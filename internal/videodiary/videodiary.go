@@ -175,10 +175,17 @@ func downloadEpisode(ep *episode) {
 	time.Sleep(time.Minute * 1)
 }
 
+// outputFilePath returns the full file path with the file name in the format
+// XX-YY-title-of-file.mp4 where XX is the season number and YY is the episode
+// number .
 func outputFilePath(ep *episode) string {
 	parentDirPath := seasonDirPath(ep.SeasonNumber)
-	episodePrefix := episodeNumberForFile(ep)
-	fileName := episodePrefix + "-" + ep.Title + ".mp4"
+	seasonPrefix := paddedNumberString(ep.SeasonNumber)
+	episodePrefix := paddedNumberString(ep.EpisodeNumber)
+	casedTitle := strings.ToLower(ep.Title)
+	casedTitle = strings.ReplaceAll(casedTitle, " ", "-")
+
+	fileName := seasonPrefix + "-" + episodePrefix + "-" + casedTitle + ".mp4"
 
 	return filepath.Join(parentDirPath, fileName)
 }
@@ -204,12 +211,12 @@ func seasonDirPath(season int) string {
 	return fullDirPath
 }
 
-func episodeNumberForFile(ep *episode) string {
-	epString := strconv.Itoa(ep.EpisodeNumber)
-	if ep.EpisodeNumber < 10 {
-		return "0" + epString
+func paddedNumberString(value int) string {
+	numString := strconv.Itoa(value)
+	if value < 10 {
+		return "0" + numString
 	}
-	return epString
+	return numString
 }
 
 func ensureOutputDirExists() error {
