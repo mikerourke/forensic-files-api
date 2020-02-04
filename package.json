@@ -1,0 +1,26 @@
+{
+  "name": "forensic-files-api",
+  "version": "1.0.0",
+  "description": "Thing that does stuff.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mikerourke/forensic-files-api.git"
+  },
+  "keywords": [
+    "forensic-files"
+  ],
+  "author": "Mike Rourke <mike.w.rourke@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mikerourke/forensic-files-api/issues"
+  },
+  "homepage": "https://github.com/mikerourke/forensic-files-api#readme",
+  "scripts": {
+    "episodes": "node -r dotenv/config ./scripts/fetchEpisodes.js"
+  },
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "fs-extra": "^8.1.0",
+    "node-fetch": "^2.6.0"
+  }
+}

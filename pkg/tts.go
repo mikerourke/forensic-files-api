@@ -11,7 +11,7 @@ import (
 	"github.com/watson-developer-cloud/go-sdk/speechtotextv1"
 )
 
-func LoadTTS() {
+func LoadTextToSpeech() {
 	err := dotenv.Load()
 	if err != nil {
 		log.Fatalf("Error loading .env file: %v", err)
