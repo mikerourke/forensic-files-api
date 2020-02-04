@@ -17,5 +17,7 @@
 # vendor/
 
 .env
-videos/
+assets/videos/
+assets/audio/
+logs/
 

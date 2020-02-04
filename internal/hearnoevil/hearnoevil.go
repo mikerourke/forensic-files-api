@@ -1,4 +1,6 @@
-package main
+// Package hearnoevil sends the audio files to the speech-to-text service for
+// transcribing.
+package hearnoevil
 
 import (
 	"encoding/json"

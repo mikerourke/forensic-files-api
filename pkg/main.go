@@ -1,7 +1,7 @@
 package main
 
-import "github.com/mikerourke/forensic-files-api/pkg/ytdownload"
+import "github.com/mikerourke/forensic-files-api/internal/videodiary"
 
 func main() {
-	ytdownload.DownloadVideos()
+	videodiary.LogMissingEpisodes()
 }
