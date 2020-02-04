@@ -2,3 +2,7 @@
 // extract the audio that will be sent to the speech-to-text service.
 package visibilityzero
 
+func ExtractAudio() {
+	// TODO: Add this.
+}
+

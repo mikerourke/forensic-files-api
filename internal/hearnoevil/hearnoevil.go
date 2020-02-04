@@ -13,14 +13,14 @@ import (
 	"github.com/watson-developer-cloud/go-sdk/speechtotextv1"
 )
 
-func LoadTextToSpeech() {
+func TranscribeEpisodes() {
 	err := dotenv.Load()
 	if err != nil {
 		log.Fatalf("Error loading .env file: %v", err)
 	}
 
 	authenticator := &core.IamAuthenticator{
-		ApiKey: os.Getenv("IBM_TTS_API_KEY"),
+		ApiKey: os.Getenv("IBM_SST_API_KEY"),
 	}
 
 	options := &speechtotextv1.SpeechToTextV1Options{
@@ -33,7 +33,7 @@ func LoadTextToSpeech() {
 		panic(err)
 	}
 
-	speechToText.SetServiceURL(os.Getenv("IBM_TTS_URL"))
+	speechToText.SetServiceURL(os.Getenv("IBM_SST_URL"))
 
 	result, _, err := speechToText.ListModels(
 		&speechtotextv1.ListModelsOptions{},

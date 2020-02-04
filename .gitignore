@@ -20,4 +20,6 @@
 assets/videos/
 assets/audio/
 logs/
+alibi
+!cmd/alibi
 

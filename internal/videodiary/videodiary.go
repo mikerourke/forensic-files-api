@@ -4,6 +4,7 @@ package videodiary
 
 import (
 	"encoding/json"
+	"fmt"
 	"io/ioutil"
 	"net/url"
 	"os"
@@ -13,6 +14,7 @@ import (
 	"strings"
 	"time"
 
+	"github.com/mikerourke/forensic-files-api/internal/common"
 	"github.com/mikerourke/forensic-files-api/internal/waterlogged"
 	"github.com/sirupsen/logrus"
 )
@@ -49,15 +51,19 @@ func DownloadEpisodes() {
 func LogMissingEpisodes() {
 	allEpisodes := parseEpisodesFromJSON()
 
+	missingCount := 0
 	for _, episode := range allEpisodes {
 		if episode.VideoHash == "" {
-			log.WithFields(logrus.Fields{
-				"season":  episode.SeasonNumber,
-				"episode": episode.EpisodeNumber,
-				"title":   episode.Title,
-			}).Info("Missing Episode")
+			fmt.Printf(
+				"Season: %v \t Episode: %v \t Title: %v\n",
+				episode.SeasonNumber,
+				episode.EpisodeNumber,
+				episode.Title,
+			)
+			missingCount++
 		}
 	}
+	fmt.Printf("Total count missing: %v\n", missingCount)
 }
 
 func checkForYouTubeDL() {
@@ -101,7 +107,7 @@ func parseEpisodesFromJSON() []*episode {
 
 func readJSONFile() []byte {
 	log.Info("reading JSON file with YouTube URLs")
-	youtubeLinks := filepath.Join(assetsDirPath(), "youtube-links.json")
+	youtubeLinks := filepath.Join(common.AssetsPath(), "youtube-links.json")
 
 	jsonFile, err := os.Open(youtubeLinks)
 
@@ -117,15 +123,6 @@ func readJSONFile() []byte {
 	}
 
 	return byteValue
-}
-
-func assetsDirPath() string {
-	pwd, err := os.Getwd()
-	if err != nil {
-		log.WithField("error", err).Fatal("Error getting pwd")
-	}
-
-	return filepath.Join(pwd, "assets")
 }
 
 func extractHash(ep jsonEpisode) string {
@@ -220,7 +217,7 @@ func paddedNumberString(value int) string {
 }
 
 func ensureOutputDirExists() error {
-	outputDir := filepath.Join(assetsDirPath(), "videos")
+	outputDir := common.VideosPath()
 
 	err := os.Mkdir(outputDir, os.ModePerm)
 	if err != nil && !isExistsError(err) {
