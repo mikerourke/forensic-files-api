@@ -17,8 +17,8 @@
 # vendor/
 
 .env
-assets/videos/
-assets/audio/
+assets/videos
+assets/audio
 logs/
 alibi
 !cmd/alibi
