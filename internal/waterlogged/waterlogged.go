@@ -13,7 +13,6 @@ import (
 // and creates a corresponding Lumberjack hook for file logging.
 func ServiceLogger(serviceName string) *logrus.Logger {
 	logger := logrus.New()
-	logger.SetReportCaller(true)
 	logger.SetFormatter(&logrus.TextFormatter{})
 
 	addLumberjackHook(logger, serviceName)

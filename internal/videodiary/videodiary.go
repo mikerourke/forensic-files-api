@@ -14,7 +14,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/mikerourke/forensic-files-api/internal/common"
+	"github.com/mikerourke/forensic-files-api/internal/crimeseen"
 	"github.com/mikerourke/forensic-files-api/internal/waterlogged"
 	"github.com/sirupsen/logrus"
 )
@@ -72,7 +72,6 @@ func checkForYouTubeDL() {
 	if err != nil {
 		panic("Could not find youtube-dl executable, it may not be installed")
 	}
-
 }
 
 func parseEpisodesFromJSON() []*episode {
@@ -107,7 +106,7 @@ func parseEpisodesFromJSON() []*episode {
 
 func readJSONFile() []byte {
 	log.Info("reading JSON file with YouTube URLs")
-	youtubeLinks := filepath.Join(common.AssetsPath(), "youtube-links.json")
+	youtubeLinks := filepath.Join(crimeseen.AssetsPath(), "youtube-links.json")
 
 	jsonFile, err := os.Open(youtubeLinks)
 
@@ -138,7 +137,7 @@ func extractHash(ep jsonEpisode) string {
 func downloadEpisode(ep *episode) {
 	outPath := outputFilePath(ep)
 
-	if fileExists(outPath) {
+	if crimeseen.FileExists(outPath) {
 		return
 	}
 
@@ -177,8 +176,8 @@ func downloadEpisode(ep *episode) {
 // number .
 func outputFilePath(ep *episode) string {
 	parentDirPath := seasonDirPath(ep.SeasonNumber)
-	seasonPrefix := paddedNumberString(ep.SeasonNumber)
-	episodePrefix := paddedNumberString(ep.EpisodeNumber)
+	seasonPrefix := crimeseen.PaddedNumberString(ep.SeasonNumber)
+	episodePrefix := crimeseen.PaddedNumberString(ep.EpisodeNumber)
 	casedTitle := strings.ToLower(ep.Title)
 	casedTitle = strings.ReplaceAll(casedTitle, " ", "-")
 
@@ -188,7 +187,7 @@ func outputFilePath(ep *episode) string {
 }
 
 func seasonDirPath(season int) string {
-	err := ensureOutputDirExists()
+	err := crimeseen.Mkdirp(crimeseen.VideosPath)
 	if err != nil {
 		log.WithField("error", err).Fatal("Error creating output directory")
 	}
@@ -196,9 +195,7 @@ func seasonDirPath(season int) string {
 	seasonName := strconv.Itoa(season)
 	fullDirPath := filepath.Join("assets", "videos", "season-"+seasonName)
 
-	err = os.Mkdir(fullDirPath, os.ModePerm)
-
-	if err != nil && !isExistsError(err) {
+	if err := crimeseen.Mkdirp(fullDirPath); err != nil {
 		log.WithFields(logrus.Fields{
 			"season": season,
 			"error":  err,
@@ -206,35 +203,4 @@ func seasonDirPath(season int) string {
 	}
 
 	return fullDirPath
-}
-
-func paddedNumberString(value int) string {
-	numString := strconv.Itoa(value)
-	if value < 10 {
-		return "0" + numString
-	}
-	return numString
-}
-
-func ensureOutputDirExists() error {
-	outputDir := common.VideosPath()
-
-	err := os.Mkdir(outputDir, os.ModePerm)
-	if err != nil && !isExistsError(err) {
-		return err
-	}
-
-	return nil
-}
-
-func fileExists(filename string) bool {
-	info, err := os.Stat(filename)
-	if os.IsNotExist(err) {
-		return false
-	}
-	return !info.IsDir()
-}
-
-func isExistsError(err error) bool {
-	return strings.Contains(err.Error(), "file exists")
 }
