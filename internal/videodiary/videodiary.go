@@ -106,7 +106,7 @@ func parseEpisodesFromJSON() []*episode {
 
 func readJSONFile() []byte {
 	log.Info("reading JSON file with YouTube URLs")
-	youtubeLinks := filepath.Join(crimeseen.AssetsPath(), "youtube-links.json")
+	youtubeLinks := filepath.Join(crimeseen.AssetsPath, "youtube-links.json")
 
 	jsonFile, err := os.Open(youtubeLinks)
 
@@ -173,7 +173,7 @@ func downloadEpisode(ep *episode) {
 
 // outputFilePath returns the full file path with the file name in the format
 // XX-YY-title-of-file.mp4 where XX is the season number and YY is the episode
-// number .
+// number.
 func outputFilePath(ep *episode) string {
 	parentDirPath := seasonDirPath(ep.SeasonNumber)
 	seasonPrefix := crimeseen.PaddedNumberString(ep.SeasonNumber)
