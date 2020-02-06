@@ -2,8 +2,12 @@ fetch-episodes:
 	node -r dotenv/config ./scripts/fetchEpisodes.js
 
 gofmt:
-	gofmt -w ./internal
-	gofmt -w ./pkg
+	gofmt -w internal
+	gofmt -w pkg
+
+golint:
+	golint internal
+	golint pkg
 
 tryout:
 	go run ./pkg/main.go

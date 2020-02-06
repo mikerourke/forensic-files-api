@@ -3,9 +3,7 @@
 package videodiary
 
 import (
-	"encoding/json"
 	"fmt"
-	"io/ioutil"
 	"net/url"
 	"os"
 	"os/exec"
@@ -75,13 +73,13 @@ func checkForYouTubeDL() {
 }
 
 func parseEpisodesFromJSON() []*episode {
-	jsonBytes := readJSONFile()
-	var jsonContents jsonEpisodesBySeason
-
-	err := json.Unmarshal(jsonBytes, &jsonContents)
+	log.Info("reading JSON file with YouTube URLs")
+	contents, err := crimeseen.ReadJSONFromAssets("youtube-links.json")
 	if err != nil {
-		log.WithField("err", err).Fatal("Error unmarshalling JSON")
+		log.WithField("error", err).Fatal("Error reading YouTube URLs file")
 	}
+
+	jsonContents := contents.(jsonEpisodesBySeason)
 
 	var allEpisodes []*episode
 
@@ -102,26 +100,6 @@ func parseEpisodesFromJSON() []*episode {
 	}
 
 	return allEpisodes
-}
-
-func readJSONFile() []byte {
-	log.Info("reading JSON file with YouTube URLs")
-	youtubeLinks := filepath.Join(crimeseen.AssetsPath, "youtube-links.json")
-
-	jsonFile, err := os.Open(youtubeLinks)
-
-	if err != nil {
-		log.WithField("error", err).Fatal("Error opening JSON file")
-	}
-
-	defer jsonFile.Close()
-
-	byteValue, err := ioutil.ReadAll(jsonFile)
-	if err != nil {
-		log.WithField("error", err).Fatal("Error reading JSON file")
-	}
-
-	return byteValue
 }
 
 func extractHash(ep jsonEpisode) string {

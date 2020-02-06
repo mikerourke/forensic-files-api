@@ -5,6 +5,7 @@ package crimeseen
 import (
 	"encoding/json"
 	"io"
+	"io/ioutil"
 	"log"
 	"os"
 	"path/filepath"
@@ -19,6 +20,8 @@ const SeasonCount = 14
 var AssetsPath = assetsPath()
 var AudioPath = filepath.Join(AssetsPath, "audio")
 var VideosPath = filepath.Join(AssetsPath, "videos")
+
+var dotEnvLoaded bool
 
 func assetsPath() string {
 	pwd, err := os.Getwd()
@@ -74,7 +77,7 @@ func WriteJSONToAssets(
 ) error {
 	outputPath := filepath.Join(AssetsPath, dirName, fileName)
 
-	bytes, err := json.MarshalIndent(contents, "", "  ")
+	b, err := json.MarshalIndent(contents, "", "  ")
 	if err != nil {
 		return err
 	}
@@ -85,7 +88,7 @@ func WriteJSONToAssets(
 	}
 	defer file.Close()
 
-	_, err = io.WriteString(file, string(bytes))
+	_, err = io.WriteString(file, string(b))
 	if err != nil {
 		return err
 	}
@@ -93,12 +96,41 @@ func WriteJSONToAssets(
 	return file.Sync()
 }
 
+// ReadJSONFromAssets reads the specified path from the `/assets` directory.
+// The path can either be a filename (for the root `/assets` directory) or
+// include the subdirectory.
+func ReadJSONFromAssets(path string) (interface{}, error) {
+	jsonFile, err := os.Open(filepath.Join(AssetsPath, path))
+	if err != nil {
+		return nil, err
+	}
+
+	defer jsonFile.Close()
+
+	b, err := ioutil.ReadAll(jsonFile)
+	if err != nil {
+		return nil, err
+	}
+
+	var contents interface{}
+	json.Unmarshal(b, &contents)
+
+	return contents, nil
+}
+
 // LoadDotEnv loads the environment variable from the `.env` file at the root
 // of the repository. It panics if it fails because the environment variables
 // are usually a hard requirement when running the functions that utilize them.
 func LoadDotEnv() {
+	if dotEnvLoaded {
+		return
+	}
+
 	err := dotenv.Load()
 	if err != nil {
+		dotEnvLoaded = false
 		panic("Failed to load .env: " + err.Error())
+	} else {
+		dotEnvLoaded = true
 	}
 }
