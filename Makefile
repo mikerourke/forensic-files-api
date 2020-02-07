@@ -12,6 +12,7 @@ golint:
 tryout:
 	go run ./pkg/main.go
 
+.PHONY: alibi
 alibi: cmd/alibi/alibi.go
 	go build -o $@ $^
 

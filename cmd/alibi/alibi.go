@@ -14,36 +14,92 @@ func main() {
 	app := kingpin.New(filepath.Base(os.Args[0]), "Internal tools for the Forensic Files API.")
 	app.HelpFlag.Short('h')
 
-	hearNoEvil := app.Command(
+	hearCommand := app.Command(
 		"hearnoevil",
-		"Send audio files to speech-to-text service for transcribing.",
+		"Service that transcribes audio with speech to text.",
 	)
 
-	videoDiary := app.Command(
+	hearRegisterCommand := hearCommand.Command(
+		"registercb",
+		"Register a callback URL.",
+	)
+
+	hearRegisterCommandURLFlag := hearRegisterCommand.Arg(
+		"url",
+		"Callback URL to use for transcribing.",
+	).Required().String()
+
+	hearServerCommand := hearCommand.Command(
+		"server",
+		"Start the callback URL server (required to start transcribing).",
+	)
+
+	hearRecognize := hearCommand.Command(
+		"recognize",
+		"Send recognition job requests to the speech to text service.",
+	)
+
+	hearRecognizeSeasonFlag := hearRecognize.Flag(
+		"season",
+		"Season of the episode to recognize.",
+	).Required().Int()
+
+	hearRecognizeEpisodeFlag := hearRecognize.Flag(
+		"episode",
+		"Episode number to recognize.",
+	).Int()
+
+	hearRecognizeURLFlag := hearRecognize.Flag(
+		"url",
+		"Callback URL to use for recognition jobs.",
+	).String()
+
+	diaryCommand := app.Command(
 		"videodiary",
 		"Download all episodes from YouTube.",
 	)
-	videoDiaryMissing := videoDiary.Flag("missing", "Log missing downloads only.").Bool()
 
-	visibilityZero := app.Command(
+	diaryCommandMissingFlag := diaryCommand.Flag(
+		"missing",
+		"Log missing downloads only.",
+	).Bool()
+
+	visZeroCommand := app.Command(
 		"viszero",
-		"Extract audio from downloaded episodes for transcription.",
+		"Extract audio from downloaded episodes for recognition.",
 	)
 
 	parsedCmd := kingpin.MustParse(app.Parse(os.Args[1:]))
 
 	switch parsedCmd {
-	case hearNoEvil.FullCommand():
-		hearnoevil.TranscribeEpisodes()
+	case hearRegisterCommand.FullCommand():
+		hearnoevil.RegisterCallbackURL(*hearRegisterCommandURLFlag)
 
-	case videoDiary.FullCommand():
-		if *videoDiaryMissing {
+	case hearServerCommand.FullCommand():
+		hearnoevil.StartTranscriptionServer()
+
+	case hearRecognize.FullCommand():
+		if *hearRecognizeEpisodeFlag == 0 {
+			hearnoevil.CreateSeasonRecognitions(
+				*hearRecognizeSeasonFlag,
+				*hearRecognizeURLFlag,
+			)
+		} else {
+			hearnoevil.CreateEpisodeRecognition(
+				*hearRecognizeSeasonFlag,
+				*hearRecognizeEpisodeFlag,
+				*hearRecognizeURLFlag,
+			)
+		}
+
+	case diaryCommand.FullCommand():
+		if *diaryCommandMissingFlag {
 			videodiary.LogMissingEpisodes()
 		} else {
 			videodiary.DownloadEpisodes()
 		}
 
-	case visibilityZero.FullCommand():
+	case visZeroCommand.FullCommand():
 		visibilityzero.ExtractAudio()
 	}
 }

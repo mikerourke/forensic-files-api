@@ -20,6 +20,7 @@ const SeasonCount = 14
 var AssetsPath = assetsPath()
 var AudioPath = filepath.Join(AssetsPath, "audio")
 var VideosPath = filepath.Join(AssetsPath, "videos")
+var RecognitionsPath = filepath.Join(AssetsPath, "recognitions")
 
 var dotEnvLoaded bool
 
@@ -107,13 +108,16 @@ func ReadJSONFromAssets(path string) (interface{}, error) {
 
 	defer jsonFile.Close()
 
-	b, err := ioutil.ReadAll(jsonFile)
+	bytes, err := ioutil.ReadAll(jsonFile)
 	if err != nil {
 		return nil, err
 	}
 
 	var contents interface{}
-	json.Unmarshal(b, &contents)
+	err = json.Unmarshal(bytes, &contents)
+	if err != nil {
+		return nil, err
+	}
 
 	return contents, nil
 }
