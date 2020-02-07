@@ -165,7 +165,7 @@ func outputFilePath(ep *episode) string {
 }
 
 func seasonDirPath(season int) string {
-	err := crimeseen.Mkdirp(crimeseen.VideosPath)
+	err := crimeseen.Mkdirp(crimeseen.VideosDirPath)
 	if err != nil {
 		log.WithField("error", err).Fatal("Error creating output directory")
 	}

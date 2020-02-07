@@ -17,14 +17,14 @@ import (
 
 const SeasonCount = 14
 
-var AssetsPath = assetsPath()
-var AudioPath = filepath.Join(AssetsPath, "audio")
-var VideosPath = filepath.Join(AssetsPath, "videos")
-var RecognitionsPath = filepath.Join(AssetsPath, "recognitions")
+var AssetsDirPath = assetsDirPath()
+var AudioDirPath = filepath.Join(AssetsDirPath, "audio")
+var VideosDirPath = filepath.Join(AssetsDirPath, "videos")
+var RecognitionsDirPath = filepath.Join(AssetsDirPath, "recognitions")
 
 var dotEnvLoaded bool
 
-func assetsPath() string {
+func assetsDirPath() string {
 	pwd, err := os.Getwd()
 	if err != nil {
 		log.Fatal("Error getting pwd")
@@ -76,9 +76,9 @@ func WriteJSONToAssets(
 	fileName string,
 	contents interface{},
 ) error {
-	outputPath := filepath.Join(AssetsPath, dirName, fileName)
+	outputPath := filepath.Join(AssetsDirPath, dirName, fileName)
 
-	b, err := json.MarshalIndent(contents, "", "  ")
+	bytes, err := json.MarshalIndent(contents, "", "  ")
 	if err != nil {
 		return err
 	}
@@ -89,7 +89,7 @@ func WriteJSONToAssets(
 	}
 	defer file.Close()
 
-	_, err = io.WriteString(file, string(b))
+	_, err = io.WriteString(file, string(bytes))
 	if err != nil {
 		return err
 	}
@@ -101,7 +101,7 @@ func WriteJSONToAssets(
 // The path can either be a filename (for the root `/assets` directory) or
 // include the subdirectory.
 func ReadJSONFromAssets(path string) (interface{}, error) {
-	jsonFile, err := os.Open(filepath.Join(AssetsPath, path))
+	jsonFile, err := os.Open(filepath.Join(AssetsDirPath, path))
 	if err != nil {
 		return nil, err
 	}

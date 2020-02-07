@@ -34,7 +34,7 @@ func checkForFFmpeg() {
 }
 
 func extractAudioFromAllSeasons() {
-	err := crimeseen.Mkdirp(filepath.Join(crimeseen.AudioPath))
+	err := crimeseen.Mkdirp(filepath.Join(crimeseen.AudioDirPath))
 	if err != nil {
 		log.WithField("error", err).Fatal("Error creating audio directory")
 	}
@@ -44,9 +44,9 @@ func extractAudioFromAllSeasons() {
 	for i := 1; i <= crimeseen.SeasonCount; i++ {
 		season := strconv.Itoa(i)
 		seasonDir := "season-" + season
-		seasonVideosPath := filepath.Join(crimeseen.VideosPath, seasonDir)
+		seasonVideosPath := filepath.Join(crimeseen.VideosDirPath, seasonDir)
 
-		err := crimeseen.Mkdirp(filepath.Join(crimeseen.AudioPath, seasonDir))
+		err := crimeseen.Mkdirp(filepath.Join(crimeseen.AudioDirPath, seasonDir))
 		if err != nil {
 			log.WithFields(logrus.Fields{
 				"season": season,
@@ -54,7 +54,8 @@ func extractAudioFromAllSeasons() {
 			}).Fatal("Error creating audio season directory")
 		}
 
-		err = filepath.Walk(seasonVideosPath,
+		err = filepath.Walk(
+			seasonVideosPath,
 			func(path string, info os.FileInfo, err error) error {
 				if strings.HasSuffix(path, ".mp4") {
 					// Every 10 videos, take a 5 minute breather. ffmpeg makes the
@@ -81,7 +82,8 @@ func extractAudioFromAllSeasons() {
 				}
 
 				return nil
-			})
+			},
+		)
 
 		if err != nil {
 			log.WithFields(logrus.Fields{
@@ -111,9 +113,9 @@ func extractAudioFromEpisode(videoPath string, audioPath string) {
 	}
 }
 
-func audioFilePath(path string) string {
-	dir, file := filepath.Split(path)
+func audioFilePath(videoPath string) string {
+	dir, file := filepath.Split(videoPath)
 	seasonDir := filepath.Base(dir)
 	mp3FileName := strings.Replace(file, ".mp4", ".mp3", -1)
-	return filepath.Join(crimeseen.AudioPath, seasonDir, mp3FileName)
+	return filepath.Join(crimeseen.AudioDirPath, seasonDir, mp3FileName)
 }

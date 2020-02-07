@@ -10,10 +10,10 @@ import (
 	"github.com/watson-developer-cloud/go-sdk/speechtotextv1"
 )
 
-// StartTranscriptionServer starts an HTTP server that listens for responses from the
-// speech-to-text service. The server runs on port 9000 and writes responses
-// to a JSON file when the service sends the response to a callback URL.
-func StartTranscriptionServer() {
+// StartCallbackServer starts an HTTP server that listens for responses from the
+// speech-to-text service. The server runs on port 9000 and is used to validate
+// registered callback URLs or write recognition results to JSON files.
+func StartCallbackServer() {
 	log.Info("Loading environment variables")
 	crimeseen.LoadDotEnv()
 	log.Infoln("Starting callback URL server on port 9000")
@@ -22,17 +22,33 @@ func StartTranscriptionServer() {
 }
 
 func handler(w http.ResponseWriter, r *http.Request) {
-	// See https://cloud.ibm.com/docs/services/speech-to-text?topic=speech-to-text-async#register
 	challengeString := r.URL.Query().Get("challenge_string")
 	if challengeString != "" {
-		log.Info("Received callback registration, sending response")
-		w.Header().Set("Content-Type", "text/plain; charset=utf-8")
-		w.WriteHeader(http.StatusOK)
-		w.Write([]byte(challengeString))
+		handleCallbackURLRegistration(w, challengeString)
 		return
 	}
 
-	log.Info("Transcription received")
+	handleRecognitionResponse(r)
+}
+
+// handleCallbackURLRegistration responds to the request to register a new callback
+// URL and adheres to the requirements specified in the IBM cloud documentation
+// at https://cloud.ibm.com/docs/services/speech-to-text?topic=speech-to-text-async#register.
+func handleCallbackURLRegistration(w http.ResponseWriter, challengeString string) {
+	log.Info("Received callback registration, sending response")
+	w.Header().Set("Content-Type", "text/plain; charset=utf-8")
+	w.WriteHeader(http.StatusOK)
+
+	_, err := w.Write([]byte(challengeString))
+	if err != nil {
+		log.WithField("error", err).Error("Error writing response")
+	}
+}
+
+// handleRecognitionResponse writes the results of a recognition job to a JSON
+// file in `/assets/recognitions`.
+func handleRecognitionResponse(r *http.Request) {
+	log.Info("Recognition response received")
 
 	bytes, err := ioutil.ReadAll(r.Body)
 	defer r.Body.Close()
@@ -66,5 +82,7 @@ func handler(w http.ResponseWriter, r *http.Request) {
 		log.WithField("error", err).Error("Error writing JSON to assets")
 	}
 
-	log.Info("Successfully wrote contents to JSON")
+	log.WithField(
+		"file", userToken,
+	).Info("Successfully wrote recognition to JSON")
 }

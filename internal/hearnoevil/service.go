@@ -6,35 +6,11 @@ import (
 
 	"github.com/IBM/go-sdk-core/core"
 	"github.com/mikerourke/forensic-files-api/internal/crimeseen"
-	"github.com/sirupsen/logrus"
 	"github.com/watson-developer-cloud/go-sdk/speechtotextv1"
 )
 
-// RegisterCallbackURL registers a callback URL with the speech to text service
-// that will receive responses.
-func RegisterCallbackURL(callbackURL string) {
-	speechToText := speechToTextService()
-
-	result, _, err := speechToText.RegisterCallback(
-		&speechtotextv1.RegisterCallbackOptions{
-			CallbackURL: core.StringPtr(callbackURL),
-		},
-	)
-
-	if result != nil {
-		log.WithFields(logrus.Fields{
-			"url":    *result.URL,
-			"status": *result.Status,
-		}).Info("Callback registration complete")
-	}
-
-	if err != nil {
-		log.WithField("error", err).Fatal("Error registering callback URL")
-	}
-
-	log.WithField("url", callbackURL).Info("Callback URL registered")
-}
-
+// speechToTextService returns an instance of the speech-to-text service that
+// can be used to register callback URLs and create recognition jobs.
 func speechToTextService() *speechtotextv1.SpeechToTextV1 {
 	crimeseen.LoadDotEnv()
 
@@ -49,7 +25,9 @@ func speechToTextService() *speechtotextv1.SpeechToTextV1 {
 	speechToText, err := speechtotextv1.NewSpeechToTextV1(options)
 
 	if err != nil {
-		log.WithField("error", err).Fatal("Error initializing speech to text service")
+		log.WithField(
+			"error", err,
+		).Fatal("Error initializing speech to text service")
 	}
 
 	// The default timeout is 30 seconds. Depending on the file, that might not

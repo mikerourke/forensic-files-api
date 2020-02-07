@@ -34,22 +34,27 @@ func main() {
 		"Start the callback URL server (required to start transcribing).",
 	)
 
-	hearRecognize := hearCommand.Command(
+	hearRecognizeCommand := hearCommand.Command(
 		"recognize",
 		"Send recognition job requests to the speech to text service.",
 	)
 
-	hearRecognizeSeasonFlag := hearRecognize.Flag(
+	hearLogCommand := hearCommand.Command(
+		"log",
+		"Log out all recognition jobs.",
+	)
+
+	hearRecognizeSeasonFlag := hearRecognizeCommand.Flag(
 		"season",
 		"Season of the episode to recognize.",
 	).Required().Int()
 
-	hearRecognizeEpisodeFlag := hearRecognize.Flag(
+	hearRecognizeEpisodeFlag := hearRecognizeCommand.Flag(
 		"episode",
 		"Episode number to recognize.",
 	).Int()
 
-	hearRecognizeURLFlag := hearRecognize.Flag(
+	hearRecognizeURLFlag := hearRecognizeCommand.Flag(
 		"url",
 		"Callback URL to use for recognition jobs.",
 	).String()
@@ -76,21 +81,24 @@ func main() {
 		hearnoevil.RegisterCallbackURL(*hearRegisterCommandURLFlag)
 
 	case hearServerCommand.FullCommand():
-		hearnoevil.StartTranscriptionServer()
+		hearnoevil.StartCallbackServer()
 
-	case hearRecognize.FullCommand():
+	case hearRecognizeCommand.FullCommand():
 		if *hearRecognizeEpisodeFlag == 0 {
-			hearnoevil.CreateSeasonRecognitions(
+			hearnoevil.CreateSeasonRecognitionJobs(
 				*hearRecognizeSeasonFlag,
 				*hearRecognizeURLFlag,
 			)
 		} else {
-			hearnoevil.CreateEpisodeRecognition(
+			hearnoevil.CreateEpisodeRecognitionJob(
 				*hearRecognizeSeasonFlag,
 				*hearRecognizeEpisodeFlag,
 				*hearRecognizeURLFlag,
 			)
 		}
+
+	case hearLogCommand.FullCommand():
+		hearnoevil.LogRecognitionJobs()
 
 	case diaryCommand.FullCommand():
 		if *diaryCommandMissingFlag {
