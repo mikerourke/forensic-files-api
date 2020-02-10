@@ -69,6 +69,16 @@ func main() {
 		"Log missing downloads only.",
 	).Bool()
 
+	diarySeasonFlag := diaryCommand.Flag(
+		"season",
+		"Season of the episode to download.",
+	).Int()
+
+	diaryEpisodeFlag := diaryCommand.Flag(
+		"episode",
+		"Episode number to download.",
+	).Int()
+
 	visZeroCommand := app.Command(
 		"viszero",
 		"Extract audio from downloaded episodes for recognition.",
@@ -103,6 +113,8 @@ func main() {
 	case diaryCommand.FullCommand():
 		if *diaryCommandMissingFlag {
 			videodiary.LogMissingEpisodes()
+		} else if *diarySeasonFlag != 0 && *diaryEpisodeFlag != 0 {
+			videodiary.DownloadEpisode(*diarySeasonFlag, *diaryEpisodeFlag)
 		} else {
 			videodiary.DownloadEpisodes()
 		}

@@ -3,7 +3,9 @@
 package videodiary
 
 import (
+	"encoding/json"
 	"fmt"
+	"io/ioutil"
 	"net/url"
 	"os"
 	"os/exec"
@@ -39,9 +41,22 @@ func DownloadEpisodes() {
 	checkForYouTubeDL()
 
 	allEpisodes := parseEpisodesFromJSON()
-	for _, episode := range allEpisodes {
-		if episode.VideoHash != "" {
-			downloadEpisode(episode)
+	for _, ep := range allEpisodes {
+		if ep.VideoHash != "" {
+			downloadEpisode(ep, true)
+		}
+	}
+}
+
+// DownloadEpisode downloads the specified episode number from the specified
+// season number.
+func DownloadEpisode(seasonNumber int, episodeNumber int) {
+	checkForYouTubeDL()
+
+	allEpisodes := parseEpisodesFromJSON()
+	for _, ep := range allEpisodes {
+		if ep.SeasonNumber == seasonNumber && ep.EpisodeNumber == episodeNumber {
+			downloadEpisode(ep, false)
 		}
 	}
 }
@@ -74,12 +89,10 @@ func checkForYouTubeDL() {
 
 func parseEpisodesFromJSON() []*episode {
 	log.Info("reading JSON file with YouTube URLs")
-	contents, err := crimeseen.ReadJSONFromAssets("youtube-links.json")
+	jsonContents, err := readYouTubeLinksJSON()
 	if err != nil {
 		log.WithField("error", err).Fatal("Error reading YouTube URLs file")
 	}
-
-	jsonContents := contents.(jsonEpisodesBySeason)
 
 	var allEpisodes []*episode
 
@@ -88,18 +101,42 @@ func parseEpisodesFromJSON() []*episode {
 			seasonNumber, _ := strconv.Atoi(season)
 			nameItems := strings.Split(jsonEpisode.Name, " | ")
 
-			episode := &episode{
+			ep := &episode{
 				Title:         nameItems[2],
 				SeasonNumber:  seasonNumber,
 				EpisodeNumber: i + 1,
 				VideoHash:     extractHash(jsonEpisode),
 			}
 
-			allEpisodes = append(allEpisodes, episode)
+			allEpisodes = append(allEpisodes, ep)
 		}
 	}
 
 	return allEpisodes
+}
+
+func readYouTubeLinksJSON() (episodes jsonEpisodesBySeason, err error) {
+	jsonFile, err := os.Open(
+		filepath.Join(crimeseen.AssetsDirPath, "youtube-links.json"))
+	if err != nil {
+		return nil, err
+	}
+
+	defer jsonFile.Close()
+
+	bytes, err := ioutil.ReadAll(jsonFile)
+	if err != nil {
+		return nil, err
+	}
+
+	var jsonContents jsonEpisodesBySeason
+	err = json.Unmarshal(bytes, &jsonContents)
+	if err != nil {
+		return nil, err
+	}
+
+	return jsonContents, nil
+
 }
 
 func extractHash(ep jsonEpisode) string {
@@ -112,7 +149,7 @@ func extractHash(ep jsonEpisode) string {
 	return q.Get("v")
 }
 
-func downloadEpisode(ep *episode) {
+func downloadEpisode(ep *episode, isPaused bool) {
 	outPath := outputFilePath(ep)
 
 	if crimeseen.FileExists(outPath) {
@@ -143,10 +180,11 @@ func downloadEpisode(ep *episode) {
 		}).Error("Error downloading video")
 	}
 
-	// We're hedging our bets here to make sure we don't exceed some kind of
-	// rate limit:
-	log.Println("Download successful, waiting 1 minute")
-	time.Sleep(time.Minute * 1)
+	// We're hedging our bets here to make sure we don't exceed some kind of rate limit:
+	if isPaused {
+		log.Println("Download successful, waiting 1 minute")
+		time.Sleep(time.Minute * 1)
+	}
 }
 
 // outputFilePath returns the full file path with the file name in the format
@@ -164,18 +202,18 @@ func outputFilePath(ep *episode) string {
 	return filepath.Join(parentDirPath, fileName)
 }
 
-func seasonDirPath(season int) string {
+func seasonDirPath(seasonNumber int) string {
 	err := crimeseen.Mkdirp(crimeseen.VideosDirPath)
 	if err != nil {
 		log.WithField("error", err).Fatal("Error creating output directory")
 	}
 
-	seasonName := strconv.Itoa(season)
+	seasonName := strconv.Itoa(seasonNumber)
 	fullDirPath := filepath.Join("assets", "videos", "season-"+seasonName)
 
 	if err := crimeseen.Mkdirp(fullDirPath); err != nil {
 		log.WithFields(logrus.Fields{
-			"season": season,
+			"season": seasonNumber,
 			"error":  err,
 		}).Fatal("Error creating season directory")
 	}
