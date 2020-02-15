@@ -15,7 +15,10 @@ import (
 	"github.com/sirupsen/logrus"
 )
 
-var log = waterlogged.ServiceLogger("visibilityzero")
+var (
+	log            = waterlogged.ServiceLogger("visibilityzero")
+	processedCount int
+)
 
 // ExtractAudio loops through all of the `/video` season directories, extracts the
 // audio from the .mp4 file using ffmpeg, and drops it into the `/assets/audio`
@@ -39,50 +42,15 @@ func extractAudioFromAllSeasons() {
 		log.WithField("error", err).Fatal("Error creating audio directory")
 	}
 
-	processedCount := 0
+	processedCount = 0
 
-	for i := 1; i <= crimeseen.SeasonCount; i++ {
-		season := strconv.Itoa(i)
-		seasonDir := "season-" + season
-		seasonVideosPath := filepath.Join(crimeseen.VideosDirPath, seasonDir)
-
-		err := crimeseen.Mkdirp(filepath.Join(crimeseen.AudioDirPath, seasonDir))
-		if err != nil {
-			log.WithFields(logrus.Fields{
-				"season": season,
-				"error":  err,
-			}).Fatal("Error creating audio season directory")
-		}
+	for season := 1; season <= crimeseen.SeasonCount; season++ {
+		seasonDir := "season-" + strconv.Itoa(season)
+		createSeasonAudioDir(seasonDir)
 
 		err = filepath.Walk(
-			seasonVideosPath,
-			func(path string, info os.FileInfo, err error) error {
-				if strings.HasSuffix(path, ".mp4") {
-					// Every 10 videos, take a 5 minute breather. ffmpeg makes the
-					// fans go bananas on my laptop:
-					if processedCount != 0 && processedCount%10 == 0 {
-						log.Infoln("Taking a breather or else I'm going to take off")
-						time.Sleep(time.Minute * 5)
-					}
-
-					audioPath := audioFilePath(path)
-
-					if !crimeseen.FileExists(audioPath) {
-						extractAudioFromEpisode(path, audioPath)
-						processedCount++
-					}
-				}
-
-				if err != nil {
-					log.WithFields(logrus.Fields{
-						"name":  info.Name(),
-						"error": err,
-					}).Error("Error in walk function")
-					return err
-				}
-
-				return nil
-			},
+			filepath.Join(crimeseen.VideosDirPath, seasonDir),
+			extractAudioFromSeason,
 		)
 
 		if err != nil {
@@ -92,6 +60,34 @@ func extractAudioFromAllSeasons() {
 			}).Fatal("Error walking season video directory")
 		}
 	}
+}
+
+func extractAudioFromSeason(path string, info os.FileInfo, err error) error {
+	if strings.HasSuffix(path, ".mp4") {
+		// Every 10 videos, take a 5 minute breather. ffmpeg makes the
+		// fans go bananas on my laptop:
+		if processedCount != 0 && processedCount%10 == 0 {
+			log.Infoln("Taking a breather or else I'm going to take off")
+			time.Sleep(time.Minute * 5)
+		}
+
+		audioPath := audioFilePath(path)
+
+		if !crimeseen.FileExists(audioPath) {
+			extractAudioFromEpisode(path, audioPath)
+			processedCount++
+		}
+	}
+
+	if err != nil {
+		log.WithFields(logrus.Fields{
+			"name":  info.Name(),
+			"error": err,
+		}).Error("Error in walk function")
+		return err
+	}
+
+	return nil
 }
 
 func extractAudioFromEpisode(videoPath string, audioPath string) {
@@ -110,6 +106,16 @@ func extractAudioFromEpisode(videoPath string, audioPath string) {
 			"error": err,
 			"video": filepath.Base(videoPath),
 		}).Error("Error extracting audio")
+	}
+}
+
+func createSeasonAudioDir(seasonDir string) {
+	err := crimeseen.Mkdirp(filepath.Join(crimeseen.AudioDirPath, seasonDir))
+	if err != nil {
+		log.WithFields(logrus.Fields{
+			"name":  seasonDir,
+			"error": err,
+		}).Fatal("Error creating season audio directory")
 	}
 }
 
