@@ -50,7 +50,7 @@ func extractAudioFromAllSeasons() {
 
 		err = filepath.Walk(
 			filepath.Join(crimeseen.VideosDirPath, seasonDir),
-			extractAudioFromSeason,
+			videoPathWalkFunc,
 		)
 
 		if err != nil {
@@ -62,7 +62,7 @@ func extractAudioFromAllSeasons() {
 	}
 }
 
-func extractAudioFromSeason(path string, info os.FileInfo, err error) error {
+func videoPathWalkFunc(path string, info os.FileInfo, err error) error {
 	if strings.HasSuffix(path, ".mp4") {
 		// Every 10 videos, take a 5 minute breather. ffmpeg makes the
 		// fans go bananas on my laptop:
@@ -95,12 +95,8 @@ func extractAudioFromEpisode(videoPath string, audioPath string) {
 		"video": filepath.Base(videoPath),
 	}).Info("Extracting audio from video file")
 
-	cmd := exec.Command("ffmpeg",
-		"-i", videoPath,
-		audioPath)
-
+	cmd := exec.Command("ffmpeg", "-i", videoPath, audioPath)
 	err := cmd.Run()
-
 	if err != nil {
 		log.WithFields(logrus.Fields{
 			"error": err,
