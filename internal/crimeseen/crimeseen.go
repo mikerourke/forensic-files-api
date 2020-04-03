@@ -11,18 +11,22 @@ import (
 	"path/filepath"
 	"strconv"
 	"strings"
-
-	"github.com/alexsasharegan/dotenv"
 )
 
+// SeasonCount is the count of seasons in Forensic Files.
 const SeasonCount = 14
 
+// AssetsDirPath is the absolute path to the `/assets` directory.
 var AssetsDirPath = assetsDirPath()
-var AudioDirPath = filepath.Join(AssetsDirPath, "audio")
-var VideosDirPath = filepath.Join(AssetsDirPath, "videos")
-var RecognitionsDirPath = filepath.Join(AssetsDirPath, "recognitions")
 
-var dotEnvLoaded bool
+// AudioDirPath is the absolute path to the `/assets/audio` directory.
+var AudioDirPath = filepath.Join(AssetsDirPath, "audio")
+
+// VideosDirPath is the absolute path to the `/assets/videos` directory.
+var VideosDirPath = filepath.Join(AssetsDirPath, "videos")
+
+// RecognitionsDirPath is the absolute path to the `/assets/recognitions` directory.
+var RecognitionsDirPath = filepath.Join(AssetsDirPath, "recognitions")
 
 func assetsDirPath() string {
 	pwd, err := os.Getwd()
@@ -120,21 +124,4 @@ func ReadJSONFromAssets(path string) (interface{}, error) {
 	}
 
 	return contents, nil
-}
-
-// LoadDotEnv loads the environment variable from the `.env` file at the root
-// of the repository. It panics if it fails because the environment variables
-// are usually a hard requirement when running the functions that utilize them.
-func LoadDotEnv() {
-	if dotEnvLoaded {
-		return
-	}
-
-	err := dotenv.Load()
-	if err != nil {
-		dotEnvLoaded = false
-		panic("Failed to load .env: " + err.Error())
-	} else {
-		dotEnvLoaded = true
-	}
 }

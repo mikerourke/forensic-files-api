@@ -1,7 +1,6 @@
 package hearnoevil
 
 import (
-	"os"
 	"time"
 
 	"github.com/IBM/go-sdk-core/core"
@@ -9,13 +8,15 @@ import (
 	"github.com/watson-developer-cloud/go-sdk/speechtotextv1"
 )
 
-// speechToTextService returns an instance of the speech-to-text service that
-// can be used to register callback URLs and create recognition jobs.
-func speechToTextService() *speechtotextv1.SpeechToTextV1 {
-	crimeseen.LoadDotEnv()
+type sttService struct {
+	*speechtotextv1.SpeechToTextV1
+}
 
+// Initialize returns an instance of the speech-to-text service that
+// can be used to register callback URLs and create recognition jobs.
+func newSTTService(env *crimeseen.Env) *sttService {
 	authenticator := &core.IamAuthenticator{
-		ApiKey: os.Getenv("IBM_STT_API_KEY"),
+		ApiKey: env.IBMAPIKey(),
 	}
 
 	options := &speechtotextv1.SpeechToTextV1Options{
@@ -25,9 +26,7 @@ func speechToTextService() *speechtotextv1.SpeechToTextV1 {
 	speechToText, err := speechtotextv1.NewSpeechToTextV1(options)
 
 	if err != nil {
-		log.WithField(
-			"error", err,
-		).Fatal("Error initializing speech to text service")
+		log.WithError(err).Fatalln("Error initializing speech to text service")
 	}
 
 	// The default timeout is 30 seconds. Depending on the file, that might not
@@ -35,10 +34,10 @@ func speechToTextService() *speechtotextv1.SpeechToTextV1 {
 	// go through:
 	speechToText.Service.Client.Timeout = time.Second * 90
 
-	err = speechToText.SetServiceURL(os.Getenv("IBM_STT_URL"))
+	err = speechToText.SetServiceURL(env.IBMAPIUrl())
 	if err != nil {
-		log.WithField("error", err).Fatal("Error setting service URL")
+		log.WithError(err).Fatalln("Error setting service URL")
 	}
 
-	return speechToText
+	return &sttService{speechToText}
 }

@@ -54,11 +54,6 @@ func main() {
 		"Episode number to recognize.",
 	).Int()
 
-	hearRecognizeURLFlag := hearRecognizeCommand.Flag(
-		"url",
-		"Callback URL to use for recognition jobs.",
-	).String()
-
 	diaryCommand := app.Command(
 		"videodiary",
 		"Download all episodes from YouTube.",
@@ -86,29 +81,26 @@ func main() {
 
 	parsedCmd := kingpin.MustParse(app.Parse(os.Args[1:]))
 
+	p := hearnoevil.NewPerpetrator("")
 	switch parsedCmd {
 	case hearRegisterCommand.FullCommand():
-		hearnoevil.RegisterCallbackURL(*hearRegisterCommandURLFlag)
+		p.RegisterCallbackURL(*hearRegisterCommandURLFlag)
 
 	case hearServerCommand.FullCommand():
-		hearnoevil.StartCallbackServer()
+		p.StartCallbackServer()
 
 	case hearRecognizeCommand.FullCommand():
 		if *hearRecognizeEpisodeFlag == 0 {
-			hearnoevil.CreateSeasonRecognitionJobs(
-				*hearRecognizeSeasonFlag,
-				*hearRecognizeURLFlag,
-			)
+			p.CreateSeasonRecognitionJobs(*hearRecognizeSeasonFlag)
 		} else {
-			hearnoevil.CreateEpisodeRecognitionJob(
+			p.CreateEpisodeRecognitionJob(
 				*hearRecognizeSeasonFlag,
 				*hearRecognizeEpisodeFlag,
-				*hearRecognizeURLFlag,
 			)
 		}
 
 	case hearLogCommand.FullCommand():
-		hearnoevil.LogRecognitionJobs()
+		p.LogRecognitionJobs()
 
 	case diaryCommand.FullCommand():
 		if *diaryCommandMissingFlag {

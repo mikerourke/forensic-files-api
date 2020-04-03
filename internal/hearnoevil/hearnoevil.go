@@ -6,11 +6,9 @@ import (
 	"bufio"
 	"encoding/json"
 	"errors"
-	"io"
 	"os"
 	"os/exec"
 	"path/filepath"
-	"strconv"
 	"strings"
 
 	"github.com/IBM/go-sdk-core/core"
@@ -20,14 +18,35 @@ import (
 	"github.com/watson-developer-cloud/go-sdk/speechtotextv1"
 )
 
+// Perpetrator contains properties and methods used to start recognition
+// jobs.
+type Perpetrator struct {
+	STT         *sttService
+	CallbackURL string
+}
+
 var log = waterlogged.ServiceLogger("hearnoevil")
+
+// NewPerpetrator returns a new instance of Perpetrator.
+func NewPerpetrator(callbackURL string) *Perpetrator {
+	env := crimeseen.NewEnv()
+	sts := newSTTService(env)
+	p := &Perpetrator{STT: sts}
+
+	if callbackURL != "" {
+		p.RegisterCallbackURL(callbackURL)
+	} else {
+		callbackURL = env.CallbackURL()
+	}
+	p.CallbackURL = callbackURL
+
+	return p
+}
 
 // RegisterCallbackURL registers a callback URL with the speech to text service
 // that will receive recognition job responses.
-func RegisterCallbackURL(callbackURL string) {
-	speechToText := speechToTextService()
-
-	result, _, err := speechToText.RegisterCallback(
+func (p *Perpetrator) RegisterCallbackURL(callbackURL string) {
+	result, _, err := p.STT.RegisterCallback(
 		&speechtotextv1.RegisterCallbackOptions{
 			CallbackURL: core.StringPtr(callbackURL),
 		},
@@ -37,58 +56,43 @@ func RegisterCallbackURL(callbackURL string) {
 		log.WithFields(logrus.Fields{
 			"url":    *result.URL,
 			"status": *result.Status,
-		}).Info("Callback registration complete")
+		}).Infoln("Callback registration complete")
 	}
 
 	if err != nil {
-		log.WithField("error", err).Fatal("Error registering callback URL")
+		log.WithError(err).Fatalln("Error registering callback URL")
 	}
 
-	log.WithField("url", callbackURL).Info("Callback URL registered")
+	log.WithField("url", callbackURL).Infoln("Callback URL registered")
 }
 
 // LogRecognitionJobs logs the last 100 jobs to the console. It displays all
 // of the fields in JSON format.
-func LogRecognitionJobs() {
-	speechToText := speechToTextService()
-	result, _, err := speechToText.CheckJobs(&speechtotextv1.CheckJobsOptions{})
+func (p *Perpetrator) LogRecognitionJobs() {
+	result, _, err := p.STT.CheckJobs(&speechtotextv1.CheckJobsOptions{})
 	if err != nil {
-		log.WithField("error", err).Fatal("Error getting recognition jobs")
+		log.WithError(err).Fatalln("Error getting recognition jobs")
 	}
 
 	recognitionJobs := result.Recognitions
-	bytes, err := json.MarshalIndent(recognitionJobs, "", "  ")
-	log.Print(string(bytes))
+	b, err := json.MarshalIndent(recognitionJobs, "", "  ")
+	log.Println(string(b))
 }
 
 // CreateSeasonRecognitionJobs batches calls to the speech-to-text service to
 // create recognition jobs for all of the episodes in the specified season.
 // You must specify a season number, but the callback URL is read from the `.env`
 // file if it isn't passed into the function.
-func CreateSeasonRecognitionJobs(seasonNumber int, callbackURL string) {
-	// Bails if ngrok isn't running.
-	ensureNgrokIsRunning()
+func (p *Perpetrator) CreateSeasonRecognitionJobs(season int) {
+	p.checkNgrok()
 
-	speechToText := speechToTextService()
-
-	// Bails if the callback URL is missing or invalid.
-	validCallbackURL := validateCallbackURL(callbackURL)
-
+	r := newRecognition(season, 0)
 	err := filepath.Walk(
-		audioSeasonDirPath(seasonNumber),
+		r.SeasonDir(),
 		func(path string, info os.FileInfo, err error) error {
 			if strings.HasSuffix(path, ".mp3") {
-				if hasExistingRecognition(path) {
-					log.WithField(
-						"file", filepath.Base(path),
-					).Info("Skipping episode, already exists")
-				} else {
-					createEpisodeRecognitionJob(
-						validCallbackURL,
-						speechToText,
-						path,
-					)
-				}
+				r.SetAudioFilePath(path)
+				r.StartJob(p.STT, p.CallbackURL)
 			}
 			return nil
 		},
@@ -97,62 +101,37 @@ func CreateSeasonRecognitionJobs(seasonNumber int, callbackURL string) {
 	if err != nil {
 		log.WithFields(logrus.Fields{
 			"error":  err,
-			"season": seasonNumber,
-		}).Fatal("Error creating recognition")
+			"season": season,
+		}).Fatalln("Error creating recognition")
 	}
 }
 
 // CreateEpisodeRecognitionJob makes a call to the speech-to-text service to
 // create a recognition job for a single episode in the specified season. You
-//must specify a season and episode number, but the callback URL is read from
+// must specify a season and episode number, but the callback URL is read from
 // the `.env` file if it isn't passed into the function.
-func CreateEpisodeRecognitionJob(
-	seasonNumber int,
-	episodeNumber int,
-	callbackURL string,
-) {
-	// Bails if ngrok isn't running.
-	ensureNgrokIsRunning()
+func (p *Perpetrator) CreateEpisodeRecognitionJob(season int, episode int) {
+	p.checkNgrok()
 
-	speechToText := speechToTextService()
+	r := newRecognition(season, episode)
+	r.StartJob(p.STT, p.CallbackURL)
+}
 
-	// Bails if the callback URL is missing or invalid.
-	validCallbackURL := validateCallbackURL(callbackURL)
+// StartCallbackServer starts the callback server to receive responses from the
+// speech-to-text service.
+func (p *Perpetrator) StartCallbackServer() {
+	cs := newCallbackServer()
+	cs.Start()
+}
 
-	audioFilePath, err := findAudioFilePath(seasonNumber, episodeNumber)
+func (p *Perpetrator) checkNgrok() {
+	err := p.findNgrokProcess()
 	if err != nil {
-		log.WithFields(logrus.Fields{
-			"error":   err,
-			"season":  seasonNumber,
-			"episode": episodeNumber,
-		}).Fatal("Could not find audio file for episode and season")
-	}
-
-	createEpisodeRecognitionJob(validCallbackURL, speechToText, audioFilePath)
-}
-
-func validateCallbackURL(callbackURL string) string {
-	if callbackURL == "" {
-		callbackURL = os.Getenv("CALLBACK_URL")
-	}
-
-	if callbackURL == "" {
-		log.Fatal("Could not find callback URL")
-	}
-
-	return callbackURL
-}
-
-func ensureNgrokIsRunning() {
-	err := findNgrokProcess()
-	if err != nil {
-		log.WithField(
-			"error", err,
-		).Fatal("ngrok is not running, run `ngrok http 9000`")
+		log.WithError(err).Fatalln("ngrok is not running, run `ngrok http 9000`")
 	}
 }
 
-func findNgrokProcess() error {
+func (p *Perpetrator) findNgrokProcess() error {
 	cmd := exec.Command("ps", "aux")
 	stdout, err := cmd.StdoutPipe()
 	if err != nil {
@@ -175,91 +154,4 @@ func findNgrokProcess() error {
 	}
 
 	return errors.New("ngrok is not running")
-}
-
-func createEpisodeRecognitionJob(
-	callbackURL string,
-	speechToText *speechtotextv1.SpeechToTextV1,
-	audioFilePath string,
-) {
-	log.WithField(
-		"file", filepath.Base(audioFilePath),
-	).Info("Starting recognition")
-
-	var audioFile io.ReadCloser
-	audioFile, err := os.Open(audioFilePath)
-
-	fileName := filepath.Base(audioFilePath)
-	if err != nil {
-		log.WithFields(logrus.Fields{
-			"error": err,
-			"file":  fileName,
-		}).Error("Error opening audio file")
-	}
-
-	jobName := strings.Replace(fileName, ".mp3", "", -1)
-
-	result, _, err := speechToText.CreateJob(
-		&speechtotextv1.CreateJobOptions{
-			Audio:       audioFile,
-			ContentType: core.StringPtr("audio/mp3"),
-			CallbackURL: core.StringPtr(callbackURL),
-			UserToken:   core.StringPtr(jobName),
-			Events:      core.StringPtr("recognitions.completed_with_results"),
-		},
-	)
-
-	if err != nil {
-		log.WithFields(logrus.Fields{
-			"error": err,
-			"file":  fileName,
-		}).Error("Error creating job")
-	}
-
-	bytes, err := json.MarshalIndent(result, "", "  ")
-	if err != nil {
-		log.Error("Could not marshal JSON")
-	}
-
-	log.Println(string(bytes))
-}
-
-// hasExistingRecognition returns true if a recognition already exists for the
-// specified audio file.
-func hasExistingRecognition(audioFilePath string) bool {
-	fileName := filepath.Base(audioFilePath)
-	jsonFileName := strings.Replace(fileName, ".mp3", ".json", -1)
-	recognitionPath := filepath.Join(crimeseen.RecognitionsDirPath, jsonFileName)
-	return crimeseen.FileExists(recognitionPath)
-}
-
-func findAudioFilePath(
-	seasonNumber int,
-	episodeNumber int,
-) (audioFilePath string, err error) {
-	seasonPrefix := crimeseen.PaddedNumberString(seasonNumber)
-	episodePrefix := crimeseen.PaddedNumberString(episodeNumber)
-	fullPrefix := seasonPrefix + "-" + episodePrefix
-
-	audioFilePath = ""
-
-	err = filepath.Walk(
-		audioSeasonDirPath(seasonNumber),
-		func(path string, info os.FileInfo, err error) error {
-			if strings.HasPrefix(filepath.Base(path), fullPrefix) {
-				audioFilePath = path
-			}
-
-			return nil
-		},
-	)
-
-	return audioFilePath, err
-}
-
-// audioSeasonDirPath return the full path to the specified season directory in
-// the `/assets/audio` directory.
-func audioSeasonDirPath(seasonNumber int) string {
-	season := strconv.Itoa(seasonNumber)
-	return filepath.Join(crimeseen.AudioDirPath, "season-"+season)
 }

@@ -10,56 +10,60 @@ import (
 	"github.com/watson-developer-cloud/go-sdk/speechtotextv1"
 )
 
-// StartCallbackServer starts an HTTP server that listens for responses from the
+type callbackServer struct{}
+
+func newCallbackServer() *callbackServer {
+	return &callbackServer{}
+}
+
+// Start starts an HTTP server that listens for responses from the
 // speech-to-text service. The server runs on port 9000 and is used to validate
 // registered callback URLs or write recognition results to JSON files.
-func StartCallbackServer() {
-	log.Info("Loading environment variables")
-	crimeseen.LoadDotEnv()
+func (cs *callbackServer) Start() {
 	log.Infoln("Starting callback URL server on port 9000")
-	http.HandleFunc("/", handler)
-	log.Fatal(http.ListenAndServe(":9000", nil))
-}
 
-func handler(w http.ResponseWriter, r *http.Request) {
-	challengeString := r.URL.Query().Get("challenge_string")
-	if challengeString != "" {
-		handleCallbackURLRegistration(w, challengeString)
-		return
+	handler := func(w http.ResponseWriter, r *http.Request) {
+		challengeString := r.URL.Query().Get("challenge_string")
+		if challengeString != "" {
+			cs.onRegister(w, challengeString)
+			return
+		}
+		cs.onResponse(r)
 	}
 
-	handleRecognitionResponse(r)
+	http.HandleFunc("/", handler)
+	log.Fatalln(http.ListenAndServe(":9000", nil))
 }
 
-// handleCallbackURLRegistration responds to the request to register a new callback
+// onRegister responds to the request to register a new callback
 // URL and adheres to the requirements specified in the IBM cloud documentation
 // at https://cloud.ibm.com/docs/services/speech-to-text?topic=speech-to-text-async#register.
-func handleCallbackURLRegistration(w http.ResponseWriter, challengeString string) {
-	log.Info("Received callback registration, sending response")
+func (cs *callbackServer) onRegister(w http.ResponseWriter, challengeString string) {
+	log.Infoln("Received callback registration, sending response")
 	w.Header().Set("Content-Type", "text/plain; charset=utf-8")
 	w.WriteHeader(http.StatusOK)
 
 	_, err := w.Write([]byte(challengeString))
 	if err != nil {
-		log.WithField("error", err).Error("Error writing response")
+		log.WithError(err).Errorln("Error writing response")
 	}
 }
 
-// handleRecognitionResponse writes the results of a recognition job to a JSON
-// file in `/assets/recognitions`.
-func handleRecognitionResponse(r *http.Request) {
-	log.Info("Recognition response received")
+// onResponse writes the results of a recognition job to a JSON file in
+// `/assets/recognitions`.
+func (cs *callbackServer) onResponse(r *http.Request) {
+	log.Infoln("Recognition response received")
 
 	bytes, err := ioutil.ReadAll(r.Body)
 	defer r.Body.Close()
 	if err != nil {
-		log.WithField("error", err).Error("Error reading body of request")
+		log.WithError(err).Errorln("Error reading body of request")
 	}
 
 	var jobContents speechtotextv1.RecognitionJob
 	err = json.Unmarshal(bytes, &jobContents)
 	if err != nil {
-		log.WithField("error", err).Error("Error unmarshalling JSON")
+		log.WithError(err).Errorln("Error unmarshalling JSON")
 	}
 
 	// If the UserToken isn't present on the job (it should always be, but just
@@ -70,7 +74,7 @@ func handleRecognitionResponse(r *http.Request) {
 		userToken = id.String()
 	}
 
-	log.WithField("file", userToken).Info("Writing results to file")
+	log.WithField("file", userToken).Infoln("Writing results to file")
 
 	err = crimeseen.WriteJSONToAssets(
 		"recognitions",
@@ -79,10 +83,9 @@ func handleRecognitionResponse(r *http.Request) {
 	)
 
 	if err != nil {
-		log.WithField("error", err).Error("Error writing JSON to assets")
+		log.WithError(err).Errorln("Error writing JSON to assets")
 	}
 
-	log.WithField(
-		"file", userToken,
-	).Info("Successfully wrote recognition to JSON")
+	log.WithField("file", userToken).Infoln(
+		"Successfully wrote recognition to JSON")
 }
