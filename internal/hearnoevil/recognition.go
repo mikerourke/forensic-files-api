@@ -49,10 +49,7 @@ func (r *recognition) StartJob(stt *sttService, callbackURL string) {
 			CallbackURL:     core.StringPtr(callbackURL),
 			UserToken:       core.StringPtr(r.jobName()),
 			Events:          core.StringPtr("recognitions.completed_with_results"),
-			Timestamps:      core.BoolPtr(false),
-			Model:           core.StringPtr("en-US_NarrowbandModel"),
 			ProfanityFilter: core.BoolPtr(false),
-			SpeakerLabels:   core.BoolPtr(true),
 		},
 	)
 	if err != nil {
