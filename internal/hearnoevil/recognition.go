@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"os"
 	"path/filepath"
+	"strconv"
 	"strings"
 
 	"github.com/IBM/go-sdk-core/core"
@@ -67,6 +68,13 @@ func (r *recognition) StartJob(stt *sttService, callbackURL string) {
 
 func (r *recognition) SetAudioFilePath(path string) {
 	r.audioPath = path
+	elements := strings.Split(filepath.Base(r.audioPath), "-")
+	ep, err := strconv.Atoi(elements[1])
+	if err != nil {
+		log.WithError(err).Fatalln("Unable to extract episode number")
+	}
+
+	r.Episode = ep
 }
 
 func (r *recognition) SeasonDir() string {
