@@ -19,5 +19,14 @@
     "dotenv": "^8.2.0",
     "fs-extra": "^8.1.0",
     "node-fetch": "^2.6.0"
+  },
+  "devDependencies": {
+    "prettier": "^2.0.2"
+  },
+  "prettier": {
+    "bracketSpacing": true,
+    "trailingComma": "all",
+    "printWidth": 80,
+    "tabWidth": 2
   }
 }

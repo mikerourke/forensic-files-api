@@ -1,1801 +1,2418 @@
 {
   "01": [
     {
-      "Title": "The Disappearance of Helle Crafts",
-      "Released": "1996-04-21",
-      "Episode": "1",
-      "imdbRating": "8.8",
-      "imdbID": "tt1469597"
+      "season": 1,
+      "episode": 1,
+      "title": "the-disappearance-of-helle-crafts",
+      "url": "https://www.youtube.com/watch?v=wV8pNYh8diI&list=PLFtpZ659RpvGZvj342APoCEKmXNe24YEt&index=1"
     },
     {
-      "Title": "The Magic Bullet",
-      "Released": "1996-10-03",
-      "Episode": "2",
-      "imdbRating": "N/A",
-      "imdbID": "tt1469601"
+      "season": 1,
+      "episode": 2,
+      "title": "the-magic-bullet",
+      "url": "https://www.youtube.com/watch?v=Bn8Oeae3j-c&list=PLFtpZ659RpvGZvj342APoCEKmXNe24YEt&index=2"
     },
     {
-      "Title": "The House That Roared",
-      "Released": "1996-10-17",
-      "Episode": "3",
-      "imdbRating": "6.8",
-      "imdbID": "tt1469599"
+      "season": 1,
+      "episode": 3,
+      "title": "the-house-that-roared",
+      "url": "https://www.youtube.com/watch?v=9EP0FtjLJZg&list=PLFtpZ659RpvGZvj342APoCEKmXNe24YEt&index=3"
     },
     {
-      "Title": "The Footpath Murders",
-      "Released": "1996-10-23",
-      "Episode": "4",
-      "imdbRating": "N/A",
-      "imdbID": "tt1469598"
+      "season": 1,
+      "episode": 4,
+      "title": "the-footpath-murders",
+      "url": "https://www.youtube.com/watch?v=_6SfVB8fp8E"
     },
     {
-      "Title": "Legionnaires' Disease",
-      "Released": "1996-11-07",
-      "Episode": "7",
-      "imdbRating": "8.0",
-      "imdbID": "tt1469592"
+      "season": 1,
+      "episode": 5,
+      "title": "planted-evidence",
+      "url": "https://www.youtube.com/watch?v=uRsJa2JhzLE&list=PLFtpZ659RpvGZvj342APoCEKmXNe24YEt&index=4"
     },
     {
-      "Title": "Insect Clues",
-      "Released": "1996-11-28",
-      "Episode": "10",
-      "imdbRating": "7.4",
-      "imdbID": "tt1469591"
+      "season": 1,
+      "episode": 6,
+      "title": "southside-strangler",
+      "url": "https://www.youtube.com/watch?v=cq4FBkCqlT0&list=PLFtpZ659RpvGZvj342APoCEKmXNe24YEt&index=5"
     },
     {
-      "Title": "The List Murders",
-      "Released": "1996-12-12",
-      "Episode": "12",
-      "imdbRating": "N/A",
-      "imdbID": "tt1469600"
+      "season": 1,
+      "episode": 7,
+      "title": "legionnaires-disease",
+      "url": "https://www.youtube.com/watch?v=xmNmJIrrzcw&list=PLFtpZ659RpvGZvj342APoCEKmXNe24YEt&index=6"
+    },
+    {
+      "season": 1,
+      "episode": 8,
+      "title": "the-wilson-murder",
+      "url": "https://www.youtube.com/watch?v=VXHFSHqwLmQ&list=PLFtpZ659RpvGZvj342APoCEKmXNe24YEt&index=7"
+    },
+    {
+      "season": 1,
+      "episode": 9,
+      "title": "deadly-neighborhoods",
+      "url": "https://www.youtube.com/watch?v=aFfI60mBBHg"
+    },
+    {
+      "season": 1,
+      "episode": 10,
+      "title": "insect-clues",
+      "url": "https://www.youtube.com/watch?v=7QDmGSFgnZ0&list=PLFtpZ659RpvGZvj342APoCEKmXNe24YEt&index=8"
+    },
+    {
+      "season": 1,
+      "episode": 11,
+      "title": "outbreak",
+      "url": "https://www.youtube.com/watch?v=bKpLls0gjwE&list=PLFtpZ659RpvGZvj342APoCEKmXNe24YEt&index=9"
+    },
+    {
+      "season": 1,
+      "episode": 12,
+      "title": "the-list-murders",
+      "url": "https://www.youtube.com/watch?v=laVfuDvoZMM&list=PLFtpZ659RpvGZvj342APoCEKmXNe24YEt&index=10"
     }
   ],
   "02": [
     {
-      "Title": "The Common Thread",
-      "Released": "1997-10-02",
-      "Episode": "1",
-      "imdbRating": "7.4",
-      "imdbID": "tt1472368"
+      "season": 2,
+      "episode": 1,
+      "title": "the-common-thread",
+      "url": "https://www.youtube.com/watch?v=pLirnJ2shTY&list=PLFtpZ659RpvHsDvu_Ji_tNJgNpLeRf-wQ&index=1"
     },
     {
-      "Title": "The Dirty Deed",
-      "Released": "1997-10-09",
-      "Episode": "2",
-      "imdbRating": "N/A",
-      "imdbID": "tt1472369"
+      "season": 2,
+      "episode": 2,
+      "title": "the-dirty-deed",
+      "url": "https://www.youtube.com/watch?v=iweCdiNI7Jo&list=PLFtpZ659RpvHsDvu_Ji_tNJgNpLeRf-wQ&index=2"
     },
     {
-      "Title": "Killer Fog",
-      "Released": "1997-10-16",
-      "Episode": "3",
-      "imdbRating": "6.6",
-      "imdbID": "tt1472364"
+      "season": 2,
+      "episode": 3,
+      "title": "killer-fog",
+      "url": "https://www.youtube.com/watch?v=eTW3nP87lgI&list=PLFtpZ659RpvHsDvu_Ji_tNJgNpLeRf-wQ&index=3"
     },
     {
-      "Title": "Sex, Lies and DNA",
-      "Released": "1997-10-23",
-      "Episode": "4",
-      "imdbRating": "7.5",
-      "imdbID": "tt1472469"
+      "season": 2,
+      "episode": 4,
+      "title": "sex-lies-and-dna",
+      "url": "https://www.youtube.com/watch?v=BRtgNOD0I_w&list=PLFtpZ659RpvHsDvu_Ji_tNJgNpLeRf-wQ&index=4"
     },
     {
-      "Title": "Bitter Potion",
-      "Released": "1997-10-30",
-      "Episode": "5",
-      "imdbRating": "N/A",
-      "imdbID": "tt1472360"
+      "season": 2,
+      "episode": 5,
+      "title": "bitter-potion",
+      "url": "https://www.youtube.com/watch?v=wQ0NBlGBnj0&list=PLFtpZ659RpvHsDvu_Ji_tNJgNpLeRf-wQ&index=5"
     },
     {
-      "Title": "The Blood Trail",
-      "Released": "1997-11-06",
-      "Episode": "6",
-      "imdbRating": "7.8",
-      "imdbID": "tt1472367"
+      "season": 2,
+      "episode": 6,
+      "title": "the-blood-trail",
+      "url": "https://www.youtube.com/watch?v=w9lHMbKggyc&list=PLFtpZ659RpvHsDvu_Ji_tNJgNpLeRf-wQ&index=6"
     },
     {
-      "Title": "Charred Remains",
-      "Released": "1997-11-20",
-      "Episode": "8",
-      "imdbRating": "7.7",
-      "imdbID": "tt1472361"
+      "season": 2,
+      "episode": 7,
+      "title": "fatal-fungus",
+      "url": "https://www.youtube.com/watch?v=AhvAdnhX2y4&list=PLFtpZ659RpvHsDvu_Ji_tNJgNpLeRf-wQ&index=7"
     },
     {
-      "Title": "Something's Fishy",
-      "Released": "1997-11-27",
-      "Episode": "9",
-      "imdbRating": "7.8",
-      "imdbID": "tt1472366"
+      "season": 2,
+      "episode": 8,
+      "title": "charred-remains",
+      "url": "https://www.youtube.com/watch?v=ly9PGRSvfXE&list=PLFtpZ659RpvHsDvu_Ji_tNJgNpLeRf-wQ&index=8"
     },
     {
-      "Title": "Sealed with a Kiss",
-      "Released": "1997-12-18",
-      "Episode": "10",
-      "imdbRating": "N/A",
-      "imdbID": "tt1472468"
+      "season": 2,
+      "episode": 9,
+      "title": "somethings-fishy",
+      "url": "https://www.youtube.com/watch?v=oMoFBYeBoH0&list=PLFtpZ659RpvHsDvu_Ji_tNJgNpLeRf-wQ&index=9"
     },
     {
-      "Title": "Postal Mortem",
-      "Released": "1997-12-11",
-      "Episode": "11",
-      "imdbRating": "7.6",
-      "imdbID": "tt1472365"
+      "season": 2,
+      "episode": 10,
+      "title": "sealed-with-a-kiss",
+      "url": "https://www.youtube.com/watch?v=51QNfL1fvtI"
     },
     {
-      "Title": "Deadly Parasites",
-      "Released": "1997-12-25",
-      "Episode": "13",
-      "imdbRating": "N/A",
-      "imdbID": "tt1472362"
+      "season": 2,
+      "episode": 11,
+      "title": "postal-mortem",
+      "url": "https://www.youtube.com/watch?v=T77sKxtlExw&list=PLFtpZ659RpvHsDvu_Ji_tNJgNpLeRf-wQ&index=10"
+    },
+    {
+      "season": 2,
+      "episode": 12,
+      "title": "microclues",
+      "url": "https://www.youtube.com/watch?v=7OVcCbhtAx0&list=PLFtpZ659RpvHsDvu_Ji_tNJgNpLeRf-wQ&index=11"
+    },
+    {
+      "season": 2,
+      "episode": 13,
+      "title": "deadly-parasites",
+      "url": "https://www.youtube.com/watch?v=Qs_6t0pR6v4"
     }
   ],
   "03": [
     {
-      "Title": "Without a Trace",
-      "Released": "1998-10-01",
-      "Episode": "1",
-      "imdbRating": "7.5",
-      "imdbID": "tt1469603"
+      "season": 3,
+      "episode": 1,
+      "title": "without-a-trace",
+      "url": "https://www.youtube.com/watch?v=cbSKyI9tfs4&list=PLFtpZ659RpvEJUsmrf4cZOTPe-ELi0DdC&index=1"
     },
     {
-      "Title": "Knot for Everyone",
-      "Released": "1998-10-08",
-      "Episode": "2",
-      "imdbRating": "N/A",
-      "imdbID": "tt0645493"
+      "season": 3,
+      "episode": 2,
+      "title": "knot-for-everyone",
+      "url": "https://www.youtube.com/watch?v=BqLRtmyXfqQ&list=PLFtpZ659RpvEJUsmrf4cZOTPe-ELi0DdC&index=2"
     },
     {
-      "Title": "The Talking Skull",
-      "Released": "1998-10-15",
-      "Episode": "3",
-      "imdbRating": "7.2",
-      "imdbID": "tt1474043"
+      "season": 3,
+      "episode": 3,
+      "title": "the-talking-skull",
+      "url": "https://www.youtube.com/watch?v=mOn_W65Mu04&list=PLFtpZ659RpvEJUsmrf4cZOTPe-ELi0DdC&index=3"
     },
     {
-      "Title": "Foreign Body",
-      "Released": "1998-10-22",
-      "Episode": "4",
-      "imdbRating": "N/A",
-      "imdbID": "tt1478066"
+      "season": 3,
+      "episode": 4,
+      "title": "foreign-body",
+      "url": "https://www.youtube.com/watch?v=iBljcPX1LW8"
     },
     {
-      "Title": "Deadly Delivery",
-      "Released": "1998-10-29",
-      "Episode": "5",
-      "imdbRating": "6.1",
-      "imdbID": "tt0947422"
+      "season": 3,
+      "episode": 5,
+      "title": "deadly-delivery",
+      "url": "https://www.youtube.com/watch?v=XEn2-dd4e9g&list=PLFtpZ659RpvEJUsmrf4cZOTPe-ELi0DdC&index=4"
     },
     {
-      "Title": "Similar Circumstances",
-      "Released": "1998-11-05",
-      "Episode": "6",
-      "imdbRating": "7.2",
-      "imdbID": "tt1474297"
+      "season": 3,
+      "episode": 6,
+      "title": "similar-circumstances",
+      "url": "https://www.youtube.com/watch?v=Zq7lt47HXkE&list=PLFtpZ659RpvEJUsmrf4cZOTPe-ELi0DdC&index=5"
     },
     {
-      "Title": "Deadly Formula",
-      "Released": "1998-11-19",
-      "Episode": "8",
-      "imdbRating": "6.9",
-      "imdbID": "tt1474040"
+      "season": 3,
+      "episode": 7,
+      "title": "grave-evidence",
+      "url": "https://www.youtube.com/watch?v=1ZWt0l4D-qo&list=PLFtpZ659RpvEJUsmrf4cZOTPe-ELi0DdC&index=6"
     },
     {
-      "Title": "Beaten by a Hair",
-      "Released": "1998-11-26",
-      "Episode": "9",
-      "imdbRating": "7.6",
-      "imdbID": "tt1474039"
+      "season": 3,
+      "episode": 8,
+      "title": "deadly-formula",
+      "url": "https://www.youtube.com/watch?v=BpWh5GowgC8&list=PLFtpZ659RpvEJUsmrf4cZOTPe-ELi0DdC&index=7"
     },
     {
-      "Title": "Crime Seen",
-      "Released": "1998-12-03",
-      "Episode": "10",
-      "imdbRating": "7.5",
-      "imdbID": "tt1476690"
+      "season": 3,
+      "episode": 9,
+      "title": "beaten-by-a-hair",
+      "url": "https://www.youtube.com/watch?v=URju59RtjFQ&list=PLFtpZ659RpvEJUsmrf4cZOTPe-ELi0DdC&index=8"
     },
     {
-      "Title": "Speck of Evidence",
-      "Released": "1998-12-10",
-      "Episode": "11",
-      "imdbRating": "7.2",
-      "imdbID": "tt1474042"
+      "season": 3,
+      "episode": 10,
+      "title": "crime-seen",
+      "url": "https://www.youtube.com/watch?v=KNQuI7aUS4Q&list=PLFtpZ659RpvEJUsmrf4cZOTPe-ELi0DdC&index=9"
     },
     {
-      "Title": "Broken Bond",
-      "Released": "1998-12-17",
-      "Episode": "12",
-      "imdbRating": "7.0",
-      "imdbID": "tt0777459"
+      "season": 3,
+      "episode": 11,
+      "title": "speck-of-evidence",
+      "url": "https://www.youtube.com/watch?v=zkHccdQdX08&list=PLFtpZ659RpvEJUsmrf4cZOTPe-ELi0DdC&index=10"
     },
     {
-      "Title": "Out of the Ashes",
-      "Released": "1998-12-24",
-      "Episode": "13",
-      "imdbRating": "8.0",
-      "imdbID": "tt1474041"
+      "season": 3,
+      "episode": 12,
+      "title": "broken-bond",
+      "url": "https://www.youtube.com/watch?v=hkr-P2u8V2o&list=PLFtpZ659RpvEJUsmrf4cZOTPe-ELi0DdC&index=11"
     },
     {
-      "Title": "Brotherhoods",
-      "Released": "2003-08-27",
-      "Episode": "27",
-      "imdbRating": "N/A",
-      "imdbID": "tt2609148"
+      "season": 3,
+      "episode": 13,
+      "title": "out-of-the-ashes",
+      "url": "https://www.youtube.com/watch?v=9eUrj8Xxlac&list=PLFtpZ659RpvEJUsmrf4cZOTPe-ELi0DdC&index=12"
     }
   ],
   "04": [
     {
-      "Title": "Invisible Intruder",
-      "Released": "1999-10-06",
-      "Episode": "1",
-      "imdbRating": "7.6",
-      "imdbID": "tt1477432"
+      "season": 4,
+      "episode": 1,
+      "title": "invisible-intruder",
+      "url": "https://www.youtube.com/watch?v=BDiW2go11xo&list=PLFtpZ659RpvH-DHFFOrVlRSHCYXW1CmQA&index=1"
     },
     {
-      "Title": "The Killing Room",
-      "Released": "1999-10-13",
-      "Episode": "2",
-      "imdbRating": "7.3",
-      "imdbID": "tt1477434"
+      "season": 4,
+      "episode": 2,
+      "title": "the-killing-room",
+      "url": "https://www.youtube.com/watch?v=3lPEE3aGSqo&list=PLFtpZ659RpvH-DHFFOrVlRSHCYXW1CmQA&index=2"
     },
     {
-      "Title": "Ultimate Betrayal",
-      "Released": "1999-07-08",
-      "Episode": "3",
-      "imdbRating": "N/A",
-      "imdbID": "tt1477435"
+      "season": 4,
+      "episode": 3,
+      "title": "ultimate-betrayal",
+      "url": "https://www.youtube.com/watch?v=kGmuSCIeuSY&list=PLFtpZ659RpvH-DHFFOrVlRSHCYXW1CmQA&index=3"
     },
     {
-      "Title": "Cement the Case",
-      "Released": "1999-10-27",
-      "Episode": "4",
-      "imdbRating": "6.9",
-      "imdbID": "tt1478067"
+      "season": 4,
+      "episode": 4,
+      "title": "cement-the-case",
+      "url": "https://www.youtube.com/watch?v=bsSuIQkSc_M&list=PLFtpZ659RpvH-DHFFOrVlRSHCYXW1CmQA&index=4"
     },
     {
-      "Title": "Innocence Lost",
-      "Released": "1999-11-03",
-      "Episode": "5",
-      "imdbRating": "6.9",
-      "imdbID": "tt1477431"
+      "season": 4,
+      "episode": 5,
+      "title": "innocence-lost",
+      "url": "https://www.youtube.com/watch?v=2nmbyDmHlb4&list=PLFtpZ659RpvH-DHFFOrVlRSHCYXW1CmQA&index=5"
     },
     {
-      "Title": "Ties That Bind",
-      "Released": "1999-08-05",
-      "Episode": "7",
-      "imdbRating": "N/A",
-      "imdbID": "tt0645494"
+      "season": 4,
+      "episode": 6,
+      "title": "til-death-do-us-part",
+      "url": "https://www.youtube.com/watch?v=rhTa4dPLOak&list=PLFtpZ659RpvH-DHFFOrVlRSHCYXW1CmQA&index=6"
     },
     {
-      "Title": "Body of Evidence",
-      "Released": "1999-11-24",
-      "Episode": "8",
-      "imdbRating": "7.5",
-      "imdbID": "tt0645492"
+      "season": 4,
+      "episode": 7,
+      "title": "ties-that-bind",
+      "url": "https://www.youtube.com/watch?v=TWr_fBrRAT0&list=PLFtpZ659RpvH-DHFFOrVlRSHCYXW1CmQA&index=7"
     },
     {
-      "Title": "Accident or Murder?",
-      "Released": "1999-12-01",
-      "Episode": "9",
-      "imdbRating": "7.6",
-      "imdbID": "tt1477429"
+      "season": 4,
+      "episode": 8,
+      "title": "body-of-evidence",
+      "url": "https://www.youtube.com/watch?v=k9RFdjF4QDk&list=PLFtpZ659RpvH-DHFFOrVlRSHCYXW1CmQA&index=8"
     },
     {
-      "Title": "Haunting Vision",
-      "Released": "1999-12-15",
-      "Episode": "11",
-      "imdbRating": "8.1",
-      "imdbID": "tt0771868"
+      "season": 4,
+      "episode": 9,
+      "title": "accident-or-murder",
+      "url": "https://www.youtube.com/watch?v=WIllxUThXEE&list=PLFtpZ659RpvH-DHFFOrVlRSHCYXW1CmQA&index=9"
     },
     {
-      "Title": "With Every Breath",
-      "Released": "1999-12-22",
-      "Episode": "12",
-      "imdbRating": "6.8",
-      "imdbID": "tt1477436"
+      "season": 4,
+      "episode": 10,
+      "title": "core-evidence",
+      "url": "https://www.youtube.com/watch?v=uuS5VRcp3e0&list=PLFtpZ659RpvH-DHFFOrVlRSHCYXW1CmQA&index=10"
     },
     {
-      "Title": "Slippery Motives",
-      "Released": "1999-12-29",
-      "Episode": "13",
-      "imdbRating": "7.1",
-      "imdbID": "tt1477433"
+      "season": 4,
+      "episode": 11,
+      "title": "haunting-vision",
+      "url": "https://www.youtube.com/watch?v=yx4yjEgcBck&list=PLFtpZ659RpvH-DHFFOrVlRSHCYXW1CmQA&index=11"
+    },
+    {
+      "season": 4,
+      "episode": 12,
+      "title": "with-every-breath",
+      "url": "https://www.youtube.com/watch?v=fD7FjnRzGw8&list=PLFtpZ659RpvH-DHFFOrVlRSHCYXW1CmQA&index=12"
+    },
+    {
+      "season": 4,
+      "episode": 13,
+      "title": "slippery-motives",
+      "url": "https://www.youtube.com/watch?v=WBjOyV9BVXo&list=PLFtpZ659RpvH-DHFFOrVlRSHCYXW1CmQA&index=13"
     }
   ],
   "05": [
     {
-      "Title": "Dew Process",
-      "Released": "2000-09-19",
-      "Episode": "2",
-      "imdbRating": "N/A",
-      "imdbID": "tt3969464"
+      "season": 5,
+      "episode": 1,
+      "title": "badge-of-deceit",
+      "url": "https://www.youtube.com/watch?v=rHGRMhlluU4&list=PLFtpZ659RpvFBZiTorm9xrjIfwgjjOewB&index=1"
     },
     {
-      "Title": "Trail of Truth",
-      "Released": "2000-10-24",
-      "Episode": "7",
-      "imdbRating": "7.4",
-      "imdbID": "tt4888858"
+      "season": 5,
+      "episode": 2,
+      "title": "dew-process",
+      "url": "https://www.youtube.com/watch?v=__2PMmeJjKg&list=PLFtpZ659RpvFBZiTorm9xrjIfwgjjOewB&index=2"
     },
     {
-      "Title": "Material Evidence",
-      "Released": "2000-10-31",
-      "Episode": "8",
-      "imdbRating": "N/A",
-      "imdbID": "tt2507910"
+      "season": 5,
+      "episode": 3,
+      "title": "a-woman-scorned",
+      "url": "https://www.youtube.com/watch?v=LR9sRg0hoTE&list=PLFtpZ659RpvFBZiTorm9xrjIfwgjjOewB&index=3"
     },
     {
-      "Title": "'Kill'Igraphy",
-      "Released": "2000-11-07",
-      "Episode": "9",
-      "imdbRating": "7.3",
-      "imdbID": "tt0581451"
+      "season": 5,
+      "episode": 4,
+      "title": "a-voice-from-beyond",
+      "url": "https://www.youtube.com/watch?v=J9NzsSiNDCA&list=PLFtpZ659RpvFBZiTorm9xrjIfwgjjOewB&index=4"
     },
     {
-      "Title": "Nursery Crimes",
-      "Released": "2000-11-14",
-      "Episode": "10",
-      "imdbRating": "N/A",
-      "imdbID": "tt4728714"
+      "season": 5,
+      "episode": 5,
+      "title": "burning-ambition",
+      "url": "https://www.youtube.com/watch?v=llvuyL0SplI&list=PLFtpZ659RpvFBZiTorm9xrjIfwgjjOewB&index=5"
     },
     {
-      "Title": "Lasting Impression",
-      "Released": "2000-11-21",
-      "Episode": "11",
-      "imdbRating": "6.9",
-      "imdbID": "tt4728712"
+      "season": 5,
+      "episode": 6,
+      "title": "memories",
+      "url": ""
     },
     {
-      "Title": "Foundation of Lies",
-      "Released": "2000-11-28",
-      "Episode": "12",
-      "imdbRating": "N/A",
-      "imdbID": "tt4728710"
+      "season": 5,
+      "episode": 7,
+      "title": "trail-of-truth",
+      "url": "https://www.youtube.com/watch?v=UXdbpRHBpF0&list=PLFtpZ659RpvFBZiTorm9xrjIfwgjjOewB&index=6"
     },
     {
-      "Title": "Unholy Vows",
-      "Released": "2000-12-05",
-      "Episode": "13",
-      "imdbRating": "6.5",
-      "imdbID": "tt4728708"
+      "season": 5,
+      "episode": 8,
+      "title": "material-evidence",
+      "url": "https://www.youtube.com/watch?v=4bLJDh7mL1s&list=PLFtpZ659RpvFBZiTorm9xrjIfwgjjOewB&index=7"
     },
     {
-      "Title": "Broken Promises",
-      "Released": "2002-04-22",
-      "Episode": "14",
-      "imdbRating": "N/A",
-      "imdbID": "tt1477304"
+      "season": 5,
+      "episode": 9,
+      "title": "killigraphy",
+      "url": "https://www.youtube.com/watch?v=Uuy9NPK7yTs&list=PLFtpZ659RpvFBZiTorm9xrjIfwgjjOewB&index=8"
     },
     {
-      "Title": "Time Will Tell",
-      "Released": "2000-12-19",
-      "Episode": "15",
-      "imdbRating": "7.2",
-      "imdbID": "tt4889160"
+      "season": 5,
+      "episode": 10,
+      "title": "nursery-crimes",
+      "url": "https://www.youtube.com/watch?v=KYylTPhVNKA&list=PLFtpZ659RpvFBZiTorm9xrjIfwgjjOewB&index=9"
     },
     {
-      "Title": "Journey to Justice",
-      "Released": "2001-01-02",
-      "Episode": "17",
-      "imdbRating": "N/A",
-      "imdbID": "tt4889310"
+      "season": 5,
+      "episode": 11,
+      "title": "lasting-impression",
+      "url": "https://www.youtube.com/watch?v=Dl1mz7fReX4&list=PLFtpZ659RpvFBZiTorm9xrjIfwgjjOewB&index=10"
     },
     {
-      "Title": "Video Diary",
-      "Released": "2001-01-09",
-      "Episode": "18",
-      "imdbRating": "N/A",
-      "imdbID": "tt3961288"
+      "season": 5,
+      "episode": 12,
+      "title": "foundation-of-lies",
+      "url": "https://www.youtube.com/watch?v=RcPRepF5zm0&list=PLFtpZ659RpvFBZiTorm9xrjIfwgjjOewB&index=11"
     },
     {
-      "Title": "Deadly Knowledge",
-      "Released": "2000-12-05",
-      "Episode": "19",
-      "imdbRating": "N/A",
-      "imdbID": "tt4722200"
+      "season": 5,
+      "episode": 13,
+      "title": "unholy-vows",
+      "url": "https://www.youtube.com/watch?v=tw0aZg_nYh0&list=PLFtpZ659RpvFBZiTorm9xrjIfwgjjOewB&index=12"
+    },
+    {
+      "season": 5,
+      "episode": 14,
+      "title": "broken-promises",
+      "url": "https://www.youtube.com/watch?v=6mrwMjnviGc&list=PLFtpZ659RpvFBZiTorm9xrjIfwgjjOewB&index=13"
+    },
+    {
+      "season": 5,
+      "episode": 15,
+      "title": "time-will-tell",
+      "url": "https://www.youtube.com/watch?v=alClovzpr1I&list=PLFtpZ659RpvFBZiTorm9xrjIfwgjjOewB&index=14"
+    },
+    {
+      "season": 5,
+      "episode": 16,
+      "title": "second-shot-at-love",
+      "url": "https://www.youtube.com/watch?v=aIuk0x8BZUw&list=PLFtpZ659RpvFBZiTorm9xrjIfwgjjOewB&index=15"
+    },
+    {
+      "season": 5,
+      "episode": 17,
+      "title": "journey-to-justice",
+      "url": "https://www.youtube.com/watch?v=JQyDnwMEDJA&list=PLFtpZ659RpvFBZiTorm9xrjIfwgjjOewB&index=16"
+    },
+    {
+      "season": 5,
+      "episode": 18,
+      "title": "video-diary",
+      "url": "https://www.youtube.com/watch?v=O4zsCwNvGX8&list=PLFtpZ659RpvFBZiTorm9xrjIfwgjjOewB&index=17"
+    },
+    {
+      "season": 5,
+      "episode": 19,
+      "title": "deadly-knowledge",
+      "url": "https://www.youtube.com/watch?v=_QixchKe-hk&list=PLFtpZ659RpvFBZiTorm9xrjIfwgjjOewB&index=18"
     }
   ],
   "06": [
     {
-      "Title": "Missing in Time",
-      "Released": "2001-05-21",
-      "Episode": "1",
-      "imdbRating": "N/A",
-      "imdbID": "tt4728728"
+      "season": 6,
+      "episode": 1,
+      "title": "missing-in-time",
+      "url": "https://www.youtube.com/watch?v=k25dF7OuBHM&list=PLFtpZ659RpvGJWZqqoXV3SajkbqkhbfDi&index=1"
     },
     {
-      "Title": "Missing Pearl",
-      "Released": "2001-05-28",
-      "Episode": "2",
-      "imdbRating": "N/A",
-      "imdbID": "tt3962874"
+      "season": 6,
+      "episode": 2,
+      "title": "missing-pearl",
+      "url": "https://www.youtube.com/watch?v=7a6KioBkbcQ&list=PLFtpZ659RpvGJWZqqoXV3SajkbqkhbfDi&index=2"
     },
     {
-      "Title": "Man's Best Friend?",
-      "Released": "2001-06-04",
-      "Episode": "3",
-      "imdbRating": "N/A",
-      "imdbID": "tt4728698"
+      "season": 6,
+      "episode": 3,
+      "title": "mans-best-friend",
+      "url": "https://www.youtube.com/watch?v=J83J3EmmMU4&list=PLFtpZ659RpvGJWZqqoXV3SajkbqkhbfDi&index=3"
     },
     {
-      "Title": "Hand Delivered",
-      "Released": "2001-06-11",
-      "Episode": "4",
-      "imdbRating": "N/A",
-      "imdbID": "tt4728706"
+      "season": 6,
+      "episode": 4,
+      "title": "hand-delivered",
+      "url": "https://www.youtube.com/watch?v=wW6vsnAOarQ&list=PLFtpZ659RpvGJWZqqoXV3SajkbqkhbfDi&index=4"
     },
     {
-      "Title": "Death Play",
-      "Released": "2001-06-18",
-      "Episode": "5",
-      "imdbRating": "N/A",
-      "imdbID": "tt4728700"
+      "season": 6,
+      "episode": 5,
+      "title": "death-play",
+      "url": ""
     },
     {
-      "Title": "Fire Dot Com",
-      "Released": "2001-06-25",
-      "Episode": "6",
-      "imdbRating": "7.2",
-      "imdbID": "tt4728726"
+      "season": 6,
+      "episode": 6,
+      "title": "fire-dot-com",
+      "url": "https://www.youtube.com/watch?v=x5cVPElYfN0&list=PLFtpZ659RpvGJWZqqoXV3SajkbqkhbfDi&index=5"
     },
     {
-      "Title": "Mistaken for Dead",
-      "Released": "2001-07-02",
-      "Episode": "7",
-      "imdbRating": "N/A",
-      "imdbID": "tt4895542"
+      "season": 6,
+      "episode": 7,
+      "title": "mistaken-for-dead",
+      "url": "https://www.youtube.com/watch?v=ww2tsHG5d2k&list=PLFtpZ659RpvGJWZqqoXV3SajkbqkhbfDi&index=6"
     },
     {
-      "Title": "Church Disappearance",
-      "Released": "2001-07-23",
-      "Episode": "10",
-      "imdbRating": "N/A",
-      "imdbID": "tt4728724"
+      "season": 6,
+      "episode": 8,
+      "title": "frozen-evidence",
+      "url": "https://www.youtube.com/watch?v=yp9gK0s4FWo&list=PLFtpZ659RpvGJWZqqoXV3SajkbqkhbfDi&index=7"
     },
     {
-      "Title": "Whodunit",
-      "Released": "2001-08-06",
-      "Episode": "12",
-      "imdbRating": "N/A",
-      "imdbID": "tt4000634"
+      "season": 6,
+      "episode": 9,
+      "title": "soft-touch",
+      "url": "https://www.youtube.com/watch?v=C3JpsjiO0rI&list=PLFtpZ659RpvGJWZqqoXV3SajkbqkhbfDi&index=8"
     },
     {
-      "Title": "Horse Play",
-      "Released": "2003-02-02",
-      "Episode": "13",
-      "imdbRating": "N/A",
-      "imdbID": "tt4000632"
+      "season": 6,
+      "episode": 10,
+      "title": "church-disappearance",
+      "url": "https://www.youtube.com/watch?v=mfxv8a5PMT8&list=PLFtpZ659RpvGJWZqqoXV3SajkbqkhbfDi&index=9"
     },
     {
-      "Title": "Treads and Threads",
-      "Released": "2001-08-20",
-      "Episode": "14",
-      "imdbRating": "N/A",
-      "imdbID": "tt4907140"
+      "season": 6,
+      "episode": 11,
+      "title": "photo-finish",
+      "url": "https://www.youtube.com/watch?v=QAXJd9LZgOU&list=PLFtpZ659RpvGJWZqqoXV3SajkbqkhbfDi&index=10"
     },
     {
-      "Title": "Killer's Cattlelog",
-      "Released": "2003-02-09",
-      "Episode": "15",
-      "imdbRating": "N/A",
-      "imdbID": "tt4006346"
+      "season": 6,
+      "episode": 12,
+      "title": "whodunit",
+      "url": "https://www.youtube.com/watch?v=L6W2X2ULVT4&list=PLFtpZ659RpvGJWZqqoXV3SajkbqkhbfDi&index=11"
     },
     {
-      "Title": "Skin of Her Teeth",
-      "Released": "2002-04-29",
-      "Episode": "16",
-      "imdbRating": "N/A",
-      "imdbID": "tt4006348"
+      "season": 6,
+      "episode": 13,
+      "title": "horse-play",
+      "url": "https://www.youtube.com/watch?v=QbPTJFkcO8w&list=PLFtpZ659RpvGJWZqqoXV3SajkbqkhbfDi&index=12"
     },
     {
-      "Title": "Line of Fire",
-      "Released": "2001-09-10",
-      "Episode": "17",
-      "imdbRating": "N/A",
-      "imdbID": "tt4728722"
+      "season": 6,
+      "episode": 14,
+      "title": "treads-and-threads",
+      "url": "https://www.youtube.com/watch?v=tA54yd3HnGY&list=PLFtpZ659RpvGJWZqqoXV3SajkbqkhbfDi&index=13"
     },
     {
-      "Title": "Bad Blood",
-      "Released": "2001-09-17",
-      "Episode": "18",
-      "imdbRating": "N/A",
-      "imdbID": "tt4728696"
+      "season": 6,
+      "episode": 15,
+      "title": "killers-cattlelog",
+      "url": "https://www.youtube.com/watch?v=VViWw7HboKU&list=PLFtpZ659RpvGJWZqqoXV3SajkbqkhbfDi&index=14"
     },
     {
-      "Title": "Root of All Evil",
-      "Released": "2001-10-01",
-      "Episode": "20",
-      "imdbRating": "N/A",
-      "imdbID": "tt4728702"
+      "season": 6,
+      "episode": 16,
+      "title": "skin-of-her-teeth",
+      "url": "https://www.youtube.com/watch?v=ddP6KxsyxVA&list=PLFtpZ659RpvGJWZqqoXV3SajkbqkhbfDi&index=15"
     },
     {
-      "Title": "Where the Blood Drops",
-      "Released": "2001-10-08",
-      "Episode": "21",
-      "imdbRating": "N/A",
-      "imdbID": "tt4011200"
+      "season": 6,
+      "episode": 17,
+      "title": "line-of-fire",
+      "url": "https://www.youtube.com/watch?v=bP1mns2SEuY&list=PLFtpZ659RpvGJWZqqoXV3SajkbqkhbfDi&index=16"
     },
     {
-      "Title": "Punch Line",
-      "Released": "2001-10-15",
-      "Episode": "22",
-      "imdbRating": "N/A",
-      "imdbID": "tt4728718"
+      "season": 6,
+      "episode": 18,
+      "title": "bad-blood",
+      "url": "https://www.youtube.com/watch?v=sI68Km3rhvU&list=PLFtpZ659RpvGJWZqqoXV3SajkbqkhbfDi&index=17"
     },
     {
-      "Title": "Sibling Rivalry",
-      "Released": "2001-10-22",
-      "Episode": "23",
-      "imdbRating": "N/A",
-      "imdbID": "tt1863709"
+      "season": 6,
+      "episode": 19,
+      "title": "pure-evil",
+      "url": "https://www.youtube.com/watch?v=Wuc3eHxTRww&list=PLFtpZ659RpvGJWZqqoXV3SajkbqkhbfDi&index=18"
     },
     {
-      "Title": "Pastoral Care",
-      "Released": "2001-10-29",
-      "Episode": "24",
-      "imdbRating": "N/A",
-      "imdbID": "tt4011198"
+      "season": 6,
+      "episode": 20,
+      "title": "root-of-all-evil",
+      "url": "https://www.youtube.com/watch?v=uQl5f3KbK0U&list=PLFtpZ659RpvGJWZqqoXV3SajkbqkhbfDi&index=19"
     },
     {
-      "Title": "Cats, Flies and Snapshots",
-      "Released": "2001-11-19",
-      "Episode": "27",
-      "imdbRating": "N/A",
-      "imdbID": "tt4015402"
+      "season": 6,
+      "episode": 21,
+      "title": "where-the-blood-drops",
+      "url": "https://www.youtube.com/watch?v=Z_DA699nO-Y&list=PLFtpZ659RpvGJWZqqoXV3SajkbqkhbfDi&index=20"
     },
     {
-      "Title": "Naked Justice",
-      "Released": "2001-11-26",
-      "Episode": "28",
-      "imdbRating": "N/A",
-      "imdbID": "tt4015400"
+      "season": 6,
+      "episode": 22,
+      "title": "punch-line",
+      "url": "https://www.youtube.com/watch?v=8sl3h5fOUAs&list=PLFtpZ659RpvGJWZqqoXV3SajkbqkhbfDi&index=21"
     },
     {
-      "Title": "Treading Not So Lightly",
-      "Released": "2001-12-03",
-      "Episode": "29",
-      "imdbRating": "N/A",
-      "imdbID": "tt4017426"
+      "season": 6,
+      "episode": 23,
+      "title": "sibling-rivalry",
+      "url": "https://www.youtube.com/watch?v=YL4DxGoINqQ&list=PLFtpZ659RpvGJWZqqoXV3SajkbqkhbfDi&index=22"
     },
     {
-      "Title": "Shopping Spree",
-      "Released": "2001-12-10",
-      "Episode": "30",
-      "imdbRating": "N/A",
-      "imdbID": "tt4017424"
+      "season": 6,
+      "episode": 24,
+      "title": "pastoral-care",
+      "url": "https://www.youtube.com/watch?v=GWchV8hpcho&list=PLFtpZ659RpvGJWZqqoXV3SajkbqkhbfDi&index=23"
+    },
+    {
+      "season": 6,
+      "episode": 25,
+      "title": "bagging-a-killer",
+      "url": "https://www.youtube.com/watch?v=iLjAiW0Pgt0&list=PLFtpZ659RpvGJWZqqoXV3SajkbqkhbfDi&index=24"
+    },
+    {
+      "season": 6,
+      "episode": 26,
+      "title": "double-trouble",
+      "url": "https://www.youtube.com/watch?v=R4JvM1FrSWM&list=PLFtpZ659RpvGJWZqqoXV3SajkbqkhbfDi&index=25"
+    },
+    {
+      "season": 6,
+      "episode": 27,
+      "title": "cats-flies-snapshots",
+      "url": "https://www.youtube.com/watch?v=B_2r616WBiU&list=PLFtpZ659RpvGJWZqqoXV3SajkbqkhbfDi&index=26"
+    },
+    {
+      "season": 6,
+      "episode": 28,
+      "title": "naked-justice",
+      "url": "https://www.youtube.com/watch?v=PHnIZ3Px02k&list=PLFtpZ659RpvGJWZqqoXV3SajkbqkhbfDi&index=27"
+    },
+    {
+      "season": 6,
+      "episode": 29,
+      "title": "treading-not-so-lightly",
+      "url": "https://www.youtube.com/watch?v=MlbK_wkfz70&list=PLFtpZ659RpvGJWZqqoXV3SajkbqkhbfDi&index=28"
+    },
+    {
+      "season": 6,
+      "episode": 30,
+      "title": "shopping-spree",
+      "url": "https://www.youtube.com/watch?v=JfXHKSR4sYs&list=PLFtpZ659RpvGJWZqqoXV3SajkbqkhbfDi&index=29"
     }
   ],
   "07": [
     {
-      "Title": "Forever Hold Your Peace",
-      "Released": "2002-01-08",
-      "Episode": "2",
-      "imdbRating": "N/A",
-      "imdbID": "tt0962343"
+      "season": 7,
+      "episode": 1,
+      "title": "the-cheater",
+      "url": "https://www.youtube.com/watch?v=nsXXAPIk7ZE"
     },
     {
-      "Title": "Reel Danger",
-      "Released": "2002-01-15",
-      "Episode": "3",
-      "imdbRating": "7.0",
-      "imdbID": "tt0581463"
+      "season": 7,
+      "episode": 2,
+      "title": "forever-hold-your-peace",
+      "url": "https://www.youtube.com/watch?v=Z7nDLpz1gYU&list=PLFtpZ659RpvGq3DmAxlFTIWOVXUk49rGc&index=1"
     },
     {
-      "Title": "A Bite Out of Crime",
-      "Released": "2002-02-05",
-      "Episode": "4",
-      "imdbRating": "6.8",
-      "imdbID": "tt4946072"
+      "season": 7,
+      "episode": 3,
+      "title": "reel-danger",
+      "url": "https://www.youtube.com/watch?v=Yv43agzM0Bc&list=PLFtpZ659RpvGq3DmAxlFTIWOVXUk49rGc&index=2"
     },
     {
-      "Title": "Palm Print Conviction",
-      "Released": "2002-06-25",
-      "Episode": "6",
-      "imdbRating": "N/A",
-      "imdbID": "tt2610714"
+      "season": 7,
+      "episode": 4,
+      "title": "whos-your-daddy",
+      "url": "https://www.youtube.com/watch?v=pHhncGRbjC4&list=PLFtpZ659RpvGq3DmAxlFTIWOVXUk49rGc&index=3"
     },
     {
-      "Title": "Purr-Fect Match",
-      "Released": "2002-02-12",
-      "Episode": "7",
-      "imdbRating": "7.1",
-      "imdbID": "tt4022384"
+      "season": 7,
+      "episode": 5,
+      "title": "the-alibi",
+      "url": "https://www.youtube.com/watch?v=sc0puW1JfRY&list=PLFtpZ659RpvGq3DmAxlFTIWOVXUk49rGc&index=4"
     },
     {
-      "Title": "Chief Evidence",
-      "Released": "2002-07-24",
-      "Episode": "7",
-      "imdbRating": "N/A",
-      "imdbID": "tt2610674"
+      "season": 7,
+      "episode": 6,
+      "title": "a-bite-out-of-crime",
+      "url": "https://www.youtube.com/watch?v=CKfvX6w0dO0"
     },
     {
-      "Title": "Telltale Tracks",
-      "Released": "2002-08-27",
-      "Episode": "8",
-      "imdbRating": "N/A",
-      "imdbID": "tt2610698"
+      "season": 7,
+      "episode": 7,
+      "title": "purr-fect-match",
+      "url": "https://www.youtube.com/watch?v=nZUzJDp7Qnk&list=PLFtpZ659RpvGq3DmAxlFTIWOVXUk49rGc&index=5"
     },
     {
-      "Title": "The Metal Business",
-      "Released": "2002-09-26",
-      "Episode": "11",
-      "imdbRating": "N/A",
-      "imdbID": "tt2610706"
+      "season": 7,
+      "episode": 8,
+      "title": "bio-attack",
+      "url": "https://www.youtube.com/watch?v=F_dsrOFsDXc&list=PLFtpZ659RpvGq3DmAxlFTIWOVXUk49rGc&index=6"
     },
     {
-      "Title": "Elephant Tracks",
-      "Released": "2002-10-17",
-      "Episode": "14",
-      "imdbRating": "N/A",
-      "imdbID": "tt2610730"
+      "season": 7,
+      "episode": 9,
+      "title": "a-shot-in-the-dark",
+      "url": "https://www.youtube.com/watch?v=0Ru5jqSbXzM&list=PLFtpZ659RpvGq3DmAxlFTIWOVXUk49rGc&index=7"
     },
     {
-      "Title": "Within a Hair",
-      "Released": "2002-08-31",
-      "Episode": "16",
-      "imdbRating": "7.0",
-      "imdbID": "tt0581473"
+      "season": 7,
+      "episode": 10,
+      "title": "without-a-prayer",
+      "url": "https://www.youtube.com/watch?v=2b12xKlfD6s&list=PLFtpZ659RpvGq3DmAxlFTIWOVXUk49rGc&index=8"
     },
     {
-      "Title": "A Shot in the Dark",
-      "Released": "2002-12-07",
-      "Episode": "17",
-      "imdbRating": "N/A",
-      "imdbID": "tt4736312"
+      "season": 7,
+      "episode": 11,
+      "title": "a-clutch-of-witnesses",
+      "url": "https://www.youtube.com/watch?v=CHeEDUKAy9A&list=PLFtpZ659RpvGq3DmAxlFTIWOVXUk49rGc&index=9"
     },
     {
-      "Title": "Without a Prayer",
-      "Released": "2002-12-14",
-      "Episode": "20",
-      "imdbRating": "N/A",
-      "imdbID": "tt4025290"
+      "season": 7,
+      "episode": 12,
+      "title": "scouts-honor",
+      "url": "https://www.youtube.com/watch?v=dRaOMQmDbOo&list=PLFtpZ659RpvGq3DmAxlFTIWOVXUk49rGc&index=10"
     },
     {
-      "Title": "A Clutch of Witnesses",
-      "Released": "2002-12-21",
-      "Episode": "21",
-      "imdbRating": "N/A",
-      "imdbID": "tt4027516"
+      "season": 7,
+      "episode": 13,
+      "title": "a-touching-recollection",
+      "url": "https://www.youtube.com/watch?v=SKy565VwB0o&list=PLFtpZ659RpvGq3DmAxlFTIWOVXUk49rGc&index=11"
     },
     {
-      "Title": "Partners in Crime",
-      "Released": "2003-01-18",
-      "Episode": "23",
-      "imdbRating": "N/A",
-      "imdbID": "tt4736310"
+      "season": 7,
+      "episode": 14,
+      "title": "a-leg-to-stand-on",
+      "url": "https://www.youtube.com/watch?v=w9sN1Iu-zic&list=PLFtpZ659RpvGq3DmAxlFTIWOVXUk49rGc&index=12"
     },
     {
-      "Title": "Mortal Sins",
-      "Released": "2006-12-06",
-      "Episode": "24",
-      "imdbRating": "N/A",
-      "imdbID": "tt1966986"
+      "season": 7,
+      "episode": 15,
+      "title": "partners-in-crime",
+      "url": "https://www.youtube.com/watch?v=dHY0On4vH_M&list=PLFtpZ659RpvGq3DmAxlFTIWOVXUk49rGc&index=13"
     },
     {
-      "Title": "Ghost in the Machine",
-      "Released": "2003-03-01",
-      "Episode": "25",
-      "imdbRating": "N/A",
-      "imdbID": "tt2610702"
+      "season": 7,
+      "episode": 16,
+      "title": "within-a-hair",
+      "url": "https://www.youtube.com/watch?v=ovryUSVvm9U&list=PLFtpZ659RpvGq3DmAxlFTIWOVXUk49rGc&index=14"
     },
     {
-      "Title": "Cold Storage",
-      "Released": "2003-03-15",
-      "Episode": "27",
-      "imdbRating": "N/A",
-      "imdbID": "tt2610708"
+      "season": 7,
+      "episode": 17,
+      "title": "chief-evidence",
+      "url": "https://www.youtube.com/watch?v=0BSE7DRmwlI&list=PLFtpZ659RpvGq3DmAxlFTIWOVXUk49rGc&index=15"
     },
     {
-      "Title": "Scout's Honor",
-      "Released": "2003-03-19",
-      "Episode": "28",
-      "imdbRating": "N/A",
-      "imdbID": "tt4566486"
+      "season": 7,
+      "episode": 18,
+      "title": "a-bitter-pill-to-swallow",
+      "url": "https://www.youtube.com/watch?v=qzKy7SWeKzs&list=PLFtpZ659RpvGq3DmAxlFTIWOVXUk49rGc&index=16"
     },
     {
-      "Title": "A Touching Recollection",
-      "Released": "2003-03-26",
-      "Episode": "29",
-      "imdbRating": "N/A",
-      "imdbID": "tt3956800"
+      "season": 7,
+      "episode": 19,
+      "title": "sip-of-sins",
+      "url": "https://www.youtube.com/watch?v=qFv5xYNDHV4&list=PLFtpZ659RpvGq3DmAxlFTIWOVXUk49rGc&index=17"
     },
     {
-      "Title": "A Bag of Evidence",
-      "Released": "2003-04-26",
-      "Episode": "31",
-      "imdbRating": "N/A",
-      "imdbID": "tt2611174"
+      "season": 7,
+      "episode": 20,
+      "title": "telltale-tracks",
+      "url": "https://www.youtube.com/watch?v=wKTVAjyTArQ&list=PLFtpZ659RpvGq3DmAxlFTIWOVXUk49rGc&index=18"
     },
     {
-      "Title": "Tooth or Consequences",
-      "Released": "2003-05-03",
-      "Episode": "32",
-      "imdbRating": "N/A",
-      "imdbID": "tt2611176"
+      "season": 7,
+      "episode": 21,
+      "title": "ghost-in-the-machine",
+      "url": "https://www.youtube.com/watch?v=m5IHj-5A8Jc&list=PLFtpZ659RpvGq3DmAxlFTIWOVXUk49rGc&index=19"
     },
     {
-      "Title": "The Sniffing Revenge",
-      "Released": "2003-05-10",
-      "Episode": "33",
-      "imdbRating": "6.3",
-      "imdbID": "tt2611178"
+      "season": 7,
+      "episode": 22,
+      "title": "frozen-in-time",
+      "url": "https://www.youtube.com/watch?v=WUaNCZMm-3Q"
     },
     {
-      "Title": "Sleight of Hand",
-      "Released": "2003-05-17",
-      "Episode": "34",
-      "imdbRating": "N/A",
-      "imdbID": "tt2611180"
+      "season": 7,
+      "episode": 23,
+      "title": "cold-storage",
+      "url": "https://www.youtube.com/watch?v=ZQTDqa3oZOQ&list=PLFtpZ659RpvGq3DmAxlFTIWOVXUk49rGc&index=20"
     },
     {
-      "Title": "Scratching the Surface",
-      "Released": "2003-05-24",
-      "Episode": "35",
-      "imdbRating": "N/A",
-      "imdbID": "tt2611182"
+      "season": 7,
+      "episode": 24,
+      "title": "the-metal-business",
+      "url": "https://www.youtube.com/watch?v=4F0o5xQAiIU&list=PLFtpZ659RpvGq3DmAxlFTIWOVXUk49rGc&index=21"
     },
     {
-      "Title": "X Marks the Spot",
-      "Released": "2003-06-07",
-      "Episode": "35",
-      "imdbRating": "8.4",
-      "imdbID": "tt1076398"
+      "season": 7,
+      "episode": 25,
+      "title": "dressed-to-kill",
+      "url": "https://www.youtube.com/watch?v=JcNff_eIbeo&list=PLFtpZ659RpvGq3DmAxlFTIWOVXUk49rGc&index=22"
     },
     {
-      "Title": "Fire Proof",
-      "Released": "2003-05-31",
-      "Episode": "36",
-      "imdbRating": "N/A",
-      "imdbID": "tt1308430"
+      "season": 7,
+      "episode": 26,
+      "title": "palm-print-conviction",
+      "url": "https://www.youtube.com/watch?v=1aPllr3_OGo&list=PLFtpZ659RpvGq3DmAxlFTIWOVXUk49rGc&index=23"
     },
     {
-      "Title": "House Call",
-      "Released": "2003-06-28",
-      "Episode": "38",
-      "imdbRating": "N/A",
-      "imdbID": "tt2611186"
+      "season": 7,
+      "episode": 27,
+      "title": "a-vow-of-silence",
+      "url": ""
     },
     {
-      "Title": "Plastic Fire",
-      "Released": "2003-07-19",
-      "Episode": "41",
-      "imdbRating": "N/A",
-      "imdbID": "tt2611196"
+      "season": 7,
+      "episode": 28,
+      "title": "elephant-tracks",
+      "url": "https://www.youtube.com/watch?v=mEzsFOxhMbo&list=PLFtpZ659RpvGq3DmAxlFTIWOVXUk49rGc&index=24"
+    },
+    {
+      "season": 7,
+      "episode": 29,
+      "title": "a-bag-of-evidence",
+      "url": "https://www.youtube.com/watch?v=DK5dISv4za4&list=PLFtpZ659RpvGq3DmAxlFTIWOVXUk49rGc&index=25"
+    },
+    {
+      "season": 7,
+      "episode": 30,
+      "title": "tooth-or-consequences",
+      "url": "https://www.youtube.com/watch?v=gAcaSMAgj4I&list=PLFtpZ659RpvGq3DmAxlFTIWOVXUk49rGc&index=26"
+    },
+    {
+      "season": 7,
+      "episode": 31,
+      "title": "the-sniffing-revenge",
+      "url": "https://www.youtube.com/watch?v=tDae_W1sz90&list=PLacP6Dm7rnO9lyssuUH9d7hmg1vus-bbv&index=132"
+    },
+    {
+      "season": 7,
+      "episode": 32,
+      "title": "sleight-of-hand",
+      "url": "https://www.youtube.com/watch?v=wbEwC_olQ3A&list=PLacP6Dm7rnO9lyssuUH9d7hmg1vus-bbv&index=133"
+    },
+    {
+      "season": 7,
+      "episode": 33,
+      "title": "scratching-the-surface",
+      "url": "https://www.youtube.com/watch?v=OG6y5Mr9Bpk&list=PLFtpZ659RpvGq3DmAxlFTIWOVXUk49rGc&index=27"
+    },
+    {
+      "season": 7,
+      "episode": 34,
+      "title": "fire-proof",
+      "url": "https://www.youtube.com/watch?v=sjG0rKhCkVw&list=PLFtpZ659RpvGq3DmAxlFTIWOVXUk49rGc&index=28"
+    },
+    {
+      "season": 7,
+      "episode": 35,
+      "title": "x-marks-the-spot",
+      "url": "https://www.youtube.com/watch?v=ON0LLyk_xnQ&list=PLacP6Dm7rnO9lyssuUH9d7hmg1vus-bbv&index=136"
+    },
+    {
+      "season": 7,
+      "episode": 36,
+      "title": "all-charged-up",
+      "url": ""
+    },
+    {
+      "season": 7,
+      "episode": 37,
+      "title": "breaking-the-mold",
+      "url": "https://www.youtube.com/watch?v=AjNfAozdT50&list=PLFtpZ659RpvGq3DmAxlFTIWOVXUk49rGc&index=29"
+    },
+    {
+      "season": 7,
+      "episode": 38,
+      "title": "house-call",
+      "url": "https://www.youtube.com/watch?v=eq_7JIoUVbY&list=PLFtpZ659RpvGq3DmAxlFTIWOVXUk49rGc&index=30"
+    },
+    {
+      "season": 7,
+      "episode": 39,
+      "title": "marathon-man",
+      "url": "https://www.youtube.com/watch?v=jipHebWE9Os&list=PLacP6Dm7rnO9lyssuUH9d7hmg1vus-bbv&index=140"
+    },
+    {
+      "season": 7,
+      "episode": 40,
+      "title": "the-snipers-trail",
+      "url": ""
+    },
+    {
+      "season": 7,
+      "episode": 41,
+      "title": "plastic-fire",
+      "url": "https://www.youtube.com/watch?v=ufzreGgGVME&list=PLFtpZ659RpvGq3DmAxlFTIWOVXUk49rGc&index=31"
+    },
+    {
+      "season": 7,
+      "episode": 42,
+      "title": "last-will",
+      "url": "https://www.youtube.com/watch?v=De1EPCHKJzk&list=PLFtpZ659RpvGq3DmAxlFTIWOVXUk49rGc&index=32"
     }
   ],
   "08": [
     {
-      "Title": "Dessert Served Cold",
-      "Released": "2003-04-02",
-      "Episode": "1",
-      "imdbRating": "N/A",
-      "imdbID": "tt2609176"
+      "season": 8,
+      "episode": 1,
+      "title": "dessert-served-cold",
+      "url": "https://www.youtube.com/watch?v=zNk1_h8JES0&list=PLFtpZ659RpvGz6qy2dGlYkGg1TK1d4rnF&index=1"
     },
     {
-      "Title": "Dessert Served Cold",
-      "Released": "2003-04-02",
-      "Episode": "1",
-      "imdbRating": "N/A",
-      "imdbID": "tt0978086"
+      "season": 8,
+      "episode": 2,
+      "title": "the-music-case",
+      "url": "https://www.youtube.com/watch?v=M0H58DdopeQ&list=PLFtpZ659RpvGz6qy2dGlYkGg1TK1d4rnF&index=2"
     },
     {
-      "Title": "Paintball",
-      "Released": "2003-04-16",
-      "Episode": "3",
-      "imdbRating": "N/A",
-      "imdbID": "tt2609114"
+      "season": 8,
+      "episode": 3,
+      "title": "paintball",
+      "url": "https://www.youtube.com/watch?v=iVxpynOWqEc&list=PLFtpZ659RpvGz6qy2dGlYkGg1TK1d4rnF&index=3"
     },
     {
-      "Title": "Shadow of a Doubt",
-      "Released": "2003-04-23",
-      "Episode": "5",
-      "imdbRating": "7.1",
-      "imdbID": "tt2609120"
+      "season": 8,
+      "episode": 4,
+      "title": "sign-here",
+      "url": "https://www.youtube.com/watch?v=ZcazfF6c4UA&list=PLFtpZ659RpvGz6qy2dGlYkGg1TK1d4rnF&index=4"
     },
     {
-      "Title": "Once Bitten",
-      "Released": "2003-06-11",
-      "Episode": "7",
-      "imdbRating": "N/A",
-      "imdbID": "tt1749701"
+      "season": 8,
+      "episode": 5,
+      "title": "shadow-of-a-doubt",
+      "url": "https://www.youtube.com/watch?v=aFw2UJVb4dA&list=PLFtpZ659RpvGz6qy2dGlYkGg1TK1d4rnF&index=5"
     },
     {
-      "Title": "All Wet",
-      "Released": "2003-06-18",
-      "Episode": "8",
-      "imdbRating": "N/A",
-      "imdbID": "tt2609126"
+      "season": 8,
+      "episode": 6,
+      "title": "tourist-trap",
+      "url": "https://www.youtube.com/watch?v=DquCy0yST5w&list=PLFtpZ659RpvGz6qy2dGlYkGg1TK1d4rnF&index=6"
     },
     {
-      "Title": "Dinner and a Movie",
-      "Released": "N/A",
-      "Episode": "10",
-      "imdbRating": "N/A",
-      "imdbID": "tt1326485"
+      "season": 8,
+      "episode": 7,
+      "title": "once-bitten",
+      "url": "https://www.youtube.com/watch?v=swvwd9BFKwA&list=PLFtpZ659RpvGz6qy2dGlYkGg1TK1d4rnF&index=7"
     },
     {
-      "Title": "A Wrong Foot",
-      "Released": "2003-07-30",
-      "Episode": "11",
-      "imdbRating": "N/A",
-      "imdbID": "tt2609132"
+      "season": 8,
+      "episode": 8,
+      "title": "all-wet",
+      "url": "https://www.youtube.com/watch?v=wK0psa9XVY4&list=PLFtpZ659RpvGz6qy2dGlYkGg1TK1d4rnF&index=8"
     },
     {
-      "Title": "Order Up",
-      "Released": "2003-08-06",
-      "Episode": "12",
-      "imdbRating": "N/A",
-      "imdbID": "tt2609134"
+      "season": 8,
+      "episode": 9,
+      "title": "shot-of-vengeance",
+      "url": "https://www.youtube.com/watch?v=IGOWQtd5dSU&list=PLFtpZ659RpvGz6qy2dGlYkGg1TK1d4rnF&index=9"
     },
     {
-      "Title": "A Welcome Intrusion",
-      "Released": "2003-08-27",
-      "Episode": "14",
-      "imdbRating": "N/A",
-      "imdbID": "tt1749695"
+      "season": 8,
+      "episode": 10,
+      "title": "dinner-and-a-movie",
+      "url": "https://www.youtube.com/watch?v=KACtTqbbrms&list=PLFtpZ659RpvGz6qy2dGlYkGg1TK1d4rnF&index=10"
     },
     {
-      "Title": "Within Arm's Reach",
-      "Released": "2003-08-25",
-      "Episode": "15",
-      "imdbRating": "N/A",
-      "imdbID": "tt2609142"
+      "season": 8,
+      "episode": 11,
+      "title": "a-wrong-foot",
+      "url": "https://www.youtube.com/watch?v=5HK2kMNeBCs&list=PLFtpZ659RpvGz6qy2dGlYkGg1TK1d4rnF&index=11"
     },
     {
-      "Title": "Hair of the Dog",
-      "Released": "2003-08-29",
-      "Episode": "18",
-      "imdbRating": "N/A",
-      "imdbID": "tt2609150"
+      "season": 8,
+      "episode": 12,
+      "title": "order-up",
+      "url": "https://www.youtube.com/watch?v=GaeuoUOBXDU&list=PLFtpZ659RpvGz6qy2dGlYkGg1TK1d4rnF&index=12"
     },
     {
-      "Title": "Breaking News",
-      "Released": "2003-09-03",
-      "Episode": "19",
-      "imdbRating": "7.2",
-      "imdbID": "tt2609152"
+      "season": 8,
+      "episode": 13,
+      "title": "when-the-dust-settled",
+      "url": "https://www.youtube.com/watch?v=T3EGMb6ltvs&list=PLFtpZ659RpvGz6qy2dGlYkGg1TK1d4rnF&index=13"
     },
     {
-      "Title": "All the World's a Stage",
-      "Released": "2003-09-10",
-      "Episode": "20",
-      "imdbRating": "6.9",
-      "imdbID": "tt1749696"
+      "season": 8,
+      "episode": 14,
+      "title": "a-welcome-intrusion",
+      "url": "https://www.youtube.com/watch?v=LOZPLFJ5i5k&list=PLFtpZ659RpvGz6qy2dGlYkGg1TK1d4rnF&index=14"
     },
     {
-      "Title": "The Big Chill",
-      "Released": "2003-09-17",
-      "Episode": "21",
-      "imdbRating": "6.7",
-      "imdbID": "tt2609160"
+      "season": 8,
+      "episode": 15,
+      "title": "within-arms-reach",
+      "url": "https://www.youtube.com/watch?v=Ra5B_yZDIYY&list=PLFtpZ659RpvGz6qy2dGlYkGg1TK1d4rnF&index=15"
     },
     {
-      "Title": "Bound for Jail",
-      "Released": "2003-10-01",
-      "Episode": "22",
-      "imdbRating": "7.0",
-      "imdbID": "tt0581456"
+      "season": 8,
+      "episode": 16,
+      "title": "private-thoughts",
+      "url": "https://www.youtube.com/watch?v=NW3rk1NGWfY&list=PLFtpZ659RpvGz6qy2dGlYkGg1TK1d4rnF&index=16"
     },
     {
-      "Title": "Nailed",
-      "Released": "N/A",
-      "Episode": "24",
-      "imdbRating": "N/A",
-      "imdbID": "tt1477305"
+      "season": 8,
+      "episode": 17,
+      "title": "brotherhoods",
+      "url": "https://www.youtube.com/watch?v=z7CmDS0SbrY&list=PLFtpZ659RpvGz6qy2dGlYkGg1TK1d4rnF&index=17"
     },
     {
-      "Title": "Letter Perfect",
-      "Released": "2003-12-10",
-      "Episode": "26",
-      "imdbRating": "N/A",
-      "imdbID": "tt2609166"
+      "season": 8,
+      "episode": 18,
+      "title": "hair-of-the-dog",
+      "url": "https://www.youtube.com/watch?v=RMDhTfj9rV8&list=PLFtpZ659RpvGz6qy2dGlYkGg1TK1d4rnF&index=18"
     },
     {
-      "Title": "True Lies",
-      "Released": "2004-01-07",
-      "Episode": "27",
-      "imdbRating": "N/A",
-      "imdbID": "tt2609168"
+      "season": 8,
+      "episode": 19,
+      "title": "breaking-news",
+      "url": "https://www.youtube.com/watch?v=YoKRCO23Tkk&list=PLFtpZ659RpvGz6qy2dGlYkGg1TK1d4rnF&index=19"
     },
     {
-      "Title": "Smoke in Your Eyes",
-      "Released": "2004-01-14",
-      "Episode": "29",
-      "imdbRating": "N/A",
-      "imdbID": "tt2609178"
+      "season": 8,
+      "episode": 20,
+      "title": "all-the-worlds-a-stage",
+      "url": "https://www.youtube.com/watch?v=25h31ROUMes&list=PLFtpZ659RpvGz6qy2dGlYkGg1TK1d4rnF&index=20"
     },
     {
-      "Title": "Flower Power",
-      "Released": "2004-01-28",
-      "Episode": "30",
-      "imdbRating": "N/A",
-      "imdbID": "tt2609184"
+      "season": 8,
+      "episode": 21,
+      "title": "the-big-chill",
+      "url": "https://www.youtube.com/watch?v=qW3j2Fdnpz8&list=PLFtpZ659RpvGz6qy2dGlYkGg1TK1d4rnF&index=21"
     },
     {
-      "Title": "Past Lives",
-      "Released": "2004-02-18",
-      "Episode": "31",
-      "imdbRating": "7.1",
-      "imdbID": "tt2609188"
+      "season": 8,
+      "episode": 22,
+      "title": "bound-for-jail",
+      "url": "https://www.youtube.com/watch?v=Sv9O2w3q5UU&list=PLFtpZ659RpvGz6qy2dGlYkGg1TK1d4rnF&index=22"
     },
     {
-      "Title": "Over and Out",
-      "Released": "2004-02-25",
-      "Episode": "32",
-      "imdbRating": "6.8",
-      "imdbID": "tt0772471"
+      "season": 8,
+      "episode": 23,
+      "title": "sphere-of-influence",
+      "url": "https://www.youtube.com/watch?v=ppquAd38ImM&list=PLFtpZ659RpvGz6qy2dGlYkGg1TK1d4rnF&index=23"
     },
     {
-      "Title": "Web of Seduction",
-      "Released": "2004-03-31",
-      "Episode": "34",
-      "imdbRating": "7.2",
-      "imdbID": "tt1749706"
+      "season": 8,
+      "episode": 24,
+      "title": "nailed",
+      "url": "https://www.youtube.com/watch?v=J5_pQV_le-g&list=PLFtpZ659RpvGz6qy2dGlYkGg1TK1d4rnF&index=24"
     },
     {
-      "Title": "Grounds for Indictment",
-      "Released": "2004-04-07",
-      "Episode": "35",
-      "imdbRating": "6.4",
-      "imdbID": "tt1749700"
+      "season": 8,
+      "episode": 25,
+      "title": "sign-of-the-zodiac",
+      "url": "https://www.youtube.com/watch?v=Rq0SbrRZ7nw&list=PLFtpZ659RpvGz6qy2dGlYkGg1TK1d4rnF&index=25"
     },
     {
-      "Title": "Duelling Confessions",
-      "Released": "2006-05-19",
-      "Episode": "36",
-      "imdbRating": "7.3",
-      "imdbID": "tt0840511"
+      "season": 8,
+      "episode": 26,
+      "title": "letter-perfect",
+      "url": "https://www.youtube.com/watch?v=-D28xg0EujU&list=PLFtpZ659RpvGz6qy2dGlYkGg1TK1d4rnF&index=26"
     },
     {
-      "Title": "Traces of Truth",
-      "Released": "2004-05-05",
-      "Episode": "37",
-      "imdbRating": "6.9",
-      "imdbID": "tt2609198"
+      "season": 8,
+      "episode": 27,
+      "title": "true-lies",
+      "url": "https://www.youtube.com/watch?v=OUP1fCaPbUc&list=PLFtpZ659RpvGz6qy2dGlYkGg1TK1d4rnF&index=27"
     },
     {
-      "Title": "Hack Attack",
-      "Released": "2006-09-04",
-      "Episode": "39",
-      "imdbRating": "6.9",
-      "imdbID": "tt4057550"
+      "season": 8,
+      "episode": 28,
+      "title": "bed-of-deceit",
+      "url": "https://www.youtube.com/watch?v=ZFfjxpvbLhk&list=PLFtpZ659RpvGz6qy2dGlYkGg1TK1d4rnF&index=28"
     },
     {
-      "Title": "Deadly Curve",
-      "Released": "2005-02-13",
-      "Episode": "40",
-      "imdbRating": "6.8",
-      "imdbID": "tt4761182"
+      "season": 8,
+      "episode": 29,
+      "title": "smoke-in-your-eyes",
+      "url": "https://www.youtube.com/watch?v=t0liDarnJ3c&list=PLFtpZ659RpvGz6qy2dGlYkGg1TK1d4rnF&index=29"
     },
     {
-      "Title": "Visibility Zero",
-      "Released": "2005-02-07",
-      "Episode": "41",
-      "imdbRating": "6.7",
-      "imdbID": "tt3512380"
+      "season": 8,
+      "episode": 30,
+      "title": "flower-power",
+      "url": "https://www.youtube.com/watch?v=vHx4PF7Tr8o&list=PLFtpZ659RpvGz6qy2dGlYkGg1TK1d4rnF&index=30"
     },
     {
-      "Title": "Flashover",
-      "Released": "2006-12-21",
-      "Episode": "42",
-      "imdbRating": "6.4",
-      "imdbID": "tt6025408"
+      "season": 8,
+      "episode": 31,
+      "title": "past-lives",
+      "url": "https://www.youtube.com/watch?v=qa4sjAzaiDU&list=PLFtpZ659RpvGz6qy2dGlYkGg1TK1d4rnF&index=31"
+    },
+    {
+      "season": 8,
+      "episode": 32,
+      "title": "over-and-out",
+      "url": "https://www.youtube.com/watch?v=kxm7nofvMEA&list=PLFtpZ659RpvGz6qy2dGlYkGg1TK1d4rnF&index=32"
+    },
+    {
+      "season": 8,
+      "episode": 33,
+      "title": "death-by-a-salesman",
+      "url": "https://www.youtube.com/watch?v=-GE2CpmKdzg&list=PLFtpZ659RpvGz6qy2dGlYkGg1TK1d4rnF&index=33"
+    },
+    {
+      "season": 8,
+      "episode": 34,
+      "title": "web-of-seduction",
+      "url": "https://www.youtube.com/watch?v=BceGTmiiaxk&list=PLFtpZ659RpvGz6qy2dGlYkGg1TK1d4rnF&index=34"
+    },
+    {
+      "season": 8,
+      "episode": 35,
+      "title": "grounds-for-indictment",
+      "url": "https://www.youtube.com/watch?v=dad91j7xaLo&list=PLFtpZ659RpvGz6qy2dGlYkGg1TK1d4rnF&index=35"
+    },
+    {
+      "season": 8,
+      "episode": 36,
+      "title": "dueling-confessions",
+      "url": "https://www.youtube.com/watch?v=a_qPyA52aJ8&list=PLFtpZ659RpvGz6qy2dGlYkGg1TK1d4rnF&index=36"
+    },
+    {
+      "season": 8,
+      "episode": 37,
+      "title": "traces-of-truth",
+      "url": "https://www.youtube.com/watch?v=uZxUO5KaU9Q&list=PLFtpZ659RpvGz6qy2dGlYkGg1TK1d4rnF&index=37"
+    },
+    {
+      "season": 8,
+      "episode": 38,
+      "title": "honour-thy-father",
+      "url": ""
+    },
+    {
+      "season": 8,
+      "episode": 39,
+      "title": "hack-attack",
+      "url": "https://www.youtube.com/watch?v=PsmGE8i3jRs&list=PLFtpZ659RpvGz6qy2dGlYkGg1TK1d4rnF&index=38"
+    },
+    {
+      "season": 8,
+      "episode": 40,
+      "title": "deadly-curve",
+      "url": "https://www.youtube.com/watch?v=nQ5Za92G4I0&list=PLFtpZ659RpvGz6qy2dGlYkGg1TK1d4rnF&index=39"
+    },
+    {
+      "season": 8,
+      "episode": 41,
+      "title": "visibility-zero",
+      "url": "https://www.youtube.com/watch?v=reW8m5zNWl4&list=PLFtpZ659RpvGz6qy2dGlYkGg1TK1d4rnF&index=40"
+    },
+    {
+      "season": 8,
+      "episode": 42,
+      "title": "flashover",
+      "url": "https://www.youtube.com/watch?v=HFQHhqUsdWw&list=PLFtpZ659RpvGz6qy2dGlYkGg1TK1d4rnF&index=41"
     }
   ],
   "09": [
     {
-      "Title": "Hunter or Hunted?",
-      "Released": "N/A",
-      "Episode": "2",
-      "imdbRating": "6.8",
-      "imdbID": "tt2611204"
+      "season": 9,
+      "episode": 1,
+      "title": "road-rage",
+      "url": "https://www.youtube.com/watch?v=t6DtVMA-lLg&list=PLFtpZ659RpvHOWmTkEa9pzyQWwGapm3az&index=1"
     },
     {
-      "Title": "No Corpus Delicti",
-      "Released": "N/A",
-      "Episode": "4",
-      "imdbRating": "6.6",
-      "imdbID": "tt2611206"
+      "season": 9,
+      "episode": 2,
+      "title": "hunter-or-hunted",
+      "url": "https://www.youtube.com/watch?v=88KAqSK8L7k&list=PLFtpZ659RpvHOWmTkEa9pzyQWwGapm3az&index=2"
     },
     {
-      "Title": "News at 11",
-      "Released": "N/A",
-      "Episode": "5",
-      "imdbRating": "6.9",
-      "imdbID": "tt2611210"
+      "season": 9,
+      "episode": 3,
+      "title": "in-harms-way",
+      "url": "https://www.youtube.com/watch?v=Esv6Wahqk7c&list=PLFtpZ659RpvHOWmTkEa9pzyQWwGapm3az&index=3"
     },
     {
-      "Title": "Burning Desire",
-      "Released": "N/A",
-      "Episode": "6",
-      "imdbRating": "6.5",
-      "imdbID": "tt2611212"
+      "season": 9,
+      "episode": 4,
+      "title": "no-corpus-delicti",
+      "url": "https://www.youtube.com/watch?v=Gc7DBvoiPQ4&list=PLFtpZ659RpvHOWmTkEa9pzyQWwGapm3az&index=4"
     },
     {
-      "Title": "Cloak of Deceit",
-      "Released": "N/A",
-      "Episode": "7",
-      "imdbRating": "7.1",
-      "imdbID": "tt2611216"
+      "season": 9,
+      "episode": 5,
+      "title": "news-at-11",
+      "url": "https://www.youtube.com/watch?v=R_LDe8Amm20&list=PLFtpZ659RpvHOWmTkEa9pzyQWwGapm3az&index=5"
     },
     {
-      "Title": "Bad Medicine",
-      "Released": "N/A",
-      "Episode": "8",
-      "imdbRating": "6.3",
-      "imdbID": "tt2611220"
+      "season": 9,
+      "episode": 6,
+      "title": "burning-desire",
+      "url": "https://www.youtube.com/watch?v=RSYw7ykGiuI&list=PLFtpZ659RpvHOWmTkEa9pzyQWwGapm3az&index=6"
     },
     {
-      "Title": "Stick 'em Up",
-      "Released": "N/A",
-      "Episode": "9",
-      "imdbRating": "7.2",
-      "imdbID": "tt2611222"
+      "season": 9,
+      "episode": 7,
+      "title": "cloak-of-deceit",
+      "url": "https://www.youtube.com/watch?v=IdzoFKImftQ&list=PLFtpZ659RpvHOWmTkEa9pzyQWwGapm3az&index=7"
     },
     {
-      "Title": "Head Games",
-      "Released": "N/A",
-      "Episode": "10",
-      "imdbRating": "6.2",
-      "imdbID": "tt2611240"
+      "season": 9,
+      "episode": 8,
+      "title": "bad-medicine",
+      "url": "https://www.youtube.com/watch?v=RSc-AigRJQI&list=PLFtpZ659RpvHOWmTkEa9pzyQWwGapm3az&index=8"
     },
     {
-      "Title": "Making the Collar",
-      "Released": "N/A",
-      "Episode": "11",
-      "imdbRating": "N/A",
-      "imdbID": "tt2611244"
+      "season": 9,
+      "episode": 9,
+      "title": "stick-em-up",
+      "url": "https://www.youtube.com/watch?v=xtdOyKjXOGo&list=PLFtpZ659RpvHOWmTkEa9pzyQWwGapm3az&index=9"
     },
     {
-      "Title": "The Financial Downfall",
-      "Released": "N/A",
-      "Episode": "12",
-      "imdbRating": "7.1",
-      "imdbID": "tt1656304"
+      "season": 9,
+      "episode": 10,
+      "title": "head-games",
+      "url": "https://www.youtube.com/watch?v=QuSytDzUI6A&list=PLFtpZ659RpvHOWmTkEa9pzyQWwGapm3az&index=10"
     },
     {
-      "Title": "A Daughter's Journey",
-      "Released": "2004-08-09",
-      "Episode": "13",
-      "imdbRating": "7.7",
-      "imdbID": "tt0581452"
+      "season": 9,
+      "episode": 11,
+      "title": "making-the-collar",
+      "url": "https://www.youtube.com/watch?v=mPFeylHLk4E&list=PLFtpZ659RpvHOWmTkEa9pzyQWwGapm3az&index=11"
     },
     {
-      "Title": "Trouble Brewing",
-      "Released": "2009-07-24",
-      "Episode": "15",
-      "imdbRating": "N/A",
-      "imdbID": "tt2252565"
+      "season": 9,
+      "episode": 12,
+      "title": "the-financial-downfall",
+      "url": "https://www.youtube.com/watch?v=9wvMLFgdGKw&list=PLFtpZ659RpvHOWmTkEa9pzyQWwGapm3az&index=12"
     },
     {
-      "Title": "Cries Unheard",
-      "Released": "N/A",
-      "Episode": "16",
-      "imdbRating": "N/A",
-      "imdbID": "tt2611250"
+      "season": 9,
+      "episode": 13,
+      "title": "a-daughters-journey",
+      "url": "https://www.youtube.com/watch?v=TMEnkLdHx78&list=PLFtpZ659RpvHOWmTkEa9pzyQWwGapm3az&index=13"
     },
     {
-      "Title": "Badge of Betrayal",
-      "Released": "N/A",
-      "Episode": "18",
-      "imdbRating": "7.8",
-      "imdbID": "tt2611256"
+      "season": 9,
+      "episode": 14,
+      "title": "over-a-barrel",
+      "url": "https://www.youtube.com/watch?v=ywI5VZMKlnM&list=PLFtpZ659RpvHOWmTkEa9pzyQWwGapm3az&index=14"
     },
     {
-      "Title": "Point of Origin",
-      "Released": "N/A",
-      "Episode": "21",
-      "imdbRating": "7.5",
-      "imdbID": "tt0909171"
+      "season": 9,
+      "episode": 15,
+      "title": "pinned-by-the-evidence",
+      "url": "https://www.youtube.com/watch?v=TfzexleC1RM&list=PLFtpZ659RpvHOWmTkEa9pzyQWwGapm3az&index=15"
     },
     {
-      "Title": "Seeds for Doubt",
-      "Released": "N/A",
-      "Episode": "22",
-      "imdbRating": "7.1",
-      "imdbID": "tt2611264"
+      "season": 9,
+      "episode": 16,
+      "title": "cries-unheard",
+      "url": "https://www.youtube.com/watch?v=vqCieDnUpSo&list=PLFtpZ659RpvHOWmTkEa9pzyQWwGapm3az&index=16"
     },
     {
-      "Title": "Saving Face",
-      "Released": "2004-10-13",
-      "Episode": "23",
-      "imdbRating": "7.1",
-      "imdbID": "tt1611325"
+      "season": 9,
+      "episode": 17,
+      "title": "buried-treasure",
+      "url": "https://www.youtube.com/watch?v=hAsEJgid2_o&list=PLFtpZ659RpvHOWmTkEa9pzyQWwGapm3az&index=17"
     },
     {
-      "Title": "Northern Exposure",
-      "Released": "N/A",
-      "Episode": "24",
-      "imdbRating": "N/A",
-      "imdbID": "tt2611274"
+      "season": 9,
+      "episode": 18,
+      "title": "badge-of-betrayal",
+      "url": "https://www.youtube.com/watch?v=o3FBoFUvzi4&list=PLFtpZ659RpvHOWmTkEa9pzyQWwGapm3az&index=18"
     },
     {
-      "Title": "Silk Stalkings",
-      "Released": "2004-12-29",
-      "Episode": "25",
-      "imdbRating": "6.7",
-      "imdbID": "tt2611278"
+      "season": 9,
+      "episode": 19,
+      "title": "deadly-matrimony",
+      "url": "https://www.youtube.com/watch?v=JtCmpgTfUQo&list=PLFtpZ659RpvHOWmTkEa9pzyQWwGapm3az&index=19"
     },
     {
-      "Title": "Fishing for the Truth",
-      "Released": "2005-03-23",
-      "Episode": "26",
-      "imdbRating": "7.5",
-      "imdbID": "tt2611284"
+      "season": 9,
+      "episode": 20,
+      "title": "muddy-waters",
+      "url": "https://www.youtube.com/watch?v=g9F5ELezCYQ&list=PLFtpZ659RpvHOWmTkEa9pzyQWwGapm3az&index=20"
     },
     {
-      "Title": "For Love or Money",
-      "Released": "2005-01-19",
-      "Episode": "27",
-      "imdbRating": "7.5",
-      "imdbID": "tt2611286"
+      "season": 9,
+      "episode": 21,
+      "title": "point-of-origin",
+      "url": "https://www.youtube.com/watch?v=KESmOFM_x-8&list=PLFtpZ659RpvHOWmTkEa9pzyQWwGapm3az&index=21"
     },
     {
-      "Title": "South of the Border",
-      "Released": "2005-02-03",
-      "Episode": "28",
-      "imdbRating": "8.0",
-      "imdbID": "tt2611292"
+      "season": 9,
+      "episode": 22,
+      "title": "seeds-for-doubt",
+      "url": "https://www.youtube.com/watch?v=QaTQhaCVxcA&list=PLFtpZ659RpvHOWmTkEa9pzyQWwGapm3az&index=22"
     },
     {
-      "Title": "Walking Terror",
-      "Released": "2005-03-02",
-      "Episode": "30",
-      "imdbRating": "7.3",
-      "imdbID": "tt2611296"
+      "season": 9,
+      "episode": 23,
+      "title": "saving-face",
+      "url": "https://www.youtube.com/watch?v=HHZiehBkbMg&list=PLFtpZ659RpvHOWmTkEa9pzyQWwGapm3az&index=23"
+    },
+    {
+      "season": 9,
+      "episode": 24,
+      "title": "northern-exposure",
+      "url": "https://www.youtube.com/watch?v=qmpD0hrHYGc&list=PLFtpZ659RpvHOWmTkEa9pzyQWwGapm3az&index=24"
+    },
+    {
+      "season": 9,
+      "episode": 25,
+      "title": "silk-stalkings",
+      "url": "https://www.youtube.com/watch?v=LjieZ1Ch0Gk&list=PLFtpZ659RpvHOWmTkEa9pzyQWwGapm3az&index=25"
+    },
+    {
+      "season": 9,
+      "episode": 26,
+      "title": "fishing-for-the-truth",
+      "url": "https://www.youtube.com/watch?v=JOxiL0WLMxo&list=PLFtpZ659RpvHOWmTkEa9pzyQWwGapm3az&index=26"
+    },
+    {
+      "season": 9,
+      "episode": 27,
+      "title": "for-love-or-money",
+      "url": "https://www.youtube.com/watch?v=WMEsNuJWVNo&list=PLFtpZ659RpvHOWmTkEa9pzyQWwGapm3az&index=27"
+    },
+    {
+      "season": 9,
+      "episode": 28,
+      "title": "south-of-the-border",
+      "url": "https://www.youtube.com/watch?v=cVrB0CZQMH4&list=PLFtpZ659RpvHOWmTkEa9pzyQWwGapm3az&index=28"
+    },
+    {
+      "season": 9,
+      "episode": 29,
+      "title": "the-stake-out",
+      "url": "https://www.youtube.com/watch?v=2euHkSs0X7g&list=PLFtpZ659RpvHOWmTkEa9pzyQWwGapm3az&index=29"
+    },
+    {
+      "season": 9,
+      "episode": 30,
+      "title": "walking-terror",
+      "url": "https://www.youtube.com/watch?v=qcrR92IelfU&list=PLFtpZ659RpvHOWmTkEa9pzyQWwGapm3az&index=30"
     }
   ],
   "10": [
     {
-      "Title": "Trial by Fire",
-      "Released": "2005-04-27",
-      "Episode": "1",
-      "imdbRating": "N/A",
-      "imdbID": "tt2616410"
+      "season": 10,
+      "episode": 1,
+      "title": "trial-by-fire",
+      "url": "https://www.youtube.com/watch?v=W0AS_0IM6iY&list=PLacP6Dm7rnO9lyssuUH9d7hmg1vus-bbv&index=216"
     },
     {
-      "Title": "Plastic Puzzle",
-      "Released": "2005-06-01",
-      "Episode": "3",
-      "imdbRating": "N/A",
-      "imdbID": "tt0766785"
+      "season": 10,
+      "episode": 2,
+      "title": "marked-for-life",
+      "url": "https://www.youtube.com/watch?v=5K5bba8m3vs&list=PLFtpZ659RpvHTur0oknskpMIpm8fHbMvB&index=1"
     },
     {
-      "Title": "Arsonist",
-      "Released": "2005-06-29",
-      "Episode": "4",
-      "imdbRating": "N/A",
-      "imdbID": "tt2143129"
+      "season": 10,
+      "episode": 3,
+      "title": "plastic-puzzle",
+      "url": "https://www.youtube.com/watch?v=F2uhEbz4xrQ&list=PLFtpZ659RpvHTur0oknskpMIpm8fHbMvB&index=2"
     },
     {
-      "Title": "Soiled Plan",
-      "Released": "2005-07-06",
-      "Episode": "5",
-      "imdbRating": "6.9",
-      "imdbID": "tt0953835"
+      "season": 10,
+      "episode": 4,
+      "title": "up-in-smoke",
+      "url": "https://www.youtube.com/watch?v=z0LxbJtM9YI&list=PLFtpZ659RpvHTur0oknskpMIpm8fHbMvB&index=3"
     },
     {
-      "Title": "One for the Road",
-      "Released": "2005-07-20",
-      "Episode": "7",
-      "imdbRating": "N/A",
-      "imdbID": "tt2616436"
+      "season": 10,
+      "episode": 5,
+      "title": "soiled-plan",
+      "url": "https://www.youtube.com/watch?v=a6qCtWXDGKc&list=PLFtpZ659RpvHTur0oknskpMIpm8fHbMvB&index=4"
     },
     {
-      "Title": "Shear Luck",
-      "Released": "2005-08-03",
-      "Episode": "9",
-      "imdbRating": "7.0",
-      "imdbID": "tt0581464"
+      "season": 10,
+      "episode": 6,
+      "title": "headquarters",
+      "url": "https://www.youtube.com/watch?v=5YkIBE2uVh8&list=PLFtpZ659RpvHTur0oknskpMIpm8fHbMvB&index=5"
     },
     {
-      "Title": "Tagging a Suspect",
-      "Released": "2005-08-10",
-      "Episode": "10",
-      "imdbRating": "N/A",
-      "imdbID": "tt2616446"
+      "season": 10,
+      "episode": 7,
+      "title": "one-for-the-road",
+      "url": "https://www.youtube.com/watch?v=TPu5SZJu8Wg&list=PLFtpZ659RpvHTur0oknskpMIpm8fHbMvB&index=6"
     },
     {
-      "Title": "Strong Impressions",
-      "Released": "2005-08-17",
-      "Episode": "11",
-      "imdbRating": "N/A",
-      "imdbID": "tt2616450"
+      "season": 10,
+      "episode": 8,
+      "title": "army-of-evidence",
+      "url": "https://www.youtube.com/watch?v=EZphxqmbSHc&list=PLFtpZ659RpvHTur0oknskpMIpm8fHbMvB&index=7"
     },
     {
-      "Title": "Cereal Killer",
-      "Released": "2005-08-24",
-      "Episode": "12",
-      "imdbRating": "8.3",
-      "imdbID": "tt2616452"
+      "season": 10,
+      "episode": 9,
+      "title": "shear-luck",
+      "url": "https://www.youtube.com/watch?v=XbDACOLJc6k&list=PLFtpZ659RpvHTur0oknskpMIpm8fHbMvB&index=8"
     },
     {
-      "Title": "Crash Course",
-      "Released": "2005-08-31",
-      "Episode": "13",
-      "imdbRating": "N/A",
-      "imdbID": "tt2616456"
+      "season": 10,
+      "episode": 10,
+      "title": "tagging-a-suspect",
+      "url": "https://www.youtube.com/watch?v=GgG334rS0XQ&list=PLFtpZ659RpvHTur0oknskpMIpm8fHbMvB&index=9"
     },
     {
-      "Title": "A Leg Up on Crime",
-      "Released": "2006-09-07",
-      "Episode": "14",
-      "imdbRating": "7.8",
-      "imdbID": "tt1106971"
+      "season": 10,
+      "episode": 11,
+      "title": "strong-impressions",
+      "url": "https://www.youtube.com/watch?v=0Fzl4u-lSuI&list=PLFtpZ659RpvHTur0oknskpMIpm8fHbMvB&index=10"
     },
     {
-      "Title": "Picture This",
-      "Released": "2005-09-28",
-      "Episode": "17",
-      "imdbRating": "N/A",
-      "imdbID": "tt2616464"
+      "season": 10,
+      "episode": 12,
+      "title": "cereal-killer",
+      "url": "https://www.youtube.com/watch?v=0zMmbWXniBs&list=PLFtpZ659RpvHTur0oknskpMIpm8fHbMvB&index=11"
     },
     {
-      "Title": "Oily in the Morning",
-      "Released": "2005-10-17",
-      "Episode": "18",
-      "imdbRating": "N/A",
-      "imdbID": "tt2616466"
+      "season": 10,
+      "episode": 13,
+      "title": "crash-course",
+      "url": "https://www.youtube.com/watch?v=zUYbuzIwrYY&list=PLFtpZ659RpvHTur0oknskpMIpm8fHbMvB&index=12"
     },
     {
-      "Title": "Gold Rush",
-      "Released": "2005-10-18",
-      "Episode": "19",
-      "imdbRating": "N/A",
-      "imdbID": "tt2616468"
+      "season": 10,
+      "episode": 14,
+      "title": "a-leg-up-on-crime",
+      "url": "https://www.youtube.com/watch?v=IpziYcQOIbI&list=PLFtpZ659RpvHTur0oknskpMIpm8fHbMvB&index=13"
     },
     {
-      "Title": "Writer's Block",
-      "Released": "2005-10-19",
-      "Episode": "21",
-      "imdbRating": "N/A",
-      "imdbID": "tt2616472"
+      "season": 10,
+      "episode": 15,
+      "title": "tight-fitting-genes",
+      "url": "https://www.youtube.com/watch?v=8qPOwQ7pGcA&list=PLFtpZ659RpvHTur0oknskpMIpm8fHbMvB&index=14"
     },
     {
-      "Title": "A Clean Getaway",
-      "Released": "2005-10-21",
-      "Episode": "22",
-      "imdbRating": "N/A",
-      "imdbID": "tt2616474"
+      "season": 10,
+      "episode": 16,
+      "title": "deadly-valentine",
+      "url": "https://www.youtube.com/watch?v=NKkZ8lQQBGs&list=PLFtpZ659RpvHTur0oknskpMIpm8fHbMvB&index=15"
     },
     {
-      "Title": "Prints Among Thieves",
-      "Released": "2005-11-02",
-      "Episode": "23",
-      "imdbRating": "N/A",
-      "imdbID": "tt2616476"
+      "season": 10,
+      "episode": 17,
+      "title": "picture-this",
+      "url": "https://www.youtube.com/watch?v=oYkgZhAlFtg&list=PLFtpZ659RpvHTur0oknskpMIpm8fHbMvB&index=16"
     },
     {
-      "Title": "Unholy Alliance",
-      "Released": "2005-11-09",
-      "Episode": "24",
-      "imdbRating": "N/A",
-      "imdbID": "tt2616478"
+      "season": 10,
+      "episode": 18,
+      "title": "oily-in-the-morning",
+      "url": "https://www.youtube.com/watch?v=FbRad-dC9VE&list=PLFtpZ659RpvHTur0oknskpMIpm8fHbMvB&index=17"
     },
     {
-      "Title": "Cop Out",
-      "Released": "2005-12-14",
-      "Episode": "26",
-      "imdbRating": "N/A",
-      "imdbID": "tt2616484"
+      "season": 10,
+      "episode": 19,
+      "title": "gold-rush",
+      "url": "https://www.youtube.com/watch?v=6uq53-KAG_g&list=PLFtpZ659RpvHTur0oknskpMIpm8fHbMvB&index=18"
     },
     {
-      "Title": "Elemental Clue",
-      "Released": "2006-01-04",
-      "Episode": "28",
-      "imdbRating": "N/A",
-      "imdbID": "tt2616494"
+      "season": 10,
+      "episode": 20,
+      "title": "four-on-the-floor",
+      "url": "https://www.youtube.com/watch?v=backP2yz5Aw&list=PLFtpZ659RpvHTur0oknskpMIpm8fHbMvB&index=19"
     },
     {
-      "Title": "Moss, Not Grass",
-      "Released": "2006-01-11",
-      "Episode": "29",
-      "imdbRating": "N/A",
-      "imdbID": "tt2616496"
+      "season": 10,
+      "episode": 21,
+      "title": "writers-block",
+      "url": "https://www.youtube.com/watch?v=90NmGTyk-PE&list=PLFtpZ659RpvHTur0oknskpMIpm8fHbMvB&index=20"
     },
     {
-      "Title": "Material Witness",
-      "Released": "2006-02-08",
-      "Episode": "30",
-      "imdbRating": "N/A",
-      "imdbID": "tt2616500"
+      "season": 10,
+      "episode": 22,
+      "title": "a-clean-getaway",
+      "url": "https://www.youtube.com/watch?v=5_s6BDe0yUI&list=PLFtpZ659RpvHTur0oknskpMIpm8fHbMvB&index=21"
     },
     {
-      "Title": "Sunday School Ambush",
-      "Released": "2006-03-08",
-      "Episode": "32",
-      "imdbRating": "N/A",
-      "imdbID": "tt2616508"
+      "season": 10,
+      "episode": 23,
+      "title": "prints-among-thieves",
+      "url": "https://www.youtube.com/watch?v=MKsgFTG7tTA&list=PLFtpZ659RpvHTur0oknskpMIpm8fHbMvB&index=22"
     },
     {
-      "Title": "Penchant for Poison",
-      "Released": "2006-01-18",
-      "Episode": "33",
-      "imdbRating": "N/A",
-      "imdbID": "tt2616510"
+      "season": 10,
+      "episode": 24,
+      "title": "unholy-alliance",
+      "url": "https://www.youtube.com/watch?v=OLYOcAhzSq0&list=PLFtpZ659RpvHTur0oknskpMIpm8fHbMvB&index=23"
     },
     {
-      "Title": "Bump in the Night",
-      "Released": "2006-01-25",
-      "Episode": "34",
-      "imdbRating": "N/A",
-      "imdbID": "tt2616516"
+      "season": 10,
+      "episode": 25,
+      "title": "signed-sealed-delivered",
+      "url": "https://www.youtube.com/watch?v=IaNidBcYzSw"
     },
     {
-      "Title": "Sole Searching",
-      "Released": "2006-02-01",
-      "Episode": "35",
-      "imdbRating": "N/A",
-      "imdbID": "tt2616518"
+      "season": 10,
+      "episode": 26,
+      "title": "cop-out",
+      "url": "https://www.youtube.com/watch?v=Ff6LBgBJIkA&list=PLFtpZ659RpvHTur0oknskpMIpm8fHbMvB&index=24"
     },
     {
-      "Title": "Hot on the Trail",
-      "Released": "2006-02-15",
-      "Episode": "37",
-      "imdbRating": "N/A",
-      "imdbID": "tt2616520"
+      "season": 10,
+      "episode": 27,
+      "title": "summer-obsession",
+      "url": "https://www.youtube.com/watch?v=ZeWl-XSwD5k&list=PLFtpZ659RpvHTur0oknskpMIpm8fHbMvB&index=25"
     },
     {
-      "Title": "To the Viktor",
-      "Released": "2006-03-01",
-      "Episode": "39",
-      "imdbRating": "N/A",
-      "imdbID": "tt1935453"
+      "season": 10,
+      "episode": 28,
+      "title": "elemental-clue",
+      "url": "https://www.youtube.com/watch?v=gNwwVeB_18c&list=PLFtpZ659RpvHTur0oknskpMIpm8fHbMvB&index=26"
     },
     {
-      "Title": "Wood-be Killer",
-      "Released": "2006-03-15",
-      "Episode": "41",
-      "imdbRating": "7.2",
-      "imdbID": "tt2616532"
+      "season": 10,
+      "episode": 29,
+      "title": "moss-not-grass",
+      "url": "https://www.youtube.com/watch?v=D-HWtIGssds&list=PLFtpZ659RpvHTur0oknskpMIpm8fHbMvB&index=27"
+    },
+    {
+      "season": 10,
+      "episode": 30,
+      "title": "material-witness",
+      "url": "https://www.youtube.com/watch?v=ppGWy2kCKjg&list=PLFtpZ659RpvHTur0oknskpMIpm8fHbMvB&index=28"
+    },
+    {
+      "season": 10,
+      "episode": 31,
+      "title": "garden-of-evil",
+      "url": "https://www.youtube.com/watch?v=KE5snE6V1No&list=PLFtpZ659RpvHTur0oknskpMIpm8fHbMvB&index=29"
+    },
+    {
+      "season": 10,
+      "episode": 32,
+      "title": "sunday-school-ambush",
+      "url": "https://www.youtube.com/watch?v=0aZKG21GLLA&list=PLFtpZ659RpvHTur0oknskpMIpm8fHbMvB&index=30"
+    },
+    {
+      "season": 10,
+      "episode": 33,
+      "title": "penchant-for-poison",
+      "url": "https://www.youtube.com/watch?v=nl1R4lx-K7M&list=PLFtpZ659RpvHTur0oknskpMIpm8fHbMvB&index=31"
+    },
+    {
+      "season": 10,
+      "episode": 34,
+      "title": "bump-in-the-night",
+      "url": "https://www.youtube.com/watch?v=UlBjGBQ74Dc&list=PLFtpZ659RpvHTur0oknskpMIpm8fHbMvB&index=32"
+    },
+    {
+      "season": 10,
+      "episode": 35,
+      "title": "sole-searching",
+      "url": "https://www.youtube.com/watch?v=72FAMpZcV8M&list=PLFtpZ659RpvHTur0oknskpMIpm8fHbMvB&index=33"
+    },
+    {
+      "season": 10,
+      "episode": 36,
+      "title": "murder-on-the-menu",
+      "url": "https://www.youtube.com/watch?v=74uMv601w4Y&list=PLFtpZ659RpvHTur0oknskpMIpm8fHbMvB&index=34"
+    },
+    {
+      "season": 10,
+      "episode": 37,
+      "title": "hot-on-the-trail",
+      "url": "https://www.youtube.com/watch?v=xg3CgA8gnd0&list=PLFtpZ659RpvHTur0oknskpMIpm8fHbMvB&index=35"
+    },
+    {
+      "season": 10,
+      "episode": 38,
+      "title": "high-n-dry",
+      "url": "https://www.youtube.com/watch?v=DNsugNeRdys&list=PLFtpZ659RpvHTur0oknskpMIpm8fHbMvB&index=36"
+    },
+    {
+      "season": 10,
+      "episode": 39,
+      "title": "to-the-viktor",
+      "url": "https://www.youtube.com/watch?v=edof6SuTEZQ&list=PLFtpZ659RpvHTur0oknskpMIpm8fHbMvB&index=37"
+    },
+    {
+      "season": 10,
+      "episode": 40,
+      "title": "wired-for-disaster",
+      "url": "https://www.youtube.com/watch?v=76w0s1j7NUQ&list=PLFtpZ659RpvHTur0oknskpMIpm8fHbMvB&index=38"
+    },
+    {
+      "season": 10,
+      "episode": 41,
+      "title": "wood-be-killer",
+      "url": "https://www.youtube.com/watch?v=bov2qDoMMjA&list=PLFtpZ659RpvHTur0oknskpMIpm8fHbMvB&index=39"
+    },
+    {
+      "season": 10,
+      "episode": 42,
+      "title": "enemy-within",
+      "url": ""
     }
   ],
   "11": [
     {
-      "Title": "Going for Broke",
-      "Released": "2006-07-26",
-      "Episode": "2",
-      "imdbRating": "N/A",
-      "imdbID": "tt2616542"
+      "season": 11,
+      "episode": 1,
+      "title": "naughty-or-nyce",
+      "url": "https://www.youtube.com/watch?v=9Ldfol_UKmI&list=PLFtpZ659RpvHzZpYsM_xreJ3aA2meSuox&index=1"
     },
     {
-      "Title": "Murder She Wrote",
-      "Released": "2006-08-23",
-      "Episode": "7",
-      "imdbRating": "N/A",
-      "imdbID": "tt2616566"
+      "season": 11,
+      "episode": 2,
+      "title": "going-for-broke",
+      "url": "https://www.youtube.com/watch?v=Tk3gYcFPLss&list=PLFtpZ659RpvHzZpYsM_xreJ3aA2meSuox&index=2"
     },
     {
-      "Title": "Concrete Alibi: The Karen Slover Case",
-      "Released": "N/A",
-      "Episode": "8",
-      "imdbRating": "N/A",
-      "imdbID": "tt2616568"
+      "season": 11,
+      "episode": 3,
+      "title": "just-desserts",
+      "url": "https://www.youtube.com/watch?v=98bLBnvt4d4&list=PLFtpZ659RpvHzZpYsM_xreJ3aA2meSuox&index=3"
     },
     {
-      "Title": "The Gambler",
-      "Released": "2006-09-20",
-      "Episode": "10",
-      "imdbRating": "N/A",
-      "imdbID": "tt2616578"
+      "season": 11,
+      "episode": 4,
+      "title": "sundays-wake",
+      "url": "https://www.youtube.com/watch?v=zcGGsJJF14w&list=PLFtpZ659RpvHzZpYsM_xreJ3aA2meSuox&index=4"
     },
     {
-      "Title": "Weakest Link",
-      "Released": "2006-09-27",
-      "Episode": "11",
-      "imdbRating": "N/A",
-      "imdbID": "tt2616586"
+      "season": 11,
+      "episode": 5,
+      "title": "shattered-dreams",
+      "url": "https://www.youtube.com/watch?v=IG3V8u8YFhQ&list=PLFtpZ659RpvHzZpYsM_xreJ3aA2meSuox&index=5"
     },
     {
-      "Title": "Capitol Crimes",
-      "Released": "2006-10-04",
-      "Episode": "12",
-      "imdbRating": "N/A",
-      "imdbID": "tt0904470"
+      "season": 11,
+      "episode": 6,
+      "title": "dockter-visit",
+      "url": "https://www.youtube.com/watch?v=aTbmhsROQJY&list=PLFtpZ659RpvHzZpYsM_xreJ3aA2meSuox&index=6"
     },
     {
-      "Title": "Undertaken",
-      "Released": "2006-10-11",
-      "Episode": "13",
-      "imdbRating": "6.4",
-      "imdbID": "tt0904471"
+      "season": 11,
+      "episode": 7,
+      "title": "murder-she-wrote",
+      "url": "https://www.youtube.com/watch?v=5PmtKVIq5ls&list=PLFtpZ659RpvHzZpYsM_xreJ3aA2meSuox&index=7"
     },
     {
-      "Title": "Dark Waters",
-      "Released": "2006-10-18",
-      "Episode": "14",
-      "imdbRating": "N/A",
-      "imdbID": "tt2616592"
+      "season": 11,
+      "episode": 8,
+      "title": "concrete-alibi",
+      "url": "https://www.youtube.com/watch?v=5uy4RHO2h2E&list=PLFtpZ659RpvHzZpYsM_xreJ3aA2meSuox&index=8"
     },
     {
-      "Title": "Grave Danger",
-      "Released": "2006-11-01",
-      "Episode": "16",
-      "imdbRating": "N/A",
-      "imdbID": "tt2616598"
+      "season": 11,
+      "episode": 9,
+      "title": "key-evidence",
+      "url": "https://www.youtube.com/watch?v=p6AdO9IQRBQ&list=PLFtpZ659RpvHzZpYsM_xreJ3aA2meSuox&index=9"
     },
     {
-      "Title": "Internal Affair",
-      "Released": "2006-11-08",
-      "Episode": "17",
-      "imdbRating": "N/A",
-      "imdbID": "tt1076397"
+      "season": 11,
+      "episode": 10,
+      "title": "the-gambler",
+      "url": "https://www.youtube.com/watch?v=HSJ4l6YqE8k&list=PLFtpZ659RpvHzZpYsM_xreJ3aA2meSuox&index=10"
     },
     {
-      "Title": "A Case of the Flue",
-      "Released": "2006-11-15",
-      "Episode": "18",
-      "imdbRating": "N/A",
-      "imdbID": "tt1230808"
+      "season": 11,
+      "episode": 11,
+      "title": "weakest-link",
+      "url": "https://www.youtube.com/watch?v=n71jF8EzDKg&list=PLFtpZ659RpvHzZpYsM_xreJ3aA2meSuox&index=11"
     },
     {
-      "Title": "Live Wire",
-      "Released": "2007-11-29",
-      "Episode": "20",
-      "imdbRating": "7.8",
-      "imdbID": "tt1392836"
+      "season": 11,
+      "episode": 12,
+      "title": "capitol-crimes",
+      "url": "https://www.youtube.com/watch?v=3nJlgjRWKk0&list=PLFtpZ659RpvHzZpYsM_xreJ3aA2meSuox&index=12"
     },
     {
-      "Title": "A Novel Idea",
-      "Released": "2006-12-13",
-      "Episode": "22",
-      "imdbRating": "N/A",
-      "imdbID": "tt2616608"
+      "season": 11,
+      "episode": 13,
+      "title": "undertaken",
+      "url": "https://www.youtube.com/watch?v=hE0WTlqAxxE&list=PLFtpZ659RpvHzZpYsM_xreJ3aA2meSuox&index=13"
     },
     {
-      "Title": "Water Hazard",
-      "Released": "2006-12-27",
-      "Episode": "24",
-      "imdbRating": "N/A",
-      "imdbID": "tt2616624"
+      "season": 11,
+      "episode": 14,
+      "title": "dark-waters",
+      "url": "https://www.youtube.com/watch?v=X1jXthL9yLM&list=PLFtpZ659RpvHzZpYsM_xreJ3aA2meSuox&index=14"
     },
     {
-      "Title": "Ring Him Up",
-      "Released": "2007-01-10",
-      "Episode": "26",
-      "imdbRating": "N/A",
-      "imdbID": "tt0990661"
+      "season": 11,
+      "episode": 15,
+      "title": "nice-threads",
+      "url": "https://www.youtube.com/watch?v=snkyghWSiaI&list=PLFtpZ659RpvHzZpYsM_xreJ3aA2meSuox&index=15"
     },
     {
-      "Title": "Critical Maneuver",
-      "Released": "2007-02-21",
-      "Episode": "32",
-      "imdbRating": "N/A",
-      "imdbID": "tt2616684"
+      "season": 11,
+      "episode": 16,
+      "title": "grave-danger",
+      "url": "https://www.youtube.com/watch?v=gVt8Hj21srY&list=PLFtpZ659RpvHzZpYsM_xreJ3aA2meSuox&index=16"
     },
     {
-      "Title": "Skirting the Evidence",
-      "Released": "2007-02-28",
-      "Episode": "33",
-      "imdbRating": "N/A",
-      "imdbID": "tt2616686"
+      "season": 11,
+      "episode": 17,
+      "title": "internal-affair",
+      "url": "https://www.youtube.com/watch?v=Yr5QoiNfpCw&list=PLFtpZ659RpvHzZpYsM_xreJ3aA2meSuox&index=17"
     },
     {
-      "Title": "Fresh Heir",
-      "Released": "2007-03-14",
-      "Episode": "35",
-      "imdbRating": "N/A",
-      "imdbID": "tt2616694"
+      "season": 11,
+      "episode": 18,
+      "title": "a-case-of-the-flue",
+      "url": "https://www.youtube.com/watch?v=2qw1YY54oxI&list=PLFtpZ659RpvHzZpYsM_xreJ3aA2meSuox&index=18"
     },
     {
-      "Title": "Ticker Tape",
-      "Released": "2007-03-21",
-      "Episode": "36",
-      "imdbRating": "N/A",
-      "imdbID": "tt1907973"
+      "season": 11,
+      "episode": 19,
+      "title": "no-safe-place",
+      "url": "https://www.youtube.com/watch?v=wLpofTqXxFM&list=PLFtpZ659RpvHzZpYsM_xreJ3aA2meSuox&index=19"
     },
     {
-      "Title": "Fired-Up",
-      "Released": "2007-04-11",
-      "Episode": "39",
-      "imdbRating": "N/A",
-      "imdbID": "tt1771255"
+      "season": 11,
+      "episode": 20,
+      "title": "live-wire",
+      "url": "https://www.youtube.com/watch?v=p1QhXwGTJ0g&list=PLFtpZ659RpvHzZpYsM_xreJ3aA2meSuox&index=20"
     },
     {
-      "Title": "Message in a Bottle",
-      "Released": "2007-05-02",
-      "Episode": "42",
-      "imdbRating": "N/A",
-      "imdbID": "tt2616706"
+      "season": 11,
+      "episode": 21,
+      "title": "van-ished",
+      "url": "https://www.youtube.com/watch?v=GvV6l02BJZk&list=PLFtpZ659RpvHzZpYsM_xreJ3aA2meSuox&index=21"
+    },
+    {
+      "season": 11,
+      "episode": 22,
+      "title": "a-novel-idea",
+      "url": "https://www.youtube.com/watch?v=IgtpjcTzA-0&list=PLFtpZ659RpvHzZpYsM_xreJ3aA2meSuox&index=22"
+    },
+    {
+      "season": 11,
+      "episode": 23,
+      "title": "chief-suspect",
+      "url": "https://www.youtube.com/watch?v=JGpG4aMO69M&list=PLFtpZ659RpvHzZpYsM_xreJ3aA2meSuox&index=23"
+    },
+    {
+      "season": 11,
+      "episode": 24,
+      "title": "water-hazard",
+      "url": "https://www.youtube.com/watch?v=CUHIEa0Xg0g&list=PLFtpZ659RpvHzZpYsM_xreJ3aA2meSuox&index=24"
+    },
+    {
+      "season": 11,
+      "episode": 25,
+      "title": "shell-game",
+      "url": "https://www.youtube.com/watch?v=uLXCg6rOikU&list=PLFtpZ659RpvHzZpYsM_xreJ3aA2meSuox&index=25"
+    },
+    {
+      "season": 11,
+      "episode": 26,
+      "title": "ring-him-up",
+      "url": "https://www.youtube.com/watch?v=rYC0W2j_jNc&list=PLFtpZ659RpvHzZpYsM_xreJ3aA2meSuox&index=26"
+    },
+    {
+      "season": 11,
+      "episode": 27,
+      "title": "killer-impression",
+      "url": "https://www.youtube.com/watch?v=3HowZr3-iPk&list=PLFtpZ659RpvHzZpYsM_xreJ3aA2meSuox&index=27"
+    },
+    {
+      "season": 11,
+      "episode": 28,
+      "title": "if-i-were-you",
+      "url": "https://www.youtube.com/watch?v=f5z32vwdcDE&list=PLFtpZ659RpvHzZpYsM_xreJ3aA2meSuox&index=28"
+    },
+    {
+      "season": 11,
+      "episode": 29,
+      "title": "as-the-tide-turns",
+      "url": "https://www.youtube.com/watch?v=-1BNw7ea3nY&list=PLFtpZ659RpvHzZpYsM_xreJ3aA2meSuox&index=29"
+    },
+    {
+      "season": 11,
+      "episode": 30,
+      "title": "a-tight-leash",
+      "url": "https://www.youtube.com/watch?v=yK8NrX-eXcY&list=PLFtpZ659RpvHzZpYsM_xreJ3aA2meSuox&index=30"
+    },
+    {
+      "season": 11,
+      "episode": 31,
+      "title": "muffled-cries",
+      "url": "https://www.youtube.com/watch?v=TsgV2zamDDo&list=PLFtpZ659RpvHzZpYsM_xreJ3aA2meSuox&index=31"
+    },
+    {
+      "season": 11,
+      "episode": 32,
+      "title": "critical-maneuver",
+      "url": "https://www.youtube.com/watch?v=Fg_DXqnpnWc&list=PLFtpZ659RpvHzZpYsM_xreJ3aA2meSuox&index=32"
+    },
+    {
+      "season": 11,
+      "episode": 33,
+      "title": "skirting-the-evidence",
+      "url": "https://www.youtube.com/watch?v=b5p_3lgfEQI&list=PLtzC_Jn_qKZ_qpFVvrkL00bQgv-NLpn0o&index=33"
+    },
+    {
+      "season": 11,
+      "episode": 34,
+      "title": "small-town-terror",
+      "url": "https://www.youtube.com/watch?v=8HqNbT8FbnU&list=PLFtpZ659RpvHzZpYsM_xreJ3aA2meSuox&index=33"
+    },
+    {
+      "season": 11,
+      "episode": 35,
+      "title": "fresh-heir",
+      "url": "https://www.youtube.com/watch?v=NbHY6MbOXqw&list=PLFtpZ659RpvHzZpYsM_xreJ3aA2meSuox&index=34"
+    },
+    {
+      "season": 11,
+      "episode": 36,
+      "title": "ticker-tape",
+      "url": "https://www.youtube.com/watch?v=Ywj3LwL8joQ&list=PLFtpZ659RpvHzZpYsM_xreJ3aA2meSuox&index=35"
+    },
+    {
+      "season": 11,
+      "episode": 37,
+      "title": "step-by-step",
+      "url": "https://www.youtube.com/watch?v=u1E3QSLKtYU&list=PLFtpZ659RpvHzZpYsM_xreJ3aA2meSuox&index=36"
+    },
+    {
+      "season": 11,
+      "episode": 38,
+      "title": "blanket-of-evidence",
+      "url": "https://www.youtube.com/watch?v=UyOXh1iJUzA&list=PLFtpZ659RpvHzZpYsM_xreJ3aA2meSuox&index=37"
+    },
+    {
+      "season": 11,
+      "episode": 39,
+      "title": "fired-up",
+      "url": "https://www.youtube.com/watch?v=706-zzdJUig&list=PLFtpZ659RpvHzZpYsM_xreJ3aA2meSuox&index=38"
+    },
+    {
+      "season": 11,
+      "episode": 40,
+      "title": "two-in-a-million",
+      "url": "https://www.youtube.com/watch?v=yk5k4FhgKaA&list=PLFtpZ659RpvHzZpYsM_xreJ3aA2meSuox&index=39"
+    },
+    {
+      "season": 11,
+      "episode": 41,
+      "title": "bitter-brew",
+      "url": "https://www.youtube.com/watch?v=b8vAqsPa4rk&list=PLFtpZ659RpvHzZpYsM_xreJ3aA2meSuox&index=40"
     }
   ],
   "12": [
     {
-      "Title": "Sharper Image",
-      "Released": "N/A",
-      "Episode": "1",
-      "imdbRating": "N/A",
-      "imdbID": "tt1146597"
+      "season": 12,
+      "episode": 1,
+      "title": "sharper-image",
+      "url": "https://www.youtube.com/watch?v=CkSV77vz3lk&list=PLFtpZ659RpvHyjZ24UdOXBSp2NGQw-b7J&index=1"
     },
     {
-      "Title": "Insulated Evidence",
-      "Released": "2007-10-03",
-      "Episode": "2",
-      "imdbRating": "N/A",
-      "imdbID": "tt1771258"
+      "season": 12,
+      "episode": 2,
+      "title": "insulated-evidence",
+      "url": "https://www.youtube.com/watch?v=gwtSY2awbTE&list=PLFtpZ659RpvHyjZ24UdOXBSp2NGQw-b7J&index=2"
     },
     {
-      "Title": "Wheel of Misfortune",
-      "Released": "2007-10-24",
-      "Episode": "4",
-      "imdbRating": "N/A",
-      "imdbID": "tt2617176"
+      "season": 12,
+      "episode": 3,
+      "title": "cold-hearted",
+      "url": "https://www.youtube.com/watch?v=EgflooAoYiE&list=PLFtpZ659RpvHyjZ24UdOXBSp2NGQw-b7J&index=3"
     },
     {
-      "Title": "Quite a Spectacle",
-      "Released": "2007-10-31",
-      "Episode": "5",
-      "imdbRating": "N/A",
-      "imdbID": "tt1260021"
+      "season": 12,
+      "episode": 4,
+      "title": "wheel-of-misfortune",
+      "url": "https://www.youtube.com/watch?v=inYcSVc3Cgw&list=PLFtpZ659RpvHyjZ24UdOXBSp2NGQw-b7J&index=4"
     },
     {
-      "Title": "Transaction Failed",
-      "Released": "2007-11-07",
-      "Episode": "6",
-      "imdbRating": "N/A",
-      "imdbID": "tt2617188"
+      "season": 12,
+      "episode": 5,
+      "title": "quite-a-spectacle",
+      "url": "https://www.youtube.com/watch?v=AOh021xnOsE&list=PLFtpZ659RpvHyjZ24UdOXBSp2NGQw-b7J&index=5"
     },
     {
-      "Title": "A Cinderella Story",
-      "Released": "2007-12-24",
-      "Episode": "11",
-      "imdbRating": "7.0",
-      "imdbID": "tt1159052"
+      "season": 12,
+      "episode": 6,
+      "title": "transaction-failed",
+      "url": "https://www.youtube.com/watch?v=TbHpgEhRVMY&list=PLFtpZ659RpvHyjZ24UdOXBSp2NGQw-b7J&index=6"
     },
     {
-      "Title": "Screen Pass",
-      "Released": "2008-01-07",
-      "Episode": "12",
-      "imdbRating": "N/A",
-      "imdbID": "tt2617244"
+      "season": 12,
+      "episode": 7,
+      "title": "the-day-the-music-died",
+      "url": "https://www.youtube.com/watch?v=GeWSKWEK5zM&list=PLFtpZ659RpvHyjZ24UdOXBSp2NGQw-b7J&index=7"
     },
     {
-      "Title": "Good as Gold",
-      "Released": "2008-01-28",
-      "Episode": "15",
-      "imdbRating": "N/A",
-      "imdbID": "tt2617230"
+      "season": 12,
+      "episode": 8,
+      "title": "sole-survivor",
+      "url": "https://www.youtube.com/watch?v=StmmtEr3mxY&list=PLFtpZ659RpvHyjZ24UdOXBSp2NGQw-b7J&index=8"
     },
     {
-      "Title": "Shattered Innocence",
-      "Released": "2008-03-07",
-      "Episode": "18",
-      "imdbRating": "6.7",
-      "imdbID": "tt1902263"
+      "season": 12,
+      "episode": 9,
+      "title": "insignificant-others",
+      "url": "https://www.youtube.com/watch?v=IXV0ZRQV5uY&list=PLFtpZ659RpvHyjZ24UdOXBSp2NGQw-b7J&index=9"
     },
     {
-      "Title": "All Butt Certain",
-      "Released": "2008-03-14",
-      "Episode": "19",
-      "imdbRating": "7.8",
-      "imdbID": "tt1191409"
+      "season": 12,
+      "episode": 10,
+      "title": "catch-22",
+      "url": "https://www.youtube.com/watch?v=nj30iVTt_Oo&list=PLFtpZ659RpvHyjZ24UdOXBSp2NGQw-b7J&index=10"
     },
     {
-      "Title": "Printed Proof",
-      "Released": "2008-06-28",
-      "Episode": "25",
-      "imdbRating": "7.2",
-      "imdbID": "tt1946875"
+      "season": 12,
+      "episode": 11,
+      "title": "a-cinderella-story",
+      "url": "https://www.youtube.com/watch?v=pvBw39kXXN4&list=PLFtpZ659RpvHyjZ24UdOXBSp2NGQw-b7J&index=11"
     },
     {
-      "Title": "Guarded Secrets",
-      "Released": "2008-08-22",
-      "Episode": "29",
-      "imdbRating": "N/A",
-      "imdbID": "tt1280208"
+      "season": 12,
+      "episode": 12,
+      "title": "screen-pass",
+      "url": "https://www.youtube.com/watch?v=-oSqsYmsYKc&list=PLFtpZ659RpvHyjZ24UdOXBSp2NGQw-b7J&index=12"
+    },
+    {
+      "season": 12,
+      "episode": 13,
+      "title": "pressed-for-crime",
+      "url": "https://www.youtube.com/watch?v=xWsz0NVXuk0&list=PLFtpZ659RpvHyjZ24UdOXBSp2NGQw-b7J&index=13"
+    },
+    {
+      "season": 12,
+      "episode": 14,
+      "title": "finger-pane",
+      "url": "https://www.youtube.com/watch?v=tdIJ2MAH_iU&list=PLFtpZ659RpvHyjZ24UdOXBSp2NGQw-b7J&index=14"
+    },
+    {
+      "season": 12,
+      "episode": 15,
+      "title": "good-as-gold",
+      "url": "https://www.youtube.com/watch?v=AbPeYgQORww&list=PLFtpZ659RpvHyjZ24UdOXBSp2NGQw-b7J&index=15"
+    },
+    {
+      "season": 12,
+      "episode": 16,
+      "title": "freedom-fighter",
+      "url": "https://www.youtube.com/watch?v=IItE1vDJITM&list=PLFtpZ659RpvHyjZ24UdOXBSp2NGQw-b7J&index=16"
+    },
+    {
+      "season": 12,
+      "episode": 17,
+      "title": "dog-day-afternoon",
+      "url": "https://www.youtube.com/watch?v=u6hxjHt-z90&list=PLFtpZ659RpvHyjZ24UdOXBSp2NGQw-b7J&index=17"
+    },
+    {
+      "season": 12,
+      "episode": 18,
+      "title": "shattered-innocence",
+      "url": "https://www.youtube.com/watch?v=WWEShGhpJgE&list=PLFtpZ659RpvHyjZ24UdOXBSp2NGQw-b7J&index=18"
+    },
+    {
+      "season": 12,
+      "episode": 19,
+      "title": "all-butt-certain",
+      "url": "https://www.youtube.com/watch?v=zdUp2s7Pvr4&list=PLFtpZ659RpvHyjZ24UdOXBSp2NGQw-b7J&index=19"
+    },
+    {
+      "season": 12,
+      "episode": 20,
+      "title": "jean-pool",
+      "url": "https://www.youtube.com/watch?v=7Z8ZFo3nl_Q&list=PLFtpZ659RpvHyjZ24UdOXBSp2NGQw-b7J&index=20"
+    },
+    {
+      "season": 12,
+      "episode": 21,
+      "title": "traffic-violations",
+      "url": "https://www.youtube.com/watch?v=1G1UkqgRroE&list=PLFtpZ659RpvHyjZ24UdOXBSp2NGQw-b7J&index=21"
+    },
+    {
+      "season": 12,
+      "episode": 22,
+      "title": "brotherly-love",
+      "url": "https://www.youtube.com/watch?v=_1jaCEcZEPI&list=PLFtpZ659RpvHyjZ24UdOXBSp2NGQw-b7J&index=22"
+    },
+    {
+      "season": 12,
+      "episode": 23,
+      "title": "disrobed",
+      "url": "https://www.youtube.com/watch?v=kEbtQKs_860&list=PLFtpZ659RpvHyjZ24UdOXBSp2NGQw-b7J&index=23"
+    },
+    {
+      "season": 12,
+      "episode": 24,
+      "title": "driven-to-silence",
+      "url": "https://www.youtube.com/watch?v=BIF5gqs4rmo&list=PLFtpZ659RpvHyjZ24UdOXBSp2NGQw-b7J&index=24"
+    },
+    {
+      "season": 12,
+      "episode": 25,
+      "title": "printed-proof",
+      "url": "https://www.youtube.com/watch?v=J6Hk8A_jC_k&list=PLFtpZ659RpvHyjZ24UdOXBSp2NGQw-b7J&index=25"
+    },
+    {
+      "season": 12,
+      "episode": 26,
+      "title": "about-face",
+      "url": "https://www.youtube.com/watch?v=HJhBvdVlC3E&list=PLFtpZ659RpvHyjZ24UdOXBSp2NGQw-b7J&index=26"
+    },
+    {
+      "season": 12,
+      "episode": 27,
+      "title": "in-the-bag",
+      "url": "https://www.youtube.com/watch?v=ZJxMWKBxs94&list=PLFtpZ659RpvHyjZ24UdOXBSp2NGQw-b7J&index=27"
+    },
+    {
+      "season": 12,
+      "episode": 28,
+      "title": "yes-in-deed",
+      "url": "https://www.youtube.com/watch?v=FHnaT6E6dX0&list=PLFtpZ659RpvHyjZ24UdOXBSp2NGQw-b7J&index=28"
+    },
+    {
+      "season": 12,
+      "episode": 29,
+      "title": "guarded-secrets",
+      "url": "https://www.youtube.com/watch?v=WvGBPIYkK0A&list=PLFtpZ659RpvHyjZ24UdOXBSp2NGQw-b7J&index=29"
+    },
+    {
+      "season": 12,
+      "episode": 30,
+      "title": "smoking-out-a-killer",
+      "url": "https://www.youtube.com/watch?v=gXiZtJQAAtA&list=PLFtpZ659RpvHyjZ24UdOXBSp2NGQw-b7J&index=30"
     }
   ],
   "13": [
     {
-      "Title": "Last Dance",
-      "Released": "2008-11-14",
-      "Episode": "7",
-      "imdbRating": "N/A",
-      "imdbID": "tt1656306"
+      "season": 13,
+      "episode": 1,
+      "title": "frozen-assets",
+      "url": "https://www.youtube.com/watch?v=czxhAeGoPE8&list=PLFtpZ659RpvF0d1QsDm_BQHiVd_YNBSrh&index=1"
     },
     {
-      "Title": "Constructive Criticism",
-      "Released": "2008-11-21",
-      "Episode": "8",
-      "imdbRating": "N/A",
-      "imdbID": "tt1328717"
+      "season": 13,
+      "episode": 2,
+      "title": "house-hunting",
+      "url": "https://www.youtube.com/watch?v=LQRgcnXTuBM&list=PLFtpZ659RpvF0d1QsDm_BQHiVd_YNBSrh&index=2"
     },
     {
-      "Title": "Room with a View",
-      "Released": "2009-09-11",
-      "Episode": "9",
-      "imdbRating": "N/A",
-      "imdbID": "tt1586851"
+      "season": 13,
+      "episode": 3,
+      "title": "shoot-to-thrill",
+      "url": "https://www.youtube.com/watch?v=TgNbIk7rd9I&list=PLFtpZ659RpvF0d1QsDm_BQHiVd_YNBSrh&index=3"
     },
     {
-      "Title": "Stranger in the Night",
-      "Released": "2008-12-19",
-      "Episode": "11",
-      "imdbRating": "N/A",
-      "imdbID": "tt1847944"
+      "season": 13,
+      "episode": 4,
+      "title": "political-thriller",
+      "url": "https://www.youtube.com/watch?v=PIZIyfw-oD0&list=PLFtpZ659RpvF0d1QsDm_BQHiVd_YNBSrh&index=4"
     },
     {
-      "Title": "Shoot to Thrill",
-      "Released": "2008-10-03",
-      "Episode": "12",
-      "imdbRating": "7.3",
-      "imdbID": "tt1367605"
+      "season": 13,
+      "episode": 5,
+      "title": "double-cross",
+      "url": "https://www.youtube.com/watch?v=-c0snoTS5lY&list=PLFtpZ659RpvF0d1QsDm_BQHiVd_YNBSrh&index=5"
     },
     {
-      "Title": "Calculated Coincidence",
-      "Released": "2009-02-06",
-      "Episode": "14",
-      "imdbRating": "N/A",
-      "imdbID": "tt2617330"
+      "season": 13,
+      "episode": 6,
+      "title": "dancing-with-the-devil",
+      "url": "https://www.youtube.com/watch?v=s7UNgPpCTaY&list=PLFtpZ659RpvF0d1QsDm_BQHiVd_YNBSrh&index=6"
     },
     {
-      "Title": "Church Dis-Service",
-      "Released": "2009-04-03",
-      "Episode": "18",
-      "imdbRating": "7.0",
-      "imdbID": "tt1509403"
+      "season": 13,
+      "episode": 7,
+      "title": "last-dance",
+      "url": "https://www.youtube.com/watch?v=hXTI28gVuss&list=PLFtpZ659RpvF0d1QsDm_BQHiVd_YNBSrh&index=7"
     },
     {
-      "Title": "Sands of Crime",
-      "Released": "2009-01-16",
-      "Episode": "23",
-      "imdbRating": "8.6",
-      "imdbID": "tt1358312"
+      "season": 13,
+      "episode": 8,
+      "title": "constructive-criticism",
+      "url": "https://www.youtube.com/watch?v=UYj2MzPyn5k&list=PLFtpZ659RpvF0d1QsDm_BQHiVd_YNBSrh&index=8"
     },
     {
-      "Title": "As-Fault",
-      "Released": "2009-06-19",
-      "Episode": "24",
-      "imdbRating": "N/A",
-      "imdbID": "tt1456709"
+      "season": 13,
+      "episode": 9,
+      "title": "home-evasion",
+      "url": "https://www.youtube.com/watch?v=YEjq4zmHk9I&list=PLFtpZ659RpvF0d1QsDm_BQHiVd_YNBSrh&index=9"
     },
     {
-      "Title": "Runaway Love",
-      "Released": "2010-04-16",
-      "Episode": "24",
-      "imdbRating": "N/A",
-      "imdbID": "tt2324349"
+      "season": 13,
+      "episode": 10,
+      "title": "window-watcher",
+      "url": "https://www.youtube.com/watch?v=A8XN2D8BEIo&list=PLFtpZ659RpvF0d1QsDm_BQHiVd_YNBSrh&index=10"
     },
     {
-      "Title": "Dirty Little Secret",
-      "Released": "2010-06-04",
-      "Episode": "26",
-      "imdbRating": "N/A",
-      "imdbID": "tt1669372"
+      "season": 13,
+      "episode": 11,
+      "title": "stranger-in-the-night",
+      "url": "https://www.youtube.com/watch?v=idtlDuli_sM&list=PLFtpZ659RpvF0d1QsDm_BQHiVd_YNBSrh&index=11"
     },
     {
-      "Title": "Pet Rock",
-      "Released": "2010-06-18",
-      "Episode": "29",
-      "imdbRating": "N/A",
-      "imdbID": "tt1677218"
+      "season": 13,
+      "episode": 12,
+      "title": "kidnapping",
+      "url": "https://www.youtube.com/watch?v=heQZUO9WMwM&list=PLFtpZ659RpvF0d1QsDm_BQHiVd_YNBSrh&index=12"
     },
     {
-      "Title": "Hair Line",
-      "Released": "2009-10-02",
-      "Episode": "31",
-      "imdbRating": "N/A",
-      "imdbID": "tt1557975"
+      "season": 13,
+      "episode": 13,
+      "title": "sands-of-crime",
+      "url": "https://www.youtube.com/watch?v=_hcVudma8Fc&list=PLFtpZ659RpvF0d1QsDm_BQHiVd_YNBSrh&index=13"
     },
     {
-      "Title": "Deadly Rebellion",
-      "Released": "2009-10-30",
-      "Episode": "33",
-      "imdbRating": "N/A",
-      "imdbID": "tt2618490"
+      "season": 13,
+      "episode": 14,
+      "title": "calculated-coincidence",
+      "url": "https://www.youtube.com/watch?v=EHPXCRI4tro&list=PLFtpZ659RpvF0d1QsDm_BQHiVd_YNBSrh&index=14"
     },
     {
-      "Title": "A Squire's Riches",
-      "Released": "2010-09-10",
-      "Episode": "34",
-      "imdbRating": "7.2",
-      "imdbID": "tt1742800"
+      "season": 13,
+      "episode": 15,
+      "title": "sworded-scheme",
+      "url": "https://www.youtube.com/watch?v=y5YySfpr7w8&list=PLFtpZ659RpvF0d1QsDm_BQHiVd_YNBSrh&index=15"
     },
     {
-      "Title": "Cold Feet",
-      "Released": "2009-12-18",
-      "Episode": "38",
-      "imdbRating": "N/A",
-      "imdbID": "tt1586604"
+      "season": 13,
+      "episode": 16,
+      "title": "unmasked",
+      "url": "https://www.youtube.com/watch?v=-ZdzIN0n3A4&list=PLFtpZ659RpvF0d1QsDm_BQHiVd_YNBSrh&index=16"
     },
     {
-      "Title": "Office Visit",
-      "Released": "2010-03-05",
-      "Episode": "40",
-      "imdbRating": "N/A",
-      "imdbID": "tt2618502"
+      "season": 13,
+      "episode": 17,
+      "title": "fashion-police",
+      "url": "https://www.youtube.com/watch?v=GklWuhZxvEg&list=PLFtpZ659RpvF0d1QsDm_BQHiVd_YNBSrh&index=17"
     },
     {
-      "Title": "Shoe-in for Murder",
-      "Released": "2010-03-19",
-      "Episode": "42",
-      "imdbRating": "N/A",
-      "imdbID": "tt1649513"
+      "season": 13,
+      "episode": 18,
+      "title": "church-dis-service",
+      "url": "https://www.youtube.com/watch?v=J-h7uckbYJg&list=PLFtpZ659RpvF0d1QsDm_BQHiVd_YNBSrh&index=18"
     },
     {
-      "Title": "Waste Mis-Management",
-      "Released": "2010-05-14",
-      "Episode": "46",
-      "imdbRating": "N/A",
-      "imdbID": "tt2120330"
+      "season": 13,
+      "episode": 19,
+      "title": "seedy-intentions",
+      "url": "https://www.youtube.com/watch?v=mfjXV_aG6HU&list=PLFtpZ659RpvF0d1QsDm_BQHiVd_YNBSrh&index=19"
     },
     {
-      "Title": "Dirty Little Seacret",
-      "Released": "2010-05-28",
-      "Episode": "47",
-      "imdbRating": "N/A",
-      "imdbID": "tt2618836"
+      "season": 13,
+      "episode": 20,
+      "title": "dna-dragnet",
+      "url": "https://www.youtube.com/watch?v=9DkFBtokrWI&list=PLFtpZ659RpvF0d1QsDm_BQHiVd_YNBSrh&index=20"
+    },
+    {
+      "season": 13,
+      "episode": 21,
+      "title": "smiley-face",
+      "url": "https://www.youtube.com/watch?v=LJVUXDa8R74&list=PLFtpZ659RpvF0d1QsDm_BQHiVd_YNBSrh&index=21"
+    },
+    {
+      "season": 13,
+      "episode": 22,
+      "title": "dirty-laundry",
+      "url": "https://www.youtube.com/watch?v=7w5cgdf0KyE&list=PLFtpZ659RpvF0d1QsDm_BQHiVd_YNBSrh&index=22"
+    },
+    {
+      "season": 13,
+      "episode": 23,
+      "title": "drowning-sorrows",
+      "url": "https://www.youtube.com/watch?v=CYr89YFSbKI&list=PLFtpZ659RpvF0d1QsDm_BQHiVd_YNBSrh&index=23"
+    },
+    {
+      "season": 13,
+      "episode": 24,
+      "title": "as-fault",
+      "url": "https://www.youtube.com/watch?v=WW0iQVabOs4&list=PLFtpZ659RpvF0d1QsDm_BQHiVd_YNBSrh&index=24"
+    },
+    {
+      "season": 13,
+      "episode": 25,
+      "title": "family-ties",
+      "url": "https://www.youtube.com/watch?v=2-ZR3GA-qbA&list=PLFtpZ659RpvF0d1QsDm_BQHiVd_YNBSrh&index=25"
+    },
+    {
+      "season": 13,
+      "episode": 26,
+      "title": "trouble-brewing",
+      "url": "https://www.youtube.com/watch?v=3UvI2XgYK_8&list=PLFtpZ659RpvF0d1QsDm_BQHiVd_YNBSrh&index=26"
+    },
+    {
+      "season": 13,
+      "episode": 27,
+      "title": "holy-terror",
+      "url": "https://www.youtube.com/watch?v=Qu29EzYPI0E&list=PLFtpZ659RpvF0d1QsDm_BQHiVd_YNBSrh&index=27"
+    },
+    {
+      "season": 13,
+      "episode": 28,
+      "title": "needle-in-a-haystack",
+      "url": "https://www.youtube.com/watch?v=j2uqOYdg4_k&list=PLFtpZ659RpvF0d1QsDm_BQHiVd_YNBSrh&index=28"
+    },
+    {
+      "season": 13,
+      "episode": 29,
+      "title": "room-with-a-view",
+      "url": "https://www.youtube.com/watch?v=UGTc-YmPc7o&list=PLFtpZ659RpvF0d1QsDm_BQHiVd_YNBSrh&index=29"
+    },
+    {
+      "season": 13,
+      "episode": 30,
+      "title": "dollars-and-sense",
+      "url": "https://www.youtube.com/watch?v=csgfwRUFmJE&list=PLFtpZ659RpvF0d1QsDm_BQHiVd_YNBSrh&index=30"
+    },
+    {
+      "season": 13,
+      "episode": 31,
+      "title": "hair-line",
+      "url": "https://www.youtube.com/watch?v=-92Agm2wipE&list=PLFtpZ659RpvF0d1QsDm_BQHiVd_YNBSrh&index=31"
+    },
+    {
+      "season": 13,
+      "episode": 32,
+      "title": "all-that-glitters-is-gold",
+      "url": "https://www.youtube.com/watch?v=g2UDFYpabwI&list=PLFtpZ659RpvF0d1QsDm_BQHiVd_YNBSrh&index=32"
+    },
+    {
+      "season": 13,
+      "episode": 33,
+      "title": "deadly-rebellion",
+      "url": "https://www.youtube.com/watch?v=NdmLKEzE6To&list=PLFtpZ659RpvF0d1QsDm_BQHiVd_YNBSrh&index=33"
+    },
+    {
+      "season": 13,
+      "episode": 34,
+      "title": "sign-of-the-crime",
+      "url": "https://www.youtube.com/watch?v=4wxSfkHH0jg&list=PLFtpZ659RpvF0d1QsDm_BQHiVd_YNBSrh&index=34"
+    },
+    {
+      "season": 13,
+      "episode": 35,
+      "title": "covet-thy-neighbor",
+      "url": "https://www.youtube.com/watch?v=g2Fc9VxI4mc&list=PLFtpZ659RpvF0d1QsDm_BQHiVd_YNBSrh&index=35"
+    },
+    {
+      "season": 13,
+      "episode": 36,
+      "title": "writing-on-the-wall",
+      "url": "https://www.youtube.com/watch?v=HiPDgk5FTDA&list=PLFtpZ659RpvF0d1QsDm_BQHiVd_YNBSrh&index=36"
+    },
+    {
+      "season": 13,
+      "episode": 37,
+      "title": "hundreds-of-reasons",
+      "url": "https://www.youtube.com/watch?v=Oq7CrcwWD_A&list=PLFtpZ659RpvF0d1QsDm_BQHiVd_YNBSrh&index=37"
+    },
+    {
+      "season": 13,
+      "episode": 38,
+      "title": "cold-feet",
+      "url": "https://www.youtube.com/watch?v=Ao368wEV9hY&list=PLFtpZ659RpvF0d1QsDm_BQHiVd_YNBSrh&index=38"
+    },
+    {
+      "season": 13,
+      "episode": 39,
+      "title": "separation-anxiety",
+      "url": "https://www.youtube.com/watch?v=W9fUIgB6OxU&list=PLFtpZ659RpvF0d1QsDm_BQHiVd_YNBSrh&index=39"
+    },
+    {
+      "season": 13,
+      "episode": 40,
+      "title": "office-visit",
+      "url": "https://www.youtube.com/watch?v=uFZHqUL8IOo&list=PLFtpZ659RpvF0d1QsDm_BQHiVd_YNBSrh&index=40"
+    },
+    {
+      "season": 13,
+      "episode": 41,
+      "title": "palm-saturday",
+      "url": "https://www.youtube.com/watch?v=rO4YePWnDfw&list=PLFtpZ659RpvF0d1QsDm_BQHiVd_YNBSrh&index=41"
+    },
+    {
+      "season": 13,
+      "episode": 42,
+      "title": "shoe-in-for-murder",
+      "url": "https://www.youtube.com/watch?v=0wY8vY7CmXw&list=PLFtpZ659RpvF0d1QsDm_BQHiVd_YNBSrh&index=42"
+    },
+    {
+      "season": 13,
+      "episode": 43,
+      "title": "family-interrupted",
+      "url": "https://www.youtube.com/watch?v=6UGAZkgk-G8&list=PLFtpZ659RpvF0d1QsDm_BQHiVd_YNBSrh&index=43"
+    },
+    {
+      "season": 13,
+      "episode": 44,
+      "title": "runaway-love",
+      "url": "https://www.youtube.com/watch?v=HWXK-MUAPPg&list=PLFtpZ659RpvF0d1QsDm_BQHiVd_YNBSrh&index=44"
+    },
+    {
+      "season": 13,
+      "episode": 45,
+      "title": "watchful-eye",
+      "url": "https://www.youtube.com/watch?v=eyLCewWoerU&list=PLFtpZ659RpvF0d1QsDm_BQHiVd_YNBSrh&index=45"
+    },
+    {
+      "season": 13,
+      "episode": 46,
+      "title": "waste-mis-management",
+      "url": "https://www.youtube.com/watch?v=opA6qUFCr1Y&list=PLFtpZ659RpvF0d1QsDm_BQHiVd_YNBSrh&index=46"
+    },
+    {
+      "season": 13,
+      "episode": 47,
+      "title": "dirty-little-seacret",
+      "url": "https://www.youtube.com/watch?v=C9laEPmfyBw&list=PLFtpZ659RpvF0d1QsDm_BQHiVd_YNBSrh&index=47"
+    },
+    {
+      "season": 13,
+      "episode": 48,
+      "title": "lights-out",
+      "url": "https://www.youtube.com/watch?v=OsUP9xL3VEA&list=PLFtpZ659RpvF0d1QsDm_BQHiVd_YNBSrh&index=48"
+    },
+    {
+      "season": 13,
+      "episode": 49,
+      "title": "pet-rock",
+      "url": "https://www.youtube.com/watch?v=dBl92JZ39As&list=PLFtpZ659RpvF0d1QsDm_BQHiVd_YNBSrh&index=49"
+    },
+    {
+      "season": 13,
+      "episode": 50,
+      "title": "best-foot-forward",
+      "url": "https://www.youtube.com/watch?v=dhVqh-9WBUQ&list=PLFtpZ659RpvF0d1QsDm_BQHiVd_YNBSrh&index=50"
     }
   ],
   "14": [
     {
-      "Title": "Purebread Murder",
-      "Released": "2010-07-16",
-      "Episode": "1",
-      "imdbRating": "8.6",
-      "imdbID": "tt1688792"
+      "season": 14,
+      "episode": 1,
+      "title": "purebread-murder",
+      "url": "https://www.youtube.com/watch?v=mKH0ZaCwYl4&list=PLFtpZ659RpvH7C1-Ka4TgjE8bodrrNO1j&index=1"
     },
     {
-      "Title": "Hear No Evil",
-      "Released": "2010-09-24",
-      "Episode": "2",
-      "imdbRating": "7.3",
-      "imdbID": "tt1702115"
+      "season": 14,
+      "episode": 2,
+      "title": "hear-no-evil",
+      "url": "https://www.youtube.com/watch?v=i_ZYF6pfffI&list=PLFtpZ659RpvH7C1-Ka4TgjE8bodrrNO1j&index=2"
     },
     {
-      "Title": "Filtered Out",
-      "Released": "2010-11-12",
-      "Episode": "2",
-      "imdbRating": "6.8",
-      "imdbID": "tt1765047"
+      "season": 14,
+      "episode": 3,
+      "title": "hells-kitchen",
+      "url": "https://www.youtube.com/watch?v=e_6KcH7l6-I&list=PLFtpZ659RpvH7C1-Ka4TgjE8bodrrNO1j&index=3"
     },
     {
-      "Title": "Home of the Brave",
-      "Released": "2010-09-24",
-      "Episode": "6",
-      "imdbRating": "7.2",
-      "imdbID": "tt1737952"
+      "season": 14,
+      "episode": 4,
+      "title": "threes-a-crowd",
+      "url": "https://www.youtube.com/watch?v=dCE3NJiSdSU&list=PLFtpZ659RpvH7C1-Ka4TgjE8bodrrNO1j&index=4"
     },
     {
-      "Title": "Textbook Murder",
-      "Released": "2010-10-29",
-      "Episode": "9",
-      "imdbRating": "7.0",
-      "imdbID": "tt1747028"
+      "season": 14,
+      "episode": 5,
+      "title": "a-squires-riches",
+      "url": "https://www.youtube.com/watch?v=q3j7LQyz0N0&list=PLFtpZ659RpvH7C1-Ka4TgjE8bodrrNO1j&index=5"
     },
     {
-      "Title": "Low Maintenance",
-      "Released": "2011-01-21",
-      "Episode": "13",
-      "imdbRating": "N/A",
-      "imdbID": "tt1825319"
+      "season": 14,
+      "episode": 6,
+      "title": "home-of-the-brave",
+      "url": "https://www.youtube.com/watch?v=w1lq3Z3tigk&list=PLFtpZ659RpvH7C1-Ka4TgjE8bodrrNO1j&index=6"
     },
     {
-      "Title": "Trail of a Killer",
-      "Released": "2011-03-25",
-      "Episode": "15",
-      "imdbRating": "N/A",
-      "imdbID": "tt1852386"
+      "season": 14,
+      "episode": 7,
+      "title": "freeze-framed",
+      "url": "https://www.youtube.com/watch?v=hT2rUf6Rqoc&list=PLFtpZ659RpvH7C1-Ka4TgjE8bodrrNO1j&index=7"
     },
     {
-      "Title": "Gone Ballistic",
-      "Released": "2011-04-08",
-      "Episode": "16",
-      "imdbRating": "N/A",
-      "imdbID": "tt2163731"
+      "season": 14,
+      "episode": 8,
+      "title": "touch-of-evil",
+      "url": "https://www.youtube.com/watch?v=o8b4Iqv5Uds&list=PLFtpZ659RpvH7C1-Ka4TgjE8bodrrNO1j&index=8"
     },
     {
-      "Title": "Auto-Motive",
-      "Released": "2011-05-06",
-      "Episode": "18",
-      "imdbRating": "N/A",
-      "imdbID": "tt1906890"
+      "season": 14,
+      "episode": 9,
+      "title": "textbook-murder",
+      "url": "https://www.youtube.com/watch?v=Cc0IGwV1OdU&list=PLFtpZ659RpvH7C1-Ka4TgjE8bodrrNO1j&index=9"
     },
     {
-      "Title": "Funeral Services",
-      "Released": "2011-06-03",
-      "Episode": "20",
-      "imdbRating": "N/A",
-      "imdbID": "tt1942294"
+      "season": 14,
+      "episode": 10,
+      "title": "filtered-out",
+      "url": "https://www.youtube.com/watch?v=AgHVyIfBFmY&list=PLFtpZ659RpvH7C1-Ka4TgjE8bodrrNO1j&index=10"
+    },
+    {
+      "season": 14,
+      "episode": 11,
+      "title": "water-logged",
+      "url": "https://www.youtube.com/watch?v=QMWwgpeLYHo&list=PLFtpZ659RpvH7C1-Ka4TgjE8bodrrNO1j&index=11"
+    },
+    {
+      "season": 14,
+      "episode": 12,
+      "title": "social-circle",
+      "url": "https://www.youtube.com/watch?v=rNsgoN-H-TY&list=PLFtpZ659RpvH7C1-Ka4TgjE8bodrrNO1j&index=12"
+    },
+    {
+      "season": 14,
+      "episode": 13,
+      "title": "low-maintenance",
+      "url": "https://www.youtube.com/watch?v=d8TREkuxmqk&list=PLFtpZ659RpvH7C1-Ka4TgjE8bodrrNO1j&index=13"
+    },
+    {
+      "season": 14,
+      "episode": 14,
+      "title": "fate-date",
+      "url": "https://www.youtube.com/watch?v=kaedLCuCBgQ&list=PLFtpZ659RpvH7C1-Ka4TgjE8bodrrNO1j&index=14"
+    },
+    {
+      "season": 14,
+      "episode": 15,
+      "title": "trail-of-a-killer",
+      "url": "https://www.youtube.com/watch?v=yCPH5O44vhY&list=PLFtpZ659RpvH7C1-Ka4TgjE8bodrrNO1j&index=15"
+    },
+    {
+      "season": 14,
+      "episode": 16,
+      "title": "gone-ballistic",
+      "url": "https://www.youtube.com/watch?v=jX_CGTI6Ewo&list=PLFtpZ659RpvH7C1-Ka4TgjE8bodrrNO1j&index=16"
+    },
+    {
+      "season": 14,
+      "episode": 17,
+      "title": "seeing-red",
+      "url": "https://www.youtube.com/watch?v=yZ38Dm-R2S0&list=PLFtpZ659RpvH7C1-Ka4TgjE8bodrrNO1j&index=17"
+    },
+    {
+      "season": 14,
+      "episode": 18,
+      "title": "automotive",
+      "url": ""
+    },
+    {
+      "season": 14,
+      "episode": 19,
+      "title": "skeleton-key",
+      "url": "https://www.youtube.com/watch?v=DpnyBFdocT4&list=PLFtpZ659RpvH7C1-Ka4TgjE8bodrrNO1j&index=18"
+    },
+    {
+      "season": 14,
+      "episode": 20,
+      "title": "funeral-services",
+      "url": "https://www.youtube.com/watch?v=aH-ANDv-E28&list=PLFtpZ659RpvH7C1-Ka4TgjE8bodrrNO1j&index=19"
+    },
+    {
+      "season": 14,
+      "episode": 21,
+      "title": "expert-witness",
+      "url": "https://www.youtube.com/watch?v=mOWLS4vVrzg&list=PLFtpZ659RpvH7C1-Ka4TgjE8bodrrNO1j&index=20"
     }
   ]
 }
