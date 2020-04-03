@@ -39,7 +39,7 @@ func checkForFFmpeg() {
 func extractAudioFromAllSeasons() {
 	err := crimeseen.Mkdirp(filepath.Join(crimeseen.AudioDirPath))
 	if err != nil {
-		log.WithField("error", err).Fatal("Error creating audio directory")
+		log.WithError(err).Fatalln("Error creating audio directory")
 	}
 
 	processedCount = 0
@@ -57,7 +57,7 @@ func extractAudioFromAllSeasons() {
 			log.WithFields(logrus.Fields{
 				"season": season,
 				"error":  err,
-			}).Fatal("Error walking season video directory")
+			}).Fatalln("Error walking season video directory")
 		}
 	}
 }
@@ -72,7 +72,6 @@ func videoPathWalkFunc(path string, info os.FileInfo, err error) error {
 		}
 
 		audioPath := audioFilePath(path)
-
 		if !crimeseen.FileExists(audioPath) {
 			extractAudioFromEpisode(path, audioPath)
 			processedCount++
@@ -83,7 +82,7 @@ func videoPathWalkFunc(path string, info os.FileInfo, err error) error {
 		log.WithFields(logrus.Fields{
 			"name":  info.Name(),
 			"error": err,
-		}).Error("Error in walk function")
+		}).Errorln("Error in walk function")
 		return err
 	}
 
@@ -93,7 +92,7 @@ func videoPathWalkFunc(path string, info os.FileInfo, err error) error {
 func extractAudioFromEpisode(videoPath string, audioPath string) {
 	log.WithFields(logrus.Fields{
 		"video": filepath.Base(videoPath),
-	}).Info("Extracting audio from video file")
+	}).Infoln("Extracting audio from video file")
 
 	cmd := exec.Command("ffmpeg", "-i", videoPath, audioPath)
 	err := cmd.Run()
@@ -101,7 +100,7 @@ func extractAudioFromEpisode(videoPath string, audioPath string) {
 		log.WithFields(logrus.Fields{
 			"error": err,
 			"video": filepath.Base(videoPath),
-		}).Error("Error extracting audio")
+		}).Errorln("Error extracting audio")
 	}
 }
 
@@ -111,7 +110,7 @@ func createSeasonAudioDir(seasonDir string) {
 		log.WithFields(logrus.Fields{
 			"name":  seasonDir,
 			"error": err,
-		}).Fatal("Error creating season audio directory")
+		}).Fatalln("Error creating season audio directory")
 	}
 }
 

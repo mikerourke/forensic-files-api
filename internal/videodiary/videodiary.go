@@ -61,6 +61,8 @@ func DownloadEpisode(seasonNumber int, episodeNumber int) {
 	}
 }
 
+// LogMissingEpisodes logs the episodes that haven't been downloaded to the
+// command line.
 func LogMissingEpisodes() {
 	allEpisodes := parseEpisodesFromJSON()
 
@@ -91,7 +93,7 @@ func parseEpisodesFromJSON() []*episode {
 	log.Info("reading JSON file with YouTube URLs")
 	jsonContents, err := readYouTubeLinksJSON()
 	if err != nil {
-		log.WithField("error", err).Fatal("Error reading YouTube URLs file")
+		log.WithField("error", err).Fatalln("Error reading YouTube URLs file")
 	}
 
 	var allEpisodes []*episode
@@ -123,7 +125,6 @@ func readYouTubeLinksJSON() (episodes jsonEpisodesBySeason, err error) {
 	}
 
 	defer jsonFile.Close()
-
 	bytes, err := ioutil.ReadAll(jsonFile)
 	if err != nil {
 		return nil, err
@@ -151,7 +152,6 @@ func extractHash(ep jsonEpisode) string {
 
 func downloadEpisode(ep *episode, isPaused bool) {
 	outPath := outputFilePath(ep)
-
 	if crimeseen.FileExists(outPath) {
 		return
 	}
@@ -161,7 +161,7 @@ func downloadEpisode(ep *episode, isPaused bool) {
 		"episode": ep.EpisodeNumber,
 		"title":   ep.Title,
 		"path":    outPath,
-	}).Info("Downloading video from YouTube")
+	}).Infoln("Downloading video from YouTube")
 
 	cmd := exec.Command("youtube-dl",
 		"-o", outPath,
@@ -177,7 +177,7 @@ func downloadEpisode(ep *episode, isPaused bool) {
 			"error": err,
 			"title": ep.Title,
 			"path":  outPath,
-		}).Error("Error downloading video")
+		}).Errorln("Error downloading video")
 	}
 
 	// We're hedging our bets here to make sure we don't exceed some kind of rate limit:
@@ -215,7 +215,7 @@ func seasonDirPath(seasonNumber int) string {
 		log.WithFields(logrus.Fields{
 			"season": seasonNumber,
 			"error":  err,
-		}).Fatal("Error creating season directory")
+		}).Fatalln("Error creating season directory")
 	}
 
 	return fullDirPath
