@@ -17,7 +17,7 @@ async function cleanupEpisodes() {
   }
 
   await fse.writeJSON(
-    path.join("..", "assets", "episodes.json"),
+    path.join(__dirname, "..", "assets", "episodes.json"),
     episodesBySeason,
     { spaces: 2 },
   );
