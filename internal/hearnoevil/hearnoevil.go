@@ -6,14 +6,13 @@ import (
 	"bufio"
 	"encoding/json"
 	"errors"
-	"os"
 	"os/exec"
-	"path/filepath"
 	"strings"
 
 	"github.com/IBM/go-sdk-core/core"
 	"github.com/mikerourke/forensic-files-api/internal/crimeseen"
 	"github.com/mikerourke/forensic-files-api/internal/waterlogged"
+	"github.com/mikerourke/forensic-files-api/internal/whodunit"
 	"github.com/sirupsen/logrus"
 	"github.com/watson-developer-cloud/go-sdk/speechtotextv1"
 )
@@ -21,17 +20,17 @@ import (
 // Perpetrator contains properties and methods used to start recognition
 // jobs.
 type Perpetrator struct {
-	STT         *sttService
+	S2T         *s2tInstance
 	CallbackURL string
 }
 
-var log = waterlogged.ServiceLogger("hearnoevil")
+var log = waterlogged.New("hearnoevil")
 
 // NewPerpetrator returns a new instance of Perpetrator.
 func NewPerpetrator(callbackURL string) *Perpetrator {
 	env := crimeseen.NewEnv()
-	sts := newSTTService(env)
-	p := &Perpetrator{STT: sts}
+	sts := newS2TInstance(env)
+	p := &Perpetrator{S2T: sts}
 
 	if callbackURL != "" {
 		p.RegisterCallbackURL(callbackURL)
@@ -46,7 +45,7 @@ func NewPerpetrator(callbackURL string) *Perpetrator {
 // RegisterCallbackURL registers a callback URL with the speech to text service
 // that will receive recognition job responses.
 func (p *Perpetrator) RegisterCallbackURL(callbackURL string) {
-	result, _, err := p.STT.RegisterCallback(
+	result, _, err := p.S2T.RegisterCallback(
 		&speechtotextv1.RegisterCallbackOptions{
 			CallbackURL: core.StringPtr(callbackURL),
 		},
@@ -69,7 +68,7 @@ func (p *Perpetrator) RegisterCallbackURL(callbackURL string) {
 // LogRecognitionJobs logs the last 100 jobs to the console. It displays all
 // of the fields in JSON format.
 func (p *Perpetrator) LogRecognitionJobs() {
-	result, _, err := p.STT.CheckJobs(&speechtotextv1.CheckJobsOptions{})
+	result, _, err := p.S2T.CheckJobs(&speechtotextv1.CheckJobsOptions{})
 	if err != nil {
 		log.WithError(err).Fatalln("Error getting recognition jobs")
 	}
@@ -83,26 +82,17 @@ func (p *Perpetrator) LogRecognitionJobs() {
 // create recognition jobs for all of the episodes in the specified season.
 // You must specify a season number, but the callback URL is read from the `.env`
 // file if it isn't passed into the function.
-func (p *Perpetrator) CreateSeasonRecognitionJobs(season int) {
+func (p *Perpetrator) CreateSeasonRecognitionJobs(seasonNumber int) {
 	p.checkNgrok()
 
-	r := newRecognition(season, 0)
-	err := filepath.Walk(
-		r.SeasonDir(),
-		func(path string, info os.FileInfo, err error) error {
-			if strings.HasSuffix(path, ".mp3") {
-				r.SetAudioFilePath(path)
-				r.StartJob(p.STT, p.CallbackURL)
-			}
-			return nil
-		},
-	)
+	s := whodunit.NewSeason(seasonNumber)
+	if err := s.PopulateEpisodes(); err != nil {
+		log.WithError(err).Fatalln("Could not get season episodes")
+	}
 
-	if err != nil {
-		log.WithFields(logrus.Fields{
-			"error":  err,
-			"season": season,
-		}).Fatalln("Error creating recognition")
+	for _, ep := range s.AllEpisodes() {
+		r := newRecognition(ep)
+		r.StartJob(p.S2T, p.CallbackURL)
 	}
 }
 
@@ -110,11 +100,15 @@ func (p *Perpetrator) CreateSeasonRecognitionJobs(season int) {
 // create a recognition job for a single episode in the specified season. You
 // must specify a season and episode number, but the callback URL is read from
 // the `.env` file if it isn't passed into the function.
-func (p *Perpetrator) CreateEpisodeRecognitionJob(season int, episode int) {
+func (p *Perpetrator) CreateEpisodeRecognitionJob(seasonNumber int, episodeNumber int) {
 	p.checkNgrok()
 
-	r := newRecognition(season, episode)
-	r.StartJob(p.STT, p.CallbackURL)
+	s := whodunit.NewSeason(seasonNumber)
+	if err := s.PopulateEpisodes(); err != nil {
+		log.WithError(err).Fatalln("Could not get season episodes")
+	}
+	r := newRecognition(s.Episode(episodeNumber))
+	r.StartJob(p.S2T, p.CallbackURL)
 }
 
 // StartCallbackServer starts the callback server to receive responses from the

@@ -4,51 +4,48 @@ import (
 	"encoding/json"
 	"fmt"
 	"os"
-	"path/filepath"
-	"strconv"
-	"strings"
 
 	"github.com/IBM/go-sdk-core/core"
-	"github.com/mikerourke/forensic-files-api/internal/crimeseen"
+	"github.com/mikerourke/forensic-files-api/internal/whodunit"
 	"github.com/sirupsen/logrus"
 	"github.com/watson-developer-cloud/go-sdk/speechtotextv1"
 )
 
 type recognition struct {
-	Season    int
-	Episode   int
-	audioPath string
+	*whodunit.Episode
 }
 
-func newRecognition(season int, episode int) *recognition {
-	r := &recognition{Season: season, Episode: episode}
-	r.audioPath = r.findAudioFile()
-	return r
+func newRecognition(ep *whodunit.Episode) *recognition {
+	return &recognition{
+		Episode: ep,
+	}
 }
 
-func (r *recognition) StartJob(stt *sttService, callbackURL string) {
-	if r.wasCompleted() {
-		log.WithField("file", r.audioFileName()).Infoln(
-			"Skipping job, already exists")
+func (r *recognition) StartJob(stt *s2tInstance, callbackURL string) {
+	if r.AssetExists(whodunit.AssetTypeRecognition) {
+		log.WithField(
+			"file",
+			r.AssetFileName(whodunit.AssetTypeRecognition),
+		).Infoln("Skipping job, already exists")
 		return
 	}
 
-	audio, err := os.Open(r.audioPath)
+	audio, err := os.Open(r.AssetFilePath(whodunit.AssetTypeAudio))
 	if err != nil {
 		log.WithError(err).Errorln("Error opening audio")
 		return
 	}
 
 	log.WithFields(logrus.Fields{
-		"episode": r.Episode,
-		"season":  r.Season,
+		"season":  r.SeasonNumber,
+		"episode": r.EpisodeNumber,
 	}).Infoln("Creating recognition job")
 	result, _, err := stt.CreateJob(
 		&speechtotextv1.CreateJobOptions{
 			Audio:           audio,
 			ContentType:     core.StringPtr("audio/mp3"),
 			CallbackURL:     core.StringPtr(callbackURL),
-			UserToken:       core.StringPtr(r.jobName()),
+			UserToken:       core.StringPtr(r.Name()),
 			Events:          core.StringPtr("recognitions.completed_with_results"),
 			ProfanityFilter: core.BoolPtr(false),
 		},
@@ -64,57 +61,4 @@ func (r *recognition) StartJob(stt *sttService, callbackURL string) {
 	}
 
 	fmt.Println(string(b))
-}
-
-func (r *recognition) SetAudioFilePath(path string) {
-	r.audioPath = path
-	elements := strings.Split(filepath.Base(r.audioPath), "-")
-	ep, err := strconv.Atoi(elements[1])
-	if err != nil {
-		log.WithError(err).Fatalln("Unable to extract episode number")
-	}
-
-	r.Episode = ep
-}
-
-func (r *recognition) SeasonDir() string {
-	s := fmt.Sprintf("season-%d", r.Season)
-	return filepath.Join(crimeseen.AudioDirPath, s)
-}
-
-func (r *recognition) wasCompleted() bool {
-	return crimeseen.FileExists(r.resultsPath())
-}
-
-func (r *recognition) resultsPath() string {
-	jf := strings.Replace(r.audioFileName(), ".mp3", ".json", -1)
-	return filepath.Join(crimeseen.RecognitionsDirPath, jf)
-}
-
-func (r *recognition) jobName() string {
-	return strings.Replace(r.audioFileName(), ".mp3", "", -1)
-}
-
-func (r *recognition) audioFileName() string {
-	return filepath.Base(r.audioPath)
-}
-
-func (r *recognition) findAudioFile() string {
-	sPre := crimeseen.PaddedNumberString(r.Season)
-	ePre := crimeseen.PaddedNumberString(r.Episode)
-	fullPre := sPre + "-" + ePre
-
-	ep := ""
-	filepath.Walk(
-		r.SeasonDir(),
-		func(path string, info os.FileInfo, err error) error {
-			if strings.HasPrefix(filepath.Base(path), fullPre) {
-				ep = path
-			}
-
-			return nil
-		},
-	)
-
-	return ep
 }

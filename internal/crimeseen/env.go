@@ -32,7 +32,7 @@ func (e *Env) IBMAPIKey() string {
 	return os.Getenv("IBM_STT_API_KEY")
 }
 
-// IBMAPIKey returns the URL for the IBM speech-to-text service.
+// IBMAPIUrl returns the URL for the IBM speech-to-text service.
 func (e *Env) IBMAPIUrl() string {
 	return os.Getenv("IBM_STT_URL")
 }

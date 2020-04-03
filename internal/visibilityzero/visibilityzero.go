@@ -3,20 +3,17 @@
 package visibilityzero
 
 import (
-	"os"
 	"os/exec"
 	"path/filepath"
-	"strconv"
-	"strings"
 	"time"
 
-	"github.com/mikerourke/forensic-files-api/internal/crimeseen"
 	"github.com/mikerourke/forensic-files-api/internal/waterlogged"
+	"github.com/mikerourke/forensic-files-api/internal/whodunit"
 	"github.com/sirupsen/logrus"
 )
 
 var (
-	log            = waterlogged.ServiceLogger("visibilityzero")
+	log            = waterlogged.New("visibilityzero")
 	processedCount int
 )
 
@@ -37,33 +34,23 @@ func checkForFFmpeg() {
 }
 
 func extractAudioFromAllSeasons() {
-	err := crimeseen.Mkdirp(filepath.Join(crimeseen.AudioDirPath))
-	if err != nil {
-		log.WithError(err).Fatalln("Error creating audio directory")
-	}
-
 	processedCount = 0
 
-	for season := 1; season <= crimeseen.SeasonCount; season++ {
-		seasonDir := "season-" + strconv.Itoa(season)
-		createSeasonAudioDir(seasonDir)
-
-		err = filepath.Walk(
-			filepath.Join(crimeseen.VideosDirPath, seasonDir),
-			videoPathWalkFunc,
-		)
-
-		if err != nil {
+	for season := 1; season <= whodunit.SeasonCount; season++ {
+		s := whodunit.NewSeason(season)
+		if err := s.PopulateEpisodes(); err != nil {
 			log.WithFields(logrus.Fields{
-				"season": season,
 				"error":  err,
-			}).Fatalln("Error walking season video directory")
+				"season": season,
+			}).Errorln("Error getting season")
+			return
 		}
+		extractAudioFromSeason(s)
 	}
 }
 
-func videoPathWalkFunc(path string, info os.FileInfo, err error) error {
-	if strings.HasSuffix(path, ".mp4") {
+func extractAudioFromSeason(s *whodunit.Season) {
+	for _, ep := range s.AllEpisodes() {
 		// Every 10 videos, take a 5 minute breather. ffmpeg makes the
 		// fans go bananas on my laptop:
 		if processedCount != 0 && processedCount%10 == 0 {
@@ -71,30 +58,21 @@ func videoPathWalkFunc(path string, info os.FileInfo, err error) error {
 			time.Sleep(time.Minute * 5)
 		}
 
-		audioPath := audioFilePath(path)
-		if !crimeseen.FileExists(audioPath) {
-			extractAudioFromEpisode(path, audioPath)
+		if !ep.AssetExists(whodunit.AssetTypeAudio) {
+			extractAudioFromEpisode(ep)
 			processedCount++
 		}
 	}
-
-	if err != nil {
-		log.WithFields(logrus.Fields{
-			"name":  info.Name(),
-			"error": err,
-		}).Errorln("Error in walk function")
-		return err
-	}
-
-	return nil
 }
 
-func extractAudioFromEpisode(videoPath string, audioPath string) {
+func extractAudioFromEpisode(ep *whodunit.Episode) {
 	log.WithFields(logrus.Fields{
-		"video": filepath.Base(videoPath),
+		"video": ep.AssetFileName(whodunit.AssetTypeVideo),
 	}).Infoln("Extracting audio from video file")
 
-	cmd := exec.Command("ffmpeg", "-i", videoPath, audioPath)
+	videoPath := ep.AssetFilePath(whodunit.AssetTypeVideo)
+	cmd := exec.Command("ffmpeg", "-i",
+		videoPath, ep.AssetFilePath(whodunit.AssetTypeAudio))
 	err := cmd.Run()
 	if err != nil {
 		log.WithFields(logrus.Fields{
@@ -102,21 +80,4 @@ func extractAudioFromEpisode(videoPath string, audioPath string) {
 			"video": filepath.Base(videoPath),
 		}).Errorln("Error extracting audio")
 	}
-}
-
-func createSeasonAudioDir(seasonDir string) {
-	err := crimeseen.Mkdirp(filepath.Join(crimeseen.AudioDirPath, seasonDir))
-	if err != nil {
-		log.WithFields(logrus.Fields{
-			"name":  seasonDir,
-			"error": err,
-		}).Fatalln("Error creating season audio directory")
-	}
-}
-
-func audioFilePath(videoPath string) string {
-	dir, file := filepath.Split(videoPath)
-	seasonDir := filepath.Base(dir)
-	mp3FileName := strings.Replace(file, ".mp4", ".mp3", -1)
-	return filepath.Join(crimeseen.AudioDirPath, seasonDir, mp3FileName)
 }

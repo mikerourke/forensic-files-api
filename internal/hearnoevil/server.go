@@ -6,7 +6,7 @@ import (
 	"net/http"
 
 	"github.com/google/uuid"
-	"github.com/mikerourke/forensic-files-api/internal/crimeseen"
+	"github.com/mikerourke/forensic-files-api/internal/whodunit"
 	"github.com/watson-developer-cloud/go-sdk/speechtotextv1"
 )
 
@@ -76,14 +76,14 @@ func (cs *callbackServer) onResponse(r *http.Request) {
 
 	log.WithField("file", userToken).Infoln("Writing results to file")
 
-	err = crimeseen.WriteJSONToAssets(
-		"recognitions",
-		userToken+".json",
-		jobContents.Results,
-	)
-
+	ep, err := whodunit.NewEpisodeFromName(userToken)
 	if err != nil {
-		log.WithError(err).Errorln("Error writing JSON to assets")
+		log.WithError(err).Errorln("Unable to get episode from user token")
+		return
+	}
+
+	if err = ep.WriteToRecognitionFile(jobContents.Results); err != nil {
+		log.WithError(err).Errorln("Error writing recognition results")
 	}
 
 	log.WithField("file", userToken).Infoln(

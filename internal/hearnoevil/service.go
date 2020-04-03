@@ -8,13 +8,13 @@ import (
 	"github.com/watson-developer-cloud/go-sdk/speechtotextv1"
 )
 
-type sttService struct {
+type s2tInstance struct {
 	*speechtotextv1.SpeechToTextV1
 }
 
-// Initialize returns an instance of the speech-to-text service that
+// newS2TInstance returns an instance of the speech-to-text service that
 // can be used to register callback URLs and create recognition jobs.
-func newSTTService(env *crimeseen.Env) *sttService {
+func newS2TInstance(env *crimeseen.Env) *s2tInstance {
 	authenticator := &core.IamAuthenticator{
 		ApiKey: env.IBMAPIKey(),
 	}
@@ -39,5 +39,5 @@ func newSTTService(env *crimeseen.Env) *sttService {
 		log.WithError(err).Fatalln("Error setting service URL")
 	}
 
-	return &sttService{speechToText}
+	return &s2tInstance{speechToText}
 }
