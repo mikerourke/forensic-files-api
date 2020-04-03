@@ -4,7 +4,9 @@ import (
 	"encoding/json"
 	"io/ioutil"
 	"net/http"
+	"path/filepath"
 
+	"github.com/0xAX/notificator"
 	"github.com/google/uuid"
 	"github.com/mikerourke/forensic-files-api/internal/whodunit"
 	"github.com/watson-developer-cloud/go-sdk/speechtotextv1"
@@ -12,7 +14,17 @@ import (
 
 type callbackServer struct{}
 
+var (
+	notify         *notificator.Notificator
+	notifyIconPath = filepath.Join(whodunit.AssetsDirPath, "notify.png")
+)
+
 func newCallbackServer() *callbackServer {
+	notify = notificator.New(notificator.Options{
+		DefaultIcon: notifyIconPath,
+		AppName:     "Forensic Files API",
+	})
+
 	return &callbackServer{}
 }
 
@@ -88,4 +100,7 @@ func (cs *callbackServer) onResponse(r *http.Request) {
 
 	log.WithField("file", userToken).Infoln(
 		"Successfully wrote recognition to JSON")
+
+	notify.Push("Recognition Complete", ep.DisplayTitle(),
+		notifyIconPath, notificator.UR_NORMAL)
 }

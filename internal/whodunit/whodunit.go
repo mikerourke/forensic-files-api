@@ -10,6 +10,28 @@ import (
 	"path/filepath"
 )
 
+// AssetStatus is an enum that represents the status of the asset.
+type AssetStatus int
+
+const (
+	// AssetStatusAny is used primarily to show all records when logging the
+	// status in the terminal.
+	AssetStatusAny AssetStatus = iota
+
+	// AssetStatusPending indicates that the asset hasn't been processed yet.
+	AssetStatusPending
+
+	// AssetStatusInProcess indicates that the asset is currently being
+	// processed.
+	AssetStatusInProcess
+
+	// AssetStatusComplete indicates that the asset has been processed.
+	AssetStatusComplete
+
+	// AssetStatusMissing indicates that the asset is missing.
+	AssetStatusMissing
+)
+
 // AssetType represents which type of asset the episode is associated with.
 type AssetType int
 

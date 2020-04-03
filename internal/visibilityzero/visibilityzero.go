@@ -5,6 +5,7 @@ package visibilityzero
 import (
 	"os/exec"
 	"path/filepath"
+	"strings"
 	"time"
 
 	"github.com/mikerourke/forensic-files-api/internal/waterlogged"
@@ -17,12 +18,37 @@ var (
 	processedCount int
 )
 
-// ExtractAudio loops through all of the `/video` season directories, extracts the
-// audio from the .mp4 file using ffmpeg, and drops it into the `/assets/audio`
-// directory for the corresponding season.
-func ExtractAudio() {
+// ExtractAudio extracts the audio from the specified season and episode (or
+// all if neither is specified) and saves it to an `.mp3` file.
+func ExtractAudio(seasonNumber int, episodeNumber int) {
 	checkForFFmpeg()
-	extractAudioFromAllSeasons()
+
+	if seasonNumber == 0 {
+		if episodeNumber != 0 {
+			log.Fatalln("You must specify a season number for an episode")
+		}
+
+		extractAudioFromAllSeasons()
+		return
+	}
+
+	s := whodunit.NewSeason(seasonNumber)
+	if err := s.PopulateEpisodes(); err != nil {
+		log.WithError(err).Fatalln("Could not get season episodes")
+	}
+
+	if episodeNumber == 0 {
+		extractAudioFromSeason(s)
+	} else {
+		ep := s.Episode(episodeNumber)
+		extractAudioFromEpisode(ep)
+	}
+}
+
+// LogStatusTable logs the episode statuses.
+func LogStatusTable(status whodunit.AssetStatus) {
+	table := whodunit.NewStatusTable(whodunit.AssetTypeAudio, status)
+	table.Log()
 }
 
 func checkForFFmpeg() {
@@ -75,6 +101,11 @@ func extractAudioFromEpisode(ep *whodunit.Episode) {
 		videoPath, ep.AssetFilePath(whodunit.AssetTypeAudio))
 	err := cmd.Run()
 	if err != nil {
+		if strings.Contains(err.Error(), "exit status 1") {
+			log.Infoln("Successfully extracted audio")
+			return
+		}
+
 		log.WithFields(logrus.Fields{
 			"error": err,
 			"video": filepath.Base(videoPath),

@@ -30,6 +30,14 @@ func (r *recognition) StartJob(stt *s2tInstance, callbackURL string) {
 		return
 	}
 
+	if !r.AssetExists(whodunit.AssetTypeAudio) {
+		log.WithField(
+			"file",
+			r.AssetFileName(whodunit.AssetTypeAudio),
+		).Warnln("Skipping job, audio file not found")
+		return
+	}
+
 	audio, err := os.Open(r.AssetFilePath(whodunit.AssetTypeAudio))
 	if err != nil {
 		log.WithError(err).Errorln("Error opening audio")

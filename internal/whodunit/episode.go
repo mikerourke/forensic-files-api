@@ -17,6 +17,7 @@ type Episode struct {
 	EpisodeNumber int    `json:"episode"`
 	Title         string `json:"title"`
 	URL           string `json:"url"`
+	assetStatus   AssetStatus
 	season        *Season
 }
 
@@ -118,6 +119,31 @@ func (e *Episode) AssetFilePath(assetType AssetType) string {
 // extension based on the specified asset type.
 func (e *Episode) AssetFileName(assetType AssetType) string {
 	return fmt.Sprintf("%s%s", e.Name(), assetType.FileExt())
+}
+
+// SetAssetStatus allows you to override the asset status extrapolated from
+// whether the file currently exists.
+func (e *Episode) SetAssetStatus(status AssetStatus) {
+	e.assetStatus = status
+}
+
+// AssetStatus returns the current status of the asset associated with the
+// episode.
+func (e *Episode) AssetStatus(assetType AssetType) AssetStatus {
+	if e.assetStatus != 0 {
+		return e.assetStatus
+	}
+
+	if e.VideoHash() == "" {
+		return AssetStatusMissing
+	}
+
+	assetExists := e.AssetExists(assetType)
+	if assetExists {
+		return AssetStatusComplete
+	}
+
+	return AssetStatusPending
 }
 
 // Name returns the name of the episode in the common format used throughout

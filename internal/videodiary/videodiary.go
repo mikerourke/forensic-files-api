@@ -3,12 +3,10 @@
 package videodiary
 
 import (
-	"fmt"
 	"os"
 	"os/exec"
 	"time"
 
-	"github.com/mikerourke/forensic-files-api/internal/crimeseen"
 	"github.com/mikerourke/forensic-files-api/internal/waterlogged"
 	"github.com/mikerourke/forensic-files-api/internal/whodunit"
 	"github.com/sirupsen/logrus"
@@ -16,74 +14,37 @@ import (
 
 var log = waterlogged.New("videodiary")
 
-// DownloadEpisodes parses the YouTube episode URLs from the `/assets/youtube-links.json`
-// file and downloads each episode to the `/assets/videos` directory.
-func DownloadEpisodes() {
+// Download downloads the specified episode number from the specified season
+// number or all seasons.
+func Download(seasonNumber int, episodeNumber int) {
 	checkForYouTubeDL()
 
-	for season := 1; season <= whodunit.SeasonCount; season++ {
-		s := whodunit.NewSeason(season)
-		if err := s.PopulateEpisodes(); err != nil {
-			log.WithFields(logrus.Fields{
-				"error":  err,
-				"season": season,
-			}).Fatalln("Could not get season episodes")
-			return
+	if seasonNumber == 0 {
+		if episodeNumber != 0 {
+			log.Fatalln("You must specify a season number for an episode")
 		}
 
-		for _, ep := range s.AllEpisodes() {
-			downloadEpisode(ep, true)
-		}
+		downloadAllSeasons()
+		return
 	}
-}
-
-// DownloadEpisode downloads the specified episode number from the specified
-// season number.
-func DownloadEpisode(seasonNumber int, episodeNumber int) {
-	checkForYouTubeDL()
 
 	s := whodunit.NewSeason(seasonNumber)
 	if err := s.PopulateEpisodes(); err != nil {
 		log.WithError(err).Fatalln("Could not get season episodes")
 	}
 
-	if ep := s.Episode(episodeNumber); ep != nil {
-		downloadEpisode(ep, false)
+	if episodeNumber == 0 {
+		downloadSeason(s, false)
 	} else {
-		log.WithField("episode", episodeNumber).Fatalln(
-			"Could not find episode")
+		ep := s.Episode(episodeNumber)
+		downloadEpisode(ep, false)
 	}
 }
 
-// LogMissingEpisodes logs the episodes that haven't been downloaded to the
-// command line.
-func LogMissingEpisodes() {
-	missingCount := 0
-
-	for season := 1; season <= whodunit.SeasonCount; season++ {
-		s := whodunit.NewSeason(season)
-		if err := s.PopulateEpisodes(); err != nil {
-			log.WithFields(logrus.Fields{
-				"error":  err,
-				"season": season,
-			}).Fatalln("Could not get season episodes")
-			return
-		}
-
-		for _, ep := range s.AllEpisodes() {
-			if ep.VideoHash() == "" {
-				fmt.Printf(
-					"Season: %v \t Episode: %v \t Title: %v\n",
-					ep.SeasonNumber,
-					ep.EpisodeNumber,
-					ep.DisplayTitle(),
-				)
-				missingCount++
-			}
-		}
-	}
-
-	fmt.Printf("Total count missing: %v\n", missingCount)
+// LogStatusTable logs the episode statuses.
+func LogStatusTable(status whodunit.AssetStatus) {
+	table := whodunit.NewStatusTable(whodunit.AssetTypeVideo, status)
+	table.Log()
 }
 
 func checkForYouTubeDL() {
@@ -94,12 +55,33 @@ func checkForYouTubeDL() {
 	}
 }
 
+func downloadAllSeasons() {
+	for season := 1; season <= whodunit.SeasonCount; season++ {
+		s := whodunit.NewSeason(season)
+		if err := s.PopulateEpisodes(); err != nil {
+			log.WithFields(logrus.Fields{
+				"error":  err,
+				"season": season,
+			}).Fatalln("Could not get season episodes")
+			return
+		}
+		downloadSeason(s, true)
+	}
+}
+
+func downloadSeason(s *whodunit.Season, isPaused bool) {
+	for _, ep := range s.AllEpisodes() {
+		downloadEpisode(ep, isPaused)
+	}
+}
+
 func downloadEpisode(ep *whodunit.Episode, isPaused bool) {
-	outPath := ep.AssetFilePath(whodunit.AssetTypeVideo)
-	if crimeseen.FileExists(outPath) {
+	if ep.AssetExists(whodunit.AssetTypeVideo) {
+		log.Infoln("Episode already downloaded, skipping")
 		return
 	}
 
+	outPath := ep.AssetFilePath(whodunit.AssetTypeVideo)
 	log.WithFields(logrus.Fields{
 		"season":  ep.SeasonNumber,
 		"episode": ep.EpisodeNumber,
@@ -110,12 +92,10 @@ func downloadEpisode(ep *whodunit.Episode, isPaused bool) {
 	cmd := exec.Command("youtube-dl",
 		"-o", outPath,
 		ep.VideoHash())
-
 	cmd.Stdout = os.Stdout
 	cmd.Stderr = os.Stderr
 
 	err := cmd.Run()
-
 	if err != nil {
 		log.WithFields(logrus.Fields{
 			"error": err,

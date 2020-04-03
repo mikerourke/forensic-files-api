@@ -4,7 +4,6 @@ package hearnoevil
 
 import (
 	"bufio"
-	"encoding/json"
 	"errors"
 	"os/exec"
 	"strings"
@@ -65,50 +64,53 @@ func (p *Perpetrator) RegisterCallbackURL(callbackURL string) {
 	log.WithField("url", callbackURL).Infoln("Callback URL registered")
 }
 
-// LogRecognitionJobs logs the last 100 jobs to the console. It displays all
-// of the fields in JSON format.
-func (p *Perpetrator) LogRecognitionJobs() {
-	result, _, err := p.S2T.CheckJobs(&speechtotextv1.CheckJobsOptions{})
-	if err != nil {
-		log.WithError(err).Fatalln("Error getting recognition jobs")
-	}
-
-	recognitionJobs := result.Recognitions
-	b, err := json.MarshalIndent(recognitionJobs, "", "  ")
-	log.Println(string(b))
-}
-
-// CreateSeasonRecognitionJobs batches calls to the speech-to-text service to
-// create recognition jobs for all of the episodes in the specified season.
-// You must specify a season number, but the callback URL is read from the `.env`
-// file if it isn't passed into the function.
-func (p *Perpetrator) CreateSeasonRecognitionJobs(seasonNumber int) {
+// Recognize makes a call to the speech-to-text service to create a recognition
+// job for a single episode in the specified season or all episodes if the season
+// was not specified.
+func (p *Perpetrator) Recognize(seasonNumber int, episodeNumber int) {
 	p.checkNgrok()
+
+	if seasonNumber == 0 {
+		log.Fatalln("You must specify a season number")
+	}
 
 	s := whodunit.NewSeason(seasonNumber)
 	if err := s.PopulateEpisodes(); err != nil {
 		log.WithError(err).Fatalln("Could not get season episodes")
 	}
 
-	for _, ep := range s.AllEpisodes() {
-		r := newRecognition(ep)
-		r.StartJob(p.S2T, p.CallbackURL)
+	if episodeNumber == 0 {
+		p.recognizeSeason(s)
+	} else {
+		ep := s.Episode(episodeNumber)
+		p.recognizeEpisode(ep)
 	}
 }
 
-// CreateEpisodeRecognitionJob makes a call to the speech-to-text service to
-// create a recognition job for a single episode in the specified season. You
-// must specify a season and episode number, but the callback URL is read from
-// the `.env` file if it isn't passed into the function.
-func (p *Perpetrator) CreateEpisodeRecognitionJob(seasonNumber int, episodeNumber int) {
-	p.checkNgrok()
+// LogStatusTable logs the episode statuses.
+func (p *Perpetrator) LogStatusTable(status whodunit.AssetStatus) {
+	totalCount := 0
+	table := whodunit.NewStatusTable(whodunit.AssetTypeRecognition, status)
+	jep := p.jobEpisodeMap()
+	for season := 1; season <= whodunit.SeasonCount; season++ {
+		s := whodunit.NewSeason(season)
+		if err := s.PopulateEpisodes(); err != nil {
+			panic("Could not get season episodes")
+		}
 
-	s := whodunit.NewSeason(seasonNumber)
-	if err := s.PopulateEpisodes(); err != nil {
-		log.WithError(err).Fatalln("Could not get season episodes")
+		for _, ep := range s.AllEpisodes() {
+			je := jep[ep.Name()]
+			if je != nil {
+				ep.SetAssetStatus(je.AssetStatus(whodunit.AssetTypeRecognition))
+			}
+
+			if table.AddRow(ep) {
+				totalCount++
+			}
+		}
 	}
-	r := newRecognition(s.Episode(episodeNumber))
-	r.StartJob(p.S2T, p.CallbackURL)
+
+	table.RenderTable(totalCount)
 }
 
 // StartCallbackServer starts the callback server to receive responses from the
@@ -116,6 +118,43 @@ func (p *Perpetrator) CreateEpisodeRecognitionJob(seasonNumber int, episodeNumbe
 func (p *Perpetrator) StartCallbackServer() {
 	cs := newCallbackServer()
 	cs.Start()
+}
+
+func (p *Perpetrator) recognizeSeason(s *whodunit.Season) {
+	for _, ep := range s.AllEpisodes() {
+		p.recognizeEpisode(ep)
+	}
+}
+
+func (p *Perpetrator) recognizeEpisode(ep *whodunit.Episode) {
+	r := newRecognition(ep)
+	r.StartJob(p.S2T, p.CallbackURL)
+}
+
+func (p *Perpetrator) jobEpisodeMap() map[string]*whodunit.Episode {
+	result, _, err := p.S2T.CheckJobs(&speechtotextv1.CheckJobsOptions{})
+	if err != nil {
+		log.WithError(err).Fatalln("Error getting recognition jobs")
+	}
+
+	epMap := make(map[string]*whodunit.Episode, 0)
+	for _, job := range result.Recognitions {
+		name := *job.UserToken
+		ep, err := whodunit.NewEpisodeFromName(name)
+		if err != nil {
+			log.WithError(err).Fatalln("Error parsing episode name")
+		}
+
+		if strings.Contains(*job.Status, "compl") {
+			ep.SetAssetStatus(whodunit.AssetStatusComplete)
+		} else {
+			ep.SetAssetStatus(whodunit.AssetStatusInProcess)
+		}
+
+		epMap[name] = ep
+	}
+
+	return epMap
 }
 
 func (p *Perpetrator) checkNgrok() {
