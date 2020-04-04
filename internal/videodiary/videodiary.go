@@ -87,11 +87,10 @@ func downloadEpisode(ep *whodunit.Episode, isPaused bool) {
 		"episode": ep.EpisodeNumber,
 		"title":   ep.Title,
 		"path":    outPath,
+		"hash":    ep.VideoHash(),
 	}).Infoln("Downloading video from YouTube")
 
-	cmd := exec.Command("youtube-dl",
-		"-o", outPath,
-		ep.VideoHash())
+	cmd := exec.Command("youtube-dl", "-o", outPath, ep.URL)
 	cmd.Stdout = os.Stdout
 	cmd.Stderr = os.Stderr
 

@@ -106,7 +106,18 @@ func (e *Episode) VideoHash() string {
 // AssetExists returns true if the file associated with the specified asset
 // type exists in the `/assets` directory.
 func (e *Episode) AssetExists(assetType AssetType) bool {
-	return crimeseen.FileExists(e.AssetFilePath(assetType))
+	path := e.AssetFilePath(assetType)
+	exists := crimeseen.FileExists(path)
+	if assetType != AssetTypeVideo {
+		return exists
+	}
+
+	if !exists {
+		mkvPath := strings.Replace(path, ".mp4", ".mkv", -1)
+		return crimeseen.FileExists(mkvPath)
+	}
+
+	return true
 }
 
 // AssetFilePath returns the absolute path to the asset file for the episode.

@@ -6,6 +6,7 @@ import (
 	"io/ioutil"
 	"os"
 	"path/filepath"
+	"sort"
 
 	"github.com/mikerourke/forensic-files-api/internal/crimeseen"
 )
@@ -67,6 +68,12 @@ func (s *Season) AllEpisodes() []*Episode {
 	for _, ep := range s.EpisodeMap {
 		episodes = append(episodes, ep)
 	}
+
+	// Sort by episode number.
+	sort.Slice(episodes, func(i, j int) bool {
+		return episodes[i].EpisodeNumber < episodes[j].EpisodeNumber
+	})
+
 	return episodes
 }
 

@@ -43,7 +43,7 @@ func main() {
 
 	logCommandFilterFlag := logCommand.Flag(
 		"filter",
-		"Type to filter by: pending, complete, in-process.").String()
+		"Type to filter by: pending, complete, in-process, missing.").String()
 
 	downloadCommand := app.Command(
 		"download",
@@ -110,6 +110,8 @@ func flagToAssetStatus(value string) whodunit.AssetStatus {
 		return whodunit.AssetStatusInProcess
 	case "complete":
 		return whodunit.AssetStatusComplete
+	case "missing":
+		return whodunit.AssetStatusMissing
 	}
 	return whodunit.AssetStatusAny
 }
