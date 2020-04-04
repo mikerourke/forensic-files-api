@@ -58,7 +58,7 @@ func main() {
 	transcribeCommand := app.Command(
 		"transcribe",
 		"Transcribes episode from recognition.")
-	transSeason, transEpisode := addSeasonEpisodeFlags(extractCommand)
+	transSeason, transEpisode := addSeasonEpisodeFlags(transcribeCommand)
 
 	parsedCmd := kingpin.MustParse(app.Parse(os.Args[1:]))
 

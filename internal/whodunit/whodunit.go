@@ -62,7 +62,7 @@ func (at AssetType) DirPath() string {
 	case AssetTypeRecognition:
 		return filepath.Join(AssetsDirPath, "recognitions")
 	case AssetTypeTranscript:
-		return filepath.Join(AssetsDirPath, "transcript")
+		return filepath.Join(AssetsDirPath, "transcripts")
 	case AssetTypeVideo:
 		return filepath.Join(AssetsDirPath, "videos")
 	default:

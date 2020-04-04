@@ -3,7 +3,6 @@ package killigraphy
 import (
 	"io"
 	"os"
-	"strings"
 
 	"github.com/mikerourke/forensic-files-api/internal/hearnoevil"
 	"github.com/mikerourke/forensic-files-api/internal/waterlogged"
@@ -65,6 +64,22 @@ func transcribeSeason(s *whodunit.Season) {
 }
 
 func transcribeEpisode(ep *whodunit.Episode) {
+	epLogger := log.WithFields(logrus.Fields{
+		"season":  ep.SeasonNumber,
+		"episode": ep.EpisodeNumber,
+	})
+
+	// TODO: Uncomment this, we're overwriting for the time being.
+	// if ep.AssetExists(whodunit.AssetTypeTranscript) {
+	// 	epLogger.Infoln("Transcript already exists, skipping")
+	// 	return
+	// }
+
+	if !ep.AssetExists(whodunit.AssetTypeRecognition) {
+		return
+	}
+
+	epLogger.Infoln("Transcribing episode")
 	r := hearnoevil.NewRecognition(ep)
 	results, err := r.ReadResults()
 	if err != nil {
@@ -78,10 +93,7 @@ func transcribeEpisode(ep *whodunit.Episode) {
 		}
 	}
 
-	contents := strings.Join(words, " ")
-	contents = strings.ReplaceAll(contents, "  ", " ")
-	contents = strings.ReplaceAll(contents, " %HESITATION", "")
-
+	l := newLuminol(words)
 	path := ep.AssetFilePath(whodunit.AssetTypeTranscript)
 	file, err := os.Create(path)
 	if err != nil {
@@ -89,7 +101,7 @@ func transcribeEpisode(ep *whodunit.Episode) {
 	}
 	defer file.Close()
 
-	if _, err = io.WriteString(file, contents); err != nil {
+	if _, err = io.WriteString(file, l.Reveal()); err != nil {
 		log.WithError(err).Fatalln("Error writing contents")
 	}
 
