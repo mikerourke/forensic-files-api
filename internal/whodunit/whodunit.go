@@ -5,6 +5,7 @@
 package whodunit
 
 import (
+	"errors"
 	"log"
 	"os"
 	"path/filepath"
@@ -84,6 +85,51 @@ func (at AssetType) FileExt() string {
 	default:
 		return ""
 	}
+}
+
+// Solve runs the specified function per episode based on the values passed
+// in for the season and episode.
+func Solve(
+	seasonNumber int,
+	episodeNumber int,
+	onEpisode func(ep *Episode),
+) error {
+	// Performs the specified action for all of the episodes in a season.
+	onSeason := func(s *Season) error {
+		if err := s.PopulateEpisodes(); err != nil {
+			return err
+		}
+
+		if episodeNumber == 0 {
+			onEpisode(s.Episode(episodeNumber))
+		} else {
+			for _, ep := range s.AllEpisodes() {
+				onEpisode(ep)
+			}
+		}
+
+		return nil
+	}
+
+	// If the season specified is 0 (not specified), the onEpisode action needs
+	// to run on every episode in every season.
+	if seasonNumber == 0 {
+		// How do we know which season to process if it isn't specified?
+		if episodeNumber != 0 {
+			return errors.New("you must specify a season number for an episode")
+		}
+
+		for season := 1; season <= SeasonCount; season++ {
+			s := NewSeason(season)
+			if err := onSeason(s); err != nil {
+				return err
+			}
+		}
+		return nil
+	}
+
+	s := NewSeason(seasonNumber)
+	return onSeason(s)
 }
 
 func assetsDirPath() string {

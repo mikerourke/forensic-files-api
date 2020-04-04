@@ -2,7 +2,6 @@ package whodunit
 
 import (
 	"fmt"
-	"net/url"
 	"path/filepath"
 	"strconv"
 	"strings"
@@ -84,18 +83,6 @@ func (e *Episode) DisplayTitle() string {
 	return strings.Title(strings.ReplaceAll(e.Title, "-", " "))
 }
 
-// VideoHash returns the YouTube URL's video hash used to identify the video
-// to download.
-func (e *Episode) VideoHash() string {
-	if e.URL == "" {
-		return ""
-	}
-
-	parsedURL, _ := url.Parse(e.URL)
-	q := parsedURL.Query()
-	return q.Get("v")
-}
-
 // AssetExists returns true if the file associated with the specified asset
 // type exists in the `/assets` directory.
 func (e *Episode) AssetExists(assetType AssetType) bool {
@@ -138,7 +125,7 @@ func (e *Episode) AssetStatus(assetType AssetType) AssetStatus {
 		return e.assetStatus
 	}
 
-	if e.VideoHash() == "" {
+	if e.URL == "" {
 		return AssetStatusMissing
 	}
 

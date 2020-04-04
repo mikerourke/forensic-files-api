@@ -6,6 +6,7 @@ import (
 	"encoding/json"
 	"io"
 	"os"
+	"os/exec"
 	"strconv"
 	"strings"
 )
@@ -64,4 +65,13 @@ func WriteJSONFile(path string, contents interface{}) error {
 	}
 
 	return file.Sync()
+}
+
+// RunCommand is a wrapper around exec.Command that redirects output to the
+// terminal.
+func RunCommand(command string, args ...string) error {
+	cmd := exec.Command(command, args...)
+	cmd.Stdout = os.Stdout
+	cmd.Stderr = os.Stderr
+	return cmd.Run()
 }

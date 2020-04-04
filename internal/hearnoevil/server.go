@@ -9,7 +9,7 @@ import (
 	"github.com/0xAX/notificator"
 	"github.com/google/uuid"
 	"github.com/mikerourke/forensic-files-api/internal/whodunit"
-	"github.com/watson-developer-cloud/go-sdk/speechtotextv1"
+	stv1 "github.com/watson-developer-cloud/go-sdk/speechtotextv1"
 )
 
 type callbackServer struct{}
@@ -72,7 +72,7 @@ func (cs *callbackServer) onResponse(r *http.Request) {
 		log.WithError(err).Errorln("Error reading body of request")
 	}
 
-	var jobContents speechtotextv1.RecognitionJob
+	var jobContents stv1.RecognitionJob
 	err = json.Unmarshal(bytes, &jobContents)
 	if err != nil {
 		log.WithError(err).Errorln("Error unmarshalling JSON")
@@ -95,7 +95,7 @@ func (cs *callbackServer) onResponse(r *http.Request) {
 	}
 
 	rec := NewRecognition(ep)
-	if err = rec.WriteToFile(jobContents.Results); err != nil {
+	if err = rec.WriteResults(jobContents.Results); err != nil {
 		log.WithError(err).Errorln("Error writing recognition results")
 	}
 

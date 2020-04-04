@@ -4,7 +4,6 @@ package hearnoevil
 
 import (
 	"bufio"
-	"errors"
 	"os/exec"
 	"strings"
 
@@ -13,7 +12,7 @@ import (
 	"github.com/mikerourke/forensic-files-api/internal/waterlogged"
 	"github.com/mikerourke/forensic-files-api/internal/whodunit"
 	"github.com/sirupsen/logrus"
-	"github.com/watson-developer-cloud/go-sdk/speechtotextv1"
+	stv1 "github.com/watson-developer-cloud/go-sdk/speechtotextv1"
 )
 
 // Perpetrator contains properties and methods used to start recognition
@@ -45,7 +44,7 @@ func NewPerpetrator(callbackURL string) *Perpetrator {
 // that will receive recognition job responses.
 func (p *Perpetrator) RegisterCallbackURL(callbackURL string) {
 	result, _, err := p.S2T.RegisterCallback(
-		&speechtotextv1.RegisterCallbackOptions{
+		&stv1.RegisterCallbackOptions{
 			CallbackURL: core.StringPtr(callbackURL),
 		},
 	)
@@ -68,27 +67,20 @@ func (p *Perpetrator) RegisterCallbackURL(callbackURL string) {
 // job for a single episode in the specified season or all episodes if the season
 // was not specified.
 func (p *Perpetrator) Recognize(seasonNumber int, episodeNumber int) {
-	p.checkNgrok()
+	p.interrogate()
 
-	if seasonNumber == 0 {
-		log.Fatalln("You must specify a season number")
+	onEpisode := func(ep *whodunit.Episode) {
+		r := NewRecognition(ep)
+		r.StartJob(p.S2T, p.CallbackURL)
 	}
 
-	s := whodunit.NewSeason(seasonNumber)
-	if err := s.PopulateEpisodes(); err != nil {
-		log.WithError(err).Fatalln("Could not get season episodes")
-	}
-
-	if episodeNumber == 0 {
-		p.recognizeSeason(s)
-	} else {
-		ep := s.Episode(episodeNumber)
-		p.recognizeEpisode(ep)
+	if err := whodunit.Solve(seasonNumber, episodeNumber, onEpisode); err != nil {
+		log.WithError(err).Errorln("Error recognizing episode(s)")
 	}
 }
 
-// LogStatusTable logs the episode statuses.
-func (p *Perpetrator) LogStatusTable(status whodunit.AssetStatus) {
+// Investigate logs the episode statuses.
+func (p *Perpetrator) Investigate(status whodunit.AssetStatus) {
 	totalCount := 0
 	table := whodunit.NewStatusTable(whodunit.AssetTypeRecognition, status)
 	jep := p.jobEpisodeMap()
@@ -120,19 +112,8 @@ func (p *Perpetrator) StartCallbackServer() {
 	cs.Start()
 }
 
-func (p *Perpetrator) recognizeSeason(s *whodunit.Season) {
-	for _, ep := range s.AllEpisodes() {
-		p.recognizeEpisode(ep)
-	}
-}
-
-func (p *Perpetrator) recognizeEpisode(ep *whodunit.Episode) {
-	r := NewRecognition(ep)
-	r.StartJob(p.S2T, p.CallbackURL)
-}
-
 func (p *Perpetrator) jobEpisodeMap() map[string]*whodunit.Episode {
-	result, _, err := p.S2T.CheckJobs(&speechtotextv1.CheckJobsOptions{})
+	result, _, err := p.S2T.CheckJobs(&stv1.CheckJobsOptions{})
 	if err != nil {
 		log.WithError(err).Fatalln("Error getting recognition jobs")
 	}
@@ -157,23 +138,18 @@ func (p *Perpetrator) jobEpisodeMap() map[string]*whodunit.Episode {
 	return epMap
 }
 
-func (p *Perpetrator) checkNgrok() {
-	err := p.findNgrokProcess()
-	if err != nil {
-		log.WithError(err).Fatalln("ngrok is not running, run `ngrok http 9000`")
-	}
-}
+func (p *Perpetrator) interrogate() {
+	const ErrorMessage = "ngrok is not running, run `ngrok http 9000`"
 
-func (p *Perpetrator) findNgrokProcess() error {
 	cmd := exec.Command("ps", "aux")
 	stdout, err := cmd.StdoutPipe()
 	if err != nil {
-		return err
+		log.WithError(err).Fatalln(ErrorMessage)
 	}
 
 	// Start the command after having set up the pipe.
 	if err := cmd.Start(); err != nil {
-		return err
+		log.WithError(err).Fatalln(ErrorMessage)
 	}
 
 	// Read command's stdout line by line.
@@ -182,9 +158,9 @@ func (p *Perpetrator) findNgrokProcess() error {
 	for in.Scan() {
 		text := in.Text()
 		if strings.Contains(text, "ngrok http 9000") {
-			return nil
+			return
 		}
 	}
 
-	return errors.New("ngrok is not running")
+	log.WithError(err).Fatalln(ErrorMessage)
 }

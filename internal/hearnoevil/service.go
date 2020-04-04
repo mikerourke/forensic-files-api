@@ -5,11 +5,11 @@ import (
 
 	"github.com/IBM/go-sdk-core/core"
 	"github.com/mikerourke/forensic-files-api/internal/crimeseen"
-	"github.com/watson-developer-cloud/go-sdk/speechtotextv1"
+	stv1 "github.com/watson-developer-cloud/go-sdk/speechtotextv1"
 )
 
 type s2tInstance struct {
-	*speechtotextv1.SpeechToTextV1
+	*stv1.SpeechToTextV1
 }
 
 // newS2TInstance returns an instance of the speech-to-text service that
@@ -19,11 +19,11 @@ func newS2TInstance(env *crimeseen.Env) *s2tInstance {
 		ApiKey: env.IBMAPIKey(),
 	}
 
-	options := &speechtotextv1.SpeechToTextV1Options{
+	options := &stv1.SpeechToTextV1Options{
 		Authenticator: authenticator,
 	}
 
-	speechToText, err := speechtotextv1.NewSpeechToTextV1(options)
+	speechToText, err := stv1.NewSpeechToTextV1(options)
 
 	if err != nil {
 		log.WithError(err).Fatalln("Error initializing speech to text service")
