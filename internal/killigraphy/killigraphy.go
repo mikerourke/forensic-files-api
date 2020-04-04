@@ -3,6 +3,7 @@ package killigraphy
 import (
 	"io"
 	"os"
+	"strings"
 
 	"github.com/mikerourke/forensic-files-api/internal/hearnoevil"
 	"github.com/mikerourke/forensic-files-api/internal/waterlogged"
@@ -93,7 +94,10 @@ func transcribeEpisode(ep *whodunit.Episode) {
 		}
 	}
 
-	l := newLuminol(words)
+	contents := strings.Join(words, " ")
+	contents = strings.ReplaceAll(contents, "  ", " ")
+	contents = strings.ReplaceAll(contents, " %HESITATION", "")
+
 	path := ep.AssetFilePath(whodunit.AssetTypeTranscript)
 	file, err := os.Create(path)
 	if err != nil {
@@ -101,7 +105,7 @@ func transcribeEpisode(ep *whodunit.Episode) {
 	}
 	defer file.Close()
 
-	if _, err = io.WriteString(file, l.Reveal()); err != nil {
+	if _, err = io.WriteString(file, contents); err != nil {
 		log.WithError(err).Fatalln("Error writing contents")
 	}
 
