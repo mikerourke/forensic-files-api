@@ -79,13 +79,6 @@ func NewEpisodeFromName(name string) (*Episode, error) {
 	}, nil
 }
 
-// WriteToRecognitionFile writes the specified contents to a new JSON file in
-// the `/recognitions` directory.
-func (e *Episode) WriteToRecognitionFile(contents interface{}) error {
-	path := e.AssetFilePath(AssetTypeRecognition)
-	return crimeseen.WriteJSONFile(path, contents)
-}
-
 // DisplayTitle returns the Title property separated by spaces with title case.
 func (e *Episode) DisplayTitle() string {
 	return strings.Title(strings.ReplaceAll(e.Title, "-", " "))

@@ -94,12 +94,13 @@ func (cs *callbackServer) onResponse(r *http.Request) {
 		return
 	}
 
-	if err = ep.WriteToRecognitionFile(jobContents.Results); err != nil {
+	rec := NewRecognition(ep)
+	if err = rec.WriteToFile(jobContents.Results); err != nil {
 		log.WithError(err).Errorln("Error writing recognition results")
 	}
 
 	log.WithField("file", userToken).Infoln(
-		"Successfully wrote recognition to JSON")
+		"Successfully wrote Recognition to JSON")
 
 	notify.Push("Recognition Complete", ep.DisplayTitle(),
 		notifyIconPath, notificator.UR_NORMAL)

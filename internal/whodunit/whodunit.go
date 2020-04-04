@@ -43,6 +43,9 @@ const (
 	// associated with the episode.
 	AssetTypeRecognition
 
+	// AssetTypeTranscript represents the transcript of the episode.
+	AssetTypeTranscript
+
 	// AssetTypeVideo represents the video file associated with the episode.
 	AssetTypeVideo
 )
@@ -58,6 +61,8 @@ func (at AssetType) DirPath() string {
 		return filepath.Join(AssetsDirPath, "audio")
 	case AssetTypeRecognition:
 		return filepath.Join(AssetsDirPath, "recognitions")
+	case AssetTypeTranscript:
+		return filepath.Join(AssetsDirPath, "transcript")
 	case AssetTypeVideo:
 		return filepath.Join(AssetsDirPath, "videos")
 	default:
@@ -72,6 +77,8 @@ func (at AssetType) FileExt() string {
 		return ".mp3"
 	case AssetTypeRecognition:
 		return ".json"
+	case AssetTypeTranscript:
+		return ".txt"
 	case AssetTypeVideo:
 		return ".mp4"
 	default:

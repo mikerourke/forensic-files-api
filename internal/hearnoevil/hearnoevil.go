@@ -127,7 +127,7 @@ func (p *Perpetrator) recognizeSeason(s *whodunit.Season) {
 }
 
 func (p *Perpetrator) recognizeEpisode(ep *whodunit.Episode) {
-	r := newRecognition(ep)
+	r := NewRecognition(ep)
 	r.StartJob(p.S2T, p.CallbackURL)
 }
 

@@ -5,6 +5,7 @@ import (
 	"path/filepath"
 
 	"github.com/mikerourke/forensic-files-api/internal/hearnoevil"
+	"github.com/mikerourke/forensic-files-api/internal/killigraphy"
 	"github.com/mikerourke/forensic-files-api/internal/videodiary"
 	"github.com/mikerourke/forensic-files-api/internal/visibilityzero"
 	"github.com/mikerourke/forensic-files-api/internal/whodunit"
@@ -30,7 +31,6 @@ func main() {
 	recognizeCommand := app.Command(
 		"recognize",
 		"Send recognition job requests to the speech to text service.")
-
 	recogSeason, recogEpisode := addSeasonEpisodeFlags(recognizeCommand)
 
 	logCommand := app.Command(
@@ -39,7 +39,7 @@ func main() {
 
 	logCommandAssetFlag := logCommand.Flag(
 		"asset",
-		"Asset to log: audio, video, recog.").Required().String()
+		"Asset to log: audio, video, recog, trans.").Required().String()
 
 	logCommandFilterFlag := logCommand.Flag(
 		"filter",
@@ -48,13 +48,17 @@ func main() {
 	downloadCommand := app.Command(
 		"download",
 		"Download episodes from YouTube.")
-
 	dlSeason, dlEpisode := addSeasonEpisodeFlags(downloadCommand)
 
 	extractCommand := app.Command(
 		"extract",
 		"Extract audio from downloaded episodes for recognition.")
 	exSeason, exEpisode := addSeasonEpisodeFlags(extractCommand)
+
+	transcribeCommand := app.Command(
+		"transcribe",
+		"Transcribes episode from recognition.")
+	transSeason, transEpisode := addSeasonEpisodeFlags(extractCommand)
 
 	parsedCmd := kingpin.MustParse(app.Parse(os.Args[1:]))
 
@@ -72,10 +76,12 @@ func main() {
 	case logCommand.FullCommand():
 		status := flagToAssetStatus(*logCommandFilterFlag)
 		switch *logCommandAssetFlag {
-		case "recog":
-			p.LogStatusTable(status)
 		case "audio":
 			visibilityzero.LogStatusTable(status)
+		case "recog":
+			p.LogStatusTable(status)
+		case "trans":
+			killigraphy.LogStatusTable(status)
 		case "video":
 			videodiary.LogStatusTable(status)
 		}
@@ -85,6 +91,9 @@ func main() {
 
 	case extractCommand.FullCommand():
 		visibilityzero.ExtractAudio(*exSeason, *exEpisode)
+
+	case transcribeCommand.FullCommand():
+		killigraphy.Transcribe(*transSeason, *transEpisode)
 
 	}
 }
