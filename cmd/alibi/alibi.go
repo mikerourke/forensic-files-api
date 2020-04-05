@@ -110,7 +110,6 @@ func main() {
 	case analyzeCommand.FullCommand():
 		d.OpenCase()
 		d.Analyze(*analyzeSeason, *analyzeEpisode)
-		d.CloseCase()
 	}
 }
 

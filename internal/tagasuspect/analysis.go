@@ -1,13 +1,11 @@
 package tagasuspect
 
 import (
-	"context"
-
-	language "cloud.google.com/go/language/apiv1"
+	"github.com/IBM/go-sdk-core/core"
 	"github.com/mikerourke/forensic-files-api/internal/crimeseen"
 	"github.com/mikerourke/forensic-files-api/internal/killigraphy"
 	"github.com/mikerourke/forensic-files-api/internal/whodunit"
-	languagepb "google.golang.org/genproto/googleapis/cloud/language/v1"
+	nluv1 "github.com/watson-developer-cloud/go-sdk/naturallanguageunderstandingv1"
 )
 
 // Analysis represents the entity analysis from the NLP service.
@@ -24,7 +22,7 @@ func NewAnalysis(ep *whodunit.Episode) *Analysis {
 
 // Create creates a new analysis file by sending the transcript to the NLP
 // service and writing the results to the `/assets` directory.
-func (a *Analysis) Create(ctx context.Context, client *language.Client) {
+func (a *Analysis) Create(svc *nluv1.NaturalLanguageUnderstandingV1) {
 	t := killigraphy.NewTranscript(a.Episode)
 	if !t.Exists() {
 		log.WithField("file", t.FileName()).Warnln(
@@ -37,25 +35,26 @@ func (a *Analysis) Create(ctx context.Context, client *language.Client) {
 			"Analysis already exists, skipping")
 	}
 
-	doc := &languagepb.Document{
-		Type: languagepb.Document_PLAIN_TEXT,
-		Source: &languagepb.Document_Content{
-			Content: t.Read(),
+	contents := t.Read()
+	result, _, err := svc.Analyze(
+		&nluv1.AnalyzeOptions{
+			Text: &contents,
+			Features: &nluv1.Features{
+				Relations: &nluv1.RelationsOptions{},
+				Entities: &nluv1.EntitiesOptions{
+					Limit: core.Int64Ptr(10000),
+				},
+				Categories: &nluv1.CategoriesOptions{
+					Limit: core.Int64Ptr(100),
+				},
+			},
 		},
-	}
-
-	req := &languagepb.AnalyzeEntitiesRequest{
-		Document:     doc,
-		EncodingType: languagepb.EncodingType_UTF8,
-	}
-
-	resp, err := client.AnalyzeEntities(ctx, req)
+	)
 	if err != nil {
-		log.WithError(err).Errorln("Error analyzing entities")
-		return
+		log.WithError(err).Errorln("Error submitting analysis request")
 	}
 
-	if err := crimeseen.WriteJSONFile(a.FilePath(), resp.Entities); err != nil {
+	if err := crimeseen.WriteJSONFile(a.FilePath(), result); err != nil {
 		log.WithError(err).Errorln("Error writing analysis file")
 	}
 }
