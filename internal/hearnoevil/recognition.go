@@ -69,6 +69,7 @@ func (r *Recognition) jobOptions(
 		UserToken:       core.StringPtr(r.Name()),
 		Events:          core.StringPtr("recognitions.completed_with_results"),
 		ProfanityFilter: core.BoolPtr(false),
+		SmartFormatting: core.BoolPtr(true),
 	}
 }
 

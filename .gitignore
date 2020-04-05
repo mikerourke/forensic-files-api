@@ -22,6 +22,4 @@ assets/audio
 logs/
 alibi
 !cmd/alibi
-assets/transcripts/*
-!assets/transcripts/.gitkeep
 gcp-creds.json

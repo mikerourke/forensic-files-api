@@ -16,7 +16,7 @@ type s2tInstance struct {
 // can be used to register callback URLs and create recognition jobs.
 func newS2TInstance(env *crimeseen.Env) *s2tInstance {
 	authenticator := &core.IamAuthenticator{
-		ApiKey: env.IBMAPIKey(),
+		ApiKey: env.IBMSpeechToTextAPIKey(),
 	}
 
 	options := &stv1.SpeechToTextV1Options{
@@ -34,7 +34,7 @@ func newS2TInstance(env *crimeseen.Env) *s2tInstance {
 	// go through:
 	speechToText.Service.Client.Timeout = time.Second * 90
 
-	err = speechToText.SetServiceURL(env.IBMAPIUrl())
+	err = speechToText.SetServiceURL(env.IBMSpeechToTextAPIUrl())
 	if err != nil {
 		log.WithError(err).Fatalln("Error setting service URL")
 	}

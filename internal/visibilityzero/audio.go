@@ -35,7 +35,10 @@ func (a *Audio) Extract(isPaused bool) {
 	log.WithField("video", v.FileName()).Infoln(
 		"Extracting audio from video file")
 
-	err := crimeseen.RunCommand("ffmpeg", "-i", v.FilePath(), a.FilePath())
+	err := crimeseen.RunCommand("ffmpeg",
+		"-i", v.FilePath(),
+		"-loglevel", "quiet",
+		a.FilePath())
 	if err != nil {
 		if strings.Contains(err.Error(), "exit status 1") {
 			log.Infoln("Successfully extracted audio")
