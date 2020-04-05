@@ -21,7 +21,7 @@ func NewEnv() *Env {
 	return &Env{}
 }
 
-// CallbackURL returns the callback URL used for getting responses from various
+// callbackURL returns the callback URL used for getting responses from various
 // services.
 func (e *Env) CallbackURL() string {
 	return os.Getenv("CALLBACK_URL")
@@ -35,4 +35,9 @@ func (e *Env) IBMAPIKey() string {
 // IBMAPIUrl returns the URL for the IBM speech-to-text service.
 func (e *Env) IBMAPIUrl() string {
 	return os.Getenv("IBM_STT_URL")
+}
+
+// GCPCredsPath returns the file path to the GCP credentials JSON file.
+func (e *Env) GCPCredsPath() string {
+	return os.Getenv("GOOGLE_APPLICATION_CREDENTIALS")
 }

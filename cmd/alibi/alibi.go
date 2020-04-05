@@ -6,6 +6,7 @@ import (
 
 	"github.com/mikerourke/forensic-files-api/internal/hearnoevil"
 	"github.com/mikerourke/forensic-files-api/internal/killigraphy"
+	"github.com/mikerourke/forensic-files-api/internal/tagasuspect"
 	"github.com/mikerourke/forensic-files-api/internal/videodiary"
 	"github.com/mikerourke/forensic-files-api/internal/visibilityzero"
 	"github.com/mikerourke/forensic-files-api/internal/whodunit"
@@ -42,7 +43,7 @@ func main() {
 	investigateCommandAssetFlag := investigateCommand.Flag(
 		"asset",
 		"Asset to log.",
-	).Short('a').Required().Enum("audio", "video", "recog", "trans")
+	).Short('a').Required().Enum("analysis", "audio", "video", "recog", "trans")
 
 	investigateCommandFilterFlag := investigateCommand.Flag(
 		"filter",
@@ -64,9 +65,14 @@ func main() {
 		"Transcribes episode from recognition.").Alias("tr")
 	transSeason, transEpisode := addSeasonEpisodeFlags(transcribeCommand)
 
+	analyzeCommand := app.Command("analyze",
+		"Create a new entity analysis.").Alias("an")
+	analyzeSeason, analyzeEpisode := addSeasonEpisodeFlags(analyzeCommand)
+
 	parsedCmd := kingpin.MustParse(app.Parse(os.Args[1:]))
 
 	p := hearnoevil.NewPerpetrator("")
+	d := tagasuspect.NewDetective()
 	switch parsedCmd {
 	case registerCommand.FullCommand():
 		p.RegisterCallbackURL(*registerCommandURLFlag)
@@ -80,6 +86,8 @@ func main() {
 	case investigateCommand.FullCommand():
 		status := flagToAssetStatus(*investigateCommandFilterFlag)
 		switch *investigateCommandAssetFlag {
+		case "analysis":
+			visibilityzero.Investigate(status)
 		case "audio":
 			visibilityzero.Investigate(status)
 		case "recog":
@@ -99,6 +107,10 @@ func main() {
 	case transcribeCommand.FullCommand():
 		killigraphy.Transcribe(*transSeason, *transEpisode)
 
+	case analyzeCommand.FullCommand():
+		d.OpenCase()
+		d.Analyze(*analyzeSeason, *analyzeEpisode)
+		d.CloseCase()
 	}
 }
 

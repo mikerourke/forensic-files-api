@@ -61,11 +61,15 @@ func (t *Transcript) Create() {
 
 func (t *Transcript) recognitionContents() string {
 	r := hearnoevil.NewRecognition(t.Episode)
-
 	if !r.Exists() {
 		log.WithField("file", r.FileName()).Warnln(
 			"Recognition not found, skipping")
 		return ""
+	}
+
+	if t.Exists() {
+		log.WithField("file", t.FileName()).Warnln(
+			"Transcript already exists, skipping")
 	}
 
 	results, err := r.ReadResults()

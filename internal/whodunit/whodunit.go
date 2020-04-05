@@ -37,8 +37,11 @@ const (
 type AssetType int
 
 const (
+	// AssetTypeAnalysis represents the entity analysis associated with the episode.
+	AssetTypeAnalysis AssetType = iota
+
 	// AssetTypeAudio represents the audio file associated with the episode.
-	AssetTypeAudio AssetType = iota
+	AssetTypeAudio
 
 	// AssetTypeRecognition represents the speech recognition JSON file
 	// associated with the episode.
@@ -58,6 +61,8 @@ var AssetsDirPath = assetsDirPath()
 // asset type.
 func (at AssetType) DirPath() string {
 	switch at {
+	case AssetTypeAnalysis:
+		return filepath.Join(AssetsDirPath, "analyses")
 	case AssetTypeAudio:
 		return filepath.Join(AssetsDirPath, "audio")
 	case AssetTypeRecognition:
@@ -74,6 +79,8 @@ func (at AssetType) DirPath() string {
 // FileExt returns the file extension associated with the asset type.
 func (at AssetType) FileExt() string {
 	switch at {
+	case AssetTypeAnalysis:
+		return ".json"
 	case AssetTypeAudio:
 		return ".mp3"
 	case AssetTypeRecognition:
@@ -100,7 +107,7 @@ func Solve(
 			return err
 		}
 
-		if episodeNumber == 0 {
+		if episodeNumber != 0 {
 			onEpisode(s.Episode(episodeNumber))
 		} else {
 			for _, ep := range s.AllEpisodes() {

@@ -18,8 +18,8 @@ import (
 // Perpetrator contains properties and methods used to start recognition
 // jobs.
 type Perpetrator struct {
-	S2T         *s2tInstance
-	CallbackURL string
+	s2t         *s2tInstance
+	callbackURL string
 }
 
 var log = waterlogged.New("hearnoevil")
@@ -28,14 +28,14 @@ var log = waterlogged.New("hearnoevil")
 func NewPerpetrator(callbackURL string) *Perpetrator {
 	env := crimeseen.NewEnv()
 	sts := newS2TInstance(env)
-	p := &Perpetrator{S2T: sts}
+	p := &Perpetrator{s2t: sts}
 
 	if callbackURL != "" {
 		p.RegisterCallbackURL(callbackURL)
 	} else {
 		callbackURL = env.CallbackURL()
 	}
-	p.CallbackURL = callbackURL
+	p.callbackURL = callbackURL
 
 	return p
 }
@@ -43,7 +43,7 @@ func NewPerpetrator(callbackURL string) *Perpetrator {
 // RegisterCallbackURL registers a callback URL with the speech to text service
 // that will receive recognition job responses.
 func (p *Perpetrator) RegisterCallbackURL(callbackURL string) {
-	result, _, err := p.S2T.RegisterCallback(
+	result, _, err := p.s2t.RegisterCallback(
 		&stv1.RegisterCallbackOptions{
 			CallbackURL: core.StringPtr(callbackURL),
 		},
@@ -71,7 +71,7 @@ func (p *Perpetrator) Recognize(seasonNumber int, episodeNumber int) {
 
 	onEpisode := func(ep *whodunit.Episode) {
 		r := NewRecognition(ep)
-		r.StartJob(p.S2T, p.CallbackURL)
+		r.StartJob(p.s2t, p.callbackURL)
 	}
 
 	if err := whodunit.Solve(seasonNumber, episodeNumber, onEpisode); err != nil {
@@ -113,7 +113,7 @@ func (p *Perpetrator) StartCallbackServer() {
 }
 
 func (p *Perpetrator) jobEpisodeMap() map[string]*whodunit.Episode {
-	result, _, err := p.S2T.CheckJobs(&stv1.CheckJobsOptions{})
+	result, _, err := p.s2t.CheckJobs(&stv1.CheckJobsOptions{})
 	if err != nil {
 		log.WithError(err).Fatalln("Error getting recognition jobs")
 	}
