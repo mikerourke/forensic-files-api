@@ -35,6 +35,12 @@ func (t *Transcript) Read() string {
 
 // Create creates a transcript file from a recognition.
 func (t *Transcript) Create() {
+	if t.Exists() {
+		log.WithField("file", t.FileName()).Warnln(
+			"Transcript already exists, skipping")
+		return
+	}
+
 	contents := t.recognitionContents()
 	if contents == "" {
 		return
@@ -77,16 +83,17 @@ func (t *Transcript) recognitionContents() string {
 		log.WithError(err).Fatalln("Error getting recognition results")
 	}
 
-	words := make([]string, 0)
+	lines := make([]string, 0)
 	for _, result := range results {
 		for _, alt := range result.Alternatives {
-			words = append(words, *alt.Transcript)
+			validLine := *alt.Transcript + "."
+			validLine = strings.ReplaceAll(validLine, " %HESITATION", "")
+			validLine = strings.ReplaceAll(validLine, " .", ".")
+			lines = append(lines, validLine)
 		}
 	}
 
-	contents := strings.Join(words, " ")
-	contents = strings.ReplaceAll(contents, "  ", " ")
-	return strings.ReplaceAll(contents, " %HESITATION", "")
+	return strings.Join(lines, "\n")
 }
 
 // Exists return true if the transcript file exists in the `/assets` directory.

@@ -33,7 +33,10 @@ func (a *Analysis) Create(svc *nluv1.NaturalLanguageUnderstandingV1) {
 	if a.Exists() {
 		log.WithField("file", a.FileName()).Warnln(
 			"Analysis already exists, skipping")
+		return
 	}
+
+	log.WithField("file", a.FileName()).Infoln("Starting analysis")
 
 	contents := t.Read()
 	result, _, err := svc.Analyze(
@@ -56,7 +59,10 @@ func (a *Analysis) Create(svc *nluv1.NaturalLanguageUnderstandingV1) {
 
 	if err := crimeseen.WriteJSONFile(a.FilePath(), result); err != nil {
 		log.WithError(err).Errorln("Error writing analysis file")
+		return
 	}
+
+	log.Infoln("Analysis successfully written")
 }
 
 // Exists return true if the analysis file exists in the `/assets` directory.

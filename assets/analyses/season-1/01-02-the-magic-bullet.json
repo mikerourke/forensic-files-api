@@ -1,0 +1,2912 @@
+{
+  "language": "en",
+  "usage": {
+    "features": 3,
+    "text_characters": 16506,
+    "text_units": 2
+  },
+  "entities": [
+    {
+      "type": "Person",
+      "text": "Trey Cooley",
+      "relevance": 0.956097,
+      "confidence": 1,
+      "count": 12
+    },
+    {
+      "type": "Person",
+      "text": "Butch Cooley",
+      "relevance": 0.790702,
+      "confidence": 1,
+      "count": 9
+    },
+    {
+      "type": "Person",
+      "text": "Trey",
+      "relevance": 0.778605,
+      "confidence": 1,
+      "count": 15
+    },
+    {
+      "type": "Person",
+      "text": "Larry Fletcher",
+      "relevance": 0.358397,
+      "confidence": 1,
+      "count": 3
+    },
+    {
+      "type": "Organization",
+      "text": "Revolver Club",
+      "relevance": 0.351324,
+      "confidence": 0.982173,
+      "count": 3
+    },
+    {
+      "type": "Person",
+      "text": "Butch",
+      "relevance": 0.271196,
+      "confidence": 1,
+      "count": 4
+    },
+    {
+      "type": "Location",
+      "text": "Dallas",
+      "relevance": 0.241265,
+      "confidence": 1,
+      "count": 5
+    },
+    {
+      "type": "Quantity",
+      "text": "fifteen yard",
+      "relevance": 0.203053,
+      "confidence": 0.9984,
+      "count": 4
+    },
+    {
+      "type": "Person",
+      "text": "Ken Buster",
+      "relevance": 0.176064,
+      "confidence": 0.999934,
+      "count": 2
+    },
+    {
+      "type": "Quantity",
+      "text": "Fourteen year",
+      "relevance": 0.171526,
+      "confidence": 0.8,
+      "count": 1
+    },
+    {
+      "type": "Facility",
+      "text": "Bulls Junior High School",
+      "relevance": 0.170566,
+      "confidence": 0.517613,
+      "count": 1
+    },
+    {
+      "type": "Person",
+      "text": "Irwin",
+      "relevance": 0.170024,
+      "confidence": 1,
+      "count": 5
+    },
+    {
+      "type": "Person",
+      "text": "Fletcher",
+      "relevance": 0.164659,
+      "confidence": 1,
+      "count": 3
+    },
+    {
+      "type": "Organization",
+      "text": "Parkland Memorial Hospital",
+      "relevance": 0.151276,
+      "confidence": 0.590308,
+      "count": 1,
+      "disambiguation": {
+        "name": "Parkland_Memorial_Hospital",
+        "dbpedia_resource": "http://dbpedia.org/resource/Parkland_Memorial_Hospital",
+        "subtype": [
+          "Location",
+          "Facility",
+          "Building",
+          "Hospital"
+        ]
+      }
+    },
+    {
+      "type": "Person",
+      "text": "Tom Peas",
+      "relevance": 0.146535,
+      "confidence": 0.824572,
+      "count": 1
+    },
+    {
+      "type": "Quantity",
+      "text": "two decades",
+      "relevance": 0.144382,
+      "confidence": 0.8,
+      "count": 1
+    },
+    {
+      "type": "Person",
+      "text": "Dan Smith",
+      "relevance": 0.141783,
+      "confidence": 1,
+      "count": 3
+    },
+    {
+      "type": "Sport",
+      "text": "baseball",
+      "relevance": 0.115645,
+      "confidence": 1,
+      "count": 2,
+      "disambiguation": {
+        "name": "Baseball",
+        "dbpedia_resource": "http://dbpedia.org/resource/Baseball"
+      }
+    },
+    {
+      "type": "Quantity",
+      "text": "fifteen yards",
+      "relevance": 0.113298,
+      "confidence": 0.96,
+      "count": 2
+    },
+    {
+      "type": "Quantity",
+      "text": "twelve feet",
+      "relevance": 0.106873,
+      "confidence": 0.8,
+      "count": 1
+    },
+    {
+      "type": "Location",
+      "text": "Texas",
+      "relevance": 0.102347,
+      "confidence": 0.999928,
+      "count": 2
+    },
+    {
+      "type": "Person",
+      "text": "David Taylor",
+      "relevance": 0.09148,
+      "confidence": 0.943789,
+      "count": 1,
+      "disambiguation": {
+        "name": "David_Taylor_%28footballer_born_1883%29",
+        "dbpedia_resource": "http://dbpedia.org/resource/David_Taylor_%28footballer_born_1883%29"
+      }
+    },
+    {
+      "type": "Quantity",
+      "text": "ten yards",
+      "relevance": 0.077838,
+      "confidence": 0.8,
+      "count": 1
+    },
+    {
+      "type": "Quantity",
+      "text": "21 years",
+      "relevance": 0.075907,
+      "confidence": 0.8,
+      "count": 1
+    },
+    {
+      "type": "Location",
+      "text": "Arlington",
+      "relevance": 0.075416,
+      "confidence": 0.999877,
+      "count": 1
+    },
+    {
+      "type": "Quantity",
+      "text": "hundred feet",
+      "relevance": 0.075314,
+      "confidence": 0.8,
+      "count": 1
+    },
+    {
+      "type": "Quantity",
+      "text": "Six hours",
+      "relevance": 0.074313,
+      "confidence": 0.8,
+      "count": 1
+    },
+    {
+      "type": "Quantity",
+      "text": "12 feet",
+      "relevance": 0.071927,
+      "confidence": 0.8,
+      "count": 1
+    },
+    {
+      "type": "Person",
+      "text": "Buster",
+      "relevance": 0.068195,
+      "confidence": 0.943784,
+      "count": 2
+    },
+    {
+      "type": "Person",
+      "text": "Mike Schmidt",
+      "relevance": 0.063695,
+      "confidence": 0.990882,
+      "count": 1,
+      "disambiguation": {
+        "name": "Mike_Schmidt",
+        "dbpedia_resource": "http://dbpedia.org/resource/Mike_Schmidt",
+        "subtype": [
+          "Athlete",
+          "HallOfFameInductee",
+          "SportsLeagueAwardWinner"
+        ]
+      }
+    },
+    {
+      "type": "Quantity",
+      "text": "twenty five yards",
+      "relevance": 0.062279,
+      "confidence": 0.8,
+      "count": 1
+    },
+    {
+      "type": "Quantity",
+      "text": "twenty yards",
+      "relevance": 0.061811,
+      "confidence": 0.8,
+      "count": 1
+    },
+    {
+      "type": "Person",
+      "text": "Steve Irwin",
+      "relevance": 0.056823,
+      "confidence": 0.99984,
+      "count": 1
+    },
+    {
+      "type": "Person",
+      "text": "Smith",
+      "relevance": 0.048127,
+      "confidence": 0.999516,
+      "count": 2
+    },
+    {
+      "type": "Person",
+      "text": "Kirk Parks",
+      "relevance": 0.045839,
+      "confidence": 0.894099,
+      "count": 1
+    },
+    {
+      "type": "Person",
+      "text": "Schmidt",
+      "relevance": 0.044437,
+      "confidence": 0.999255,
+      "count": 1
+    },
+    {
+      "type": "Quantity",
+      "text": "20 feet",
+      "relevance": 0.037328,
+      "confidence": 0.8,
+      "count": 1
+    },
+    {
+      "type": "Quantity",
+      "text": "five feet",
+      "relevance": 0.028332,
+      "confidence": 0.8,
+      "count": 1
+    },
+    {
+      "type": "Quantity",
+      "text": "twelve hundred feet",
+      "relevance": 0.025818,
+      "confidence": 0.8,
+      "count": 1
+    },
+    {
+      "type": "Person",
+      "text": "Cooley",
+      "relevance": 0.023637,
+      "confidence": 0.98699,
+      "count": 3
+    },
+    {
+      "type": "Quantity",
+      "text": "ten degree",
+      "relevance": 0.020516,
+      "confidence": 0.8,
+      "count": 1
+    },
+    {
+      "type": "Quantity",
+      "text": "nine hundred feet",
+      "relevance": 0.019788,
+      "confidence": 0.8,
+      "count": 1
+    },
+    {
+      "type": "Person",
+      "text": "Parks",
+      "relevance": 0.014526,
+      "confidence": 0.645458,
+      "count": 1
+    },
+    {
+      "type": "Quantity",
+      "text": "three inches",
+      "relevance": 0.014206,
+      "confidence": 0.8,
+      "count": 1
+    },
+    {
+      "type": "Quantity",
+      "text": "seven inches",
+      "relevance": 0.012716,
+      "confidence": 0.8,
+      "count": 1
+    },
+    {
+      "type": "Quantity",
+      "text": "one day",
+      "relevance": 0.003472,
+      "confidence": 0.8,
+      "count": 1
+    }
+  ],
+  "categories": [
+    {
+      "label": "/sports/hunting and shooting",
+      "score": 0.959279
+    },
+    {
+      "label": "/sports/hunting and shooting/target shooting",
+      "score": 0.812117
+    }
+  ],
+  "relations": [
+    {
+      "score": 0.280701,
+      "sentence": "At the Dallas Pistol and Revolver Club in 1991, Trey Cooley, a young spectator was watching a shooting competition seated behind an air gun range.",
+      "type": "employedBy",
+      "arguments": [
+        {
+          "entities": [
+            {
+              "text": "spectator",
+              "type": "Person"
+            }
+          ],
+          "location": [
+            69,
+            78
+          ],
+          "text": "spectator"
+        },
+        {
+          "entities": [
+            {
+              "text": "Revolver Club",
+              "type": "Organization"
+            }
+          ],
+          "location": [
+            25,
+            38
+          ],
+          "text": "Revolver Club"
+        }
+      ]
+    },
+    {
+      "score": 0.55902,
+      "sentence": "The two shared a passion for shooting, Butch was judging a competition, he gave Trey a choice to sleep in or tag along.",
+      "type": "partOfMany",
+      "arguments": [
+        {
+          "entities": [
+            {
+              "text": "Butch Cooley",
+              "type": "Person"
+            }
+          ],
+          "location": [
+            869,
+            874
+          ],
+          "text": "Butch"
+        },
+        {
+          "entities": [
+            {
+              "text": "friends",
+              "type": "Cardinal"
+            }
+          ],
+          "location": [
+            834,
+            837
+          ],
+          "text": "two"
+        }
+      ]
+    },
+    {
+      "score": 0.974244,
+      "sentence": "Trey started shooting when he was seven.",
+      "type": "hasAttribute",
+      "arguments": [
+        {
+          "entities": [
+            {
+              "text": "Trey Cooley",
+              "type": "Person"
+            }
+          ],
+          "location": [
+            1011,
+            1013
+          ],
+          "text": "he"
+        },
+        {
+          "entities": [
+            {
+              "text": "seven",
+              "type": "Age"
+            }
+          ],
+          "location": [
+            1018,
+            1023
+          ],
+          "text": "seven"
+        }
+      ]
+    },
+    {
+      "score": 0.954205,
+      "sentence": "He shot his first deer when he was eight.",
+      "type": "agentOf",
+      "arguments": [
+        {
+          "entities": [
+            {
+              "text": "Trey Cooley",
+              "type": "Person"
+            }
+          ],
+          "location": [
+            1040,
+            1042
+          ],
+          "text": "He"
+        },
+        {
+          "entities": [
+            {
+              "text": "shooting",
+              "type": "Crime"
+            }
+          ],
+          "location": [
+            1043,
+            1047
+          ],
+          "text": "shot"
+        }
+      ]
+    },
+    {
+      "score": 0.856834,
+      "sentence": "When I got there and saw that he had been shot, I checked his pulse and I knew it wasn't good.",
+      "type": "agentOf",
+      "arguments": [
+        {
+          "entities": [
+            {
+              "text": "Trey Cooley",
+              "type": "Person"
+            }
+          ],
+          "location": [
+            1927,
+            1929
+          ],
+          "text": "he"
+        },
+        {
+          "entities": [
+            {
+              "text": "shooting",
+              "type": "Crime"
+            }
+          ],
+          "location": [
+            1939,
+            1943
+          ],
+          "text": "shot"
+        }
+      ]
+    },
+    {
+      "score": 0.971212,
+      "sentence": "He shot his first deer when he was eight.",
+      "type": "hasAttribute",
+      "arguments": [
+        {
+          "entities": [
+            {
+              "text": "Trey Cooley",
+              "type": "Person"
+            }
+          ],
+          "location": [
+            1068,
+            1070
+          ],
+          "text": "he"
+        },
+        {
+          "entities": [
+            {
+              "text": "eight",
+              "type": "Age"
+            }
+          ],
+          "location": [
+            1075,
+            1080
+          ],
+          "text": "eight"
+        }
+      ]
+    },
+    {
+      "score": 0.116618,
+      "sentence": "He wanted to be a pistol competitor.",
+      "type": "ownerOf",
+      "arguments": [
+        {
+          "entities": [
+            {
+              "text": "competitor",
+              "type": "Organization"
+            }
+          ],
+          "location": [
+            1107,
+            1117
+          ],
+          "text": "competitor"
+        },
+        {
+          "entities": [
+            {
+              "text": "Pistol",
+              "type": "Weapon"
+            }
+          ],
+          "location": [
+            1100,
+            1106
+          ],
+          "text": "pistol"
+        }
+      ]
+    },
+    {
+      "score": 0.095953,
+      "sentence": "A pistol competitor named Dan Smith was using that gun on the day of the competition And he was firing on this outdoor range just behind the air gun building.",
+      "type": "ownerOf",
+      "arguments": [
+        {
+          "entities": [
+            {
+              "text": "competitor",
+              "type": "Organization"
+            }
+          ],
+          "location": [
+            5683,
+            5693
+          ],
+          "text": "competitor"
+        },
+        {
+          "entities": [
+            {
+              "text": "Pistol",
+              "type": "Weapon"
+            }
+          ],
+          "location": [
+            5676,
+            5682
+          ],
+          "text": "pistol"
+        }
+      ]
+    },
+    {
+      "score": 0.63913,
+      "sentence": "At the Dallas Pistol and Revolver Club, Trey volunteered to help out by running results from judges to the official scorer.",
+      "type": "employedBy",
+      "arguments": [
+        {
+          "entities": [
+            {
+              "text": "Trey Cooley",
+              "type": "Person"
+            }
+          ],
+          "location": [
+            1185,
+            1189
+          ],
+          "text": "Trey"
+        },
+        {
+          "entities": [
+            {
+              "text": "Revolver Club",
+              "type": "Organization"
+            }
+          ],
+          "location": [
+            1170,
+            1183
+          ],
+          "text": "Revolver Club"
+        }
+      ]
+    },
+    {
+      "score": 0.798877,
+      "sentence": "Butch Cooley was outside the building just a few yards from his son when he heard the screaming.",
+      "type": "parentOf",
+      "arguments": [
+        {
+          "entities": [
+            {
+              "text": "Trey Cooley",
+              "type": "Person"
+            }
+          ],
+          "location": [
+            1712,
+            1715
+          ],
+          "text": "his"
+        },
+        {
+          "entities": [
+            {
+              "text": "Butch Cooley",
+              "type": "Person"
+            }
+          ],
+          "location": [
+            1716,
+            1719
+          ],
+          "text": "son"
+        }
+      ]
+    },
+    {
+      "score": 0.722831,
+      "sentence": "My only son, my best friend, my fishing buddy, my hunting partner.",
+      "type": "parentOf",
+      "arguments": [
+        {
+          "entities": [
+            {
+              "text": "Trey Cooley",
+              "type": "Person"
+            }
+          ],
+          "location": [
+            2591,
+            2593
+          ],
+          "text": "My"
+        },
+        {
+          "entities": [
+            {
+              "text": "Butch Cooley",
+              "type": "Person"
+            }
+          ],
+          "location": [
+            2599,
+            2602
+          ],
+          "text": "son"
+        }
+      ]
+    },
+    {
+      "score": 0.749493,
+      "sentence": "The animation also helped Butch Cooley understand what had happened to his son, but there is still little piece for Trey's dad.",
+      "type": "parentOf",
+      "arguments": [
+        {
+          "entities": [
+            {
+              "text": "Trey Cooley",
+              "type": "Person"
+            }
+          ],
+          "location": [
+            15513,
+            15516
+          ],
+          "text": "his"
+        },
+        {
+          "entities": [
+            {
+              "text": "Butch Cooley",
+              "type": "Person"
+            }
+          ],
+          "location": [
+            15517,
+            15520
+          ],
+          "text": "son"
+        }
+      ]
+    },
+    {
+      "score": 0.52973,
+      "sentence": "The animation also helped Butch Cooley understand what had happened to his son, but there is still little piece for Trey's dad.",
+      "type": "parentOf",
+      "arguments": [
+        {
+          "entities": [
+            {
+              "text": "Trey Cooley",
+              "type": "Person"
+            }
+          ],
+          "location": [
+            15558,
+            15562
+          ],
+          "text": "Trey"
+        },
+        {
+          "entities": [
+            {
+              "text": "Butch Cooley",
+              "type": "Person"
+            }
+          ],
+          "location": [
+            15565,
+            15568
+          ],
+          "text": "dad"
+        }
+      ]
+    },
+    {
+      "score": 0.82519,
+      "sentence": "Although Butch Cooley spent 21 years as a state trooper, and was trained to handle emergencies, no training could prepare him for what he saw next.",
+      "type": "employedBy",
+      "arguments": [
+        {
+          "entities": [
+            {
+              "text": "Butch Cooley",
+              "type": "Person"
+            }
+          ],
+          "location": [
+            1797,
+            1804
+          ],
+          "text": "trooper"
+        },
+        {
+          "entities": [
+            {
+              "text": "Parkland Memorial Hospital",
+              "type": "GeopoliticalEntity"
+            }
+          ],
+          "location": [
+            1791,
+            1796
+          ],
+          "text": "state"
+        }
+      ]
+    },
+    {
+      "score": 0.828207,
+      "sentence": "Butch Cooley spent two decades as a state trooper, was it possible the shooting had something to do with an enemy he possibly made during his tenure?",
+      "type": "employedBy",
+      "arguments": [
+        {
+          "entities": [
+            {
+              "text": "Butch Cooley",
+              "type": "Person"
+            }
+          ],
+          "location": [
+            3012,
+            3019
+          ],
+          "text": "trooper"
+        },
+        {
+          "entities": [
+            {
+              "text": "Parkland Memorial Hospital",
+              "type": "GeopoliticalEntity"
+            }
+          ],
+          "location": [
+            3006,
+            3011
+          ],
+          "text": "state"
+        }
+      ]
+    },
+    {
+      "score": 0.501237,
+      "sentence": "Butch walked in and I asked him, what are you doing home?",
+      "type": "affectedBy",
+      "arguments": [
+        {
+          "entities": [
+            {
+              "text": "Butch Cooley",
+              "type": "Person"
+            }
+          ],
+          "location": [
+            1992,
+            1997
+          ],
+          "text": "Butch"
+        },
+        {
+          "entities": [
+            {
+              "text": "asked",
+              "type": "EventCommunication"
+            }
+          ],
+          "location": [
+            2014,
+            2019
+          ],
+          "text": "asked"
+        }
+      ]
+    },
+    {
+      "score": 0.99355,
+      "sentence": "Butch walked in and I asked him, what are you doing home?",
+      "type": "agentOf",
+      "arguments": [
+        {
+          "entities": [
+            {
+              "text": "Trey Cooley",
+              "type": "Person"
+            }
+          ],
+          "location": [
+            2012,
+            2013
+          ],
+          "text": "I"
+        },
+        {
+          "entities": [
+            {
+              "text": "asked",
+              "type": "EventCommunication"
+            }
+          ],
+          "location": [
+            2014,
+            2019
+          ],
+          "text": "asked"
+        }
+      ]
+    },
+    {
+      "score": 0.849995,
+      "sentence": "Fourteen year old Trey Cooley, look at him and you see the all American boy.",
+      "type": "employedBy",
+      "arguments": [
+        {
+          "entities": [
+            {
+              "text": "Trey Cooley",
+              "type": "Person"
+            }
+          ],
+          "location": [
+            357,
+            360
+          ],
+          "text": "boy"
+        },
+        {
+          "entities": [
+            {
+              "text": "American",
+              "type": "GeopoliticalEntity"
+            }
+          ],
+          "location": [
+            348,
+            356
+          ],
+          "text": "American"
+        }
+      ]
+    },
+    {
+      "score": 0.59694,
+      "sentence": "Butch walked in and I asked him, what are you doing home?",
+      "type": "affectedBy",
+      "arguments": [
+        {
+          "entities": [
+            {
+              "text": "Trey Cooley",
+              "type": "Person"
+            }
+          ],
+          "location": [
+            2020,
+            2023
+          ],
+          "text": "him"
+        },
+        {
+          "entities": [
+            {
+              "text": "asked",
+              "type": "EventCommunication"
+            }
+          ],
+          "location": [
+            2014,
+            2019
+          ],
+          "text": "asked"
+        }
+      ]
+    },
+    {
+      "score": 0.99667,
+      "sentence": "And then he came in and he told me, there's been an accident.",
+      "type": "agentOf",
+      "arguments": [
+        {
+          "entities": [
+            {
+              "text": "Trey Cooley",
+              "type": "Person"
+            }
+          ],
+          "location": [
+            2089,
+            2091
+          ],
+          "text": "he"
+        },
+        {
+          "entities": [
+            {
+              "text": "told",
+              "type": "EventCommunication"
+            }
+          ],
+          "location": [
+            2092,
+            2096
+          ],
+          "text": "told"
+        }
+      ]
+    },
+    {
+      "score": 0.994511,
+      "sentence": "And I said well that's okay he'll be okay.",
+      "type": "agentOf",
+      "arguments": [
+        {
+          "entities": [
+            {
+              "text": "Trey Cooley",
+              "type": "Person"
+            }
+          ],
+          "location": [
+            2229,
+            2230
+          ],
+          "text": "I"
+        },
+        {
+          "entities": [
+            {
+              "text": "told",
+              "type": "EventCommunication"
+            }
+          ],
+          "location": [
+            2231,
+            2235
+          ],
+          "text": "said"
+        }
+      ]
+    },
+    {
+      "score": 0.82246,
+      "sentence": "And then he came in and he told me, there's been an accident.",
+      "type": "affectedBy",
+      "arguments": [
+        {
+          "entities": [
+            {
+              "text": "Trey Cooley",
+              "type": "Person"
+            }
+          ],
+          "location": [
+            2097,
+            2099
+          ],
+          "text": "me"
+        },
+        {
+          "entities": [
+            {
+              "text": "told",
+              "type": "EventCommunication"
+            }
+          ],
+          "location": [
+            2092,
+            2096
+          ],
+          "text": "told"
+        }
+      ]
+    },
+    {
+      "score": 0.783246,
+      "sentence": "Tray was rushed by ambulance to Parkland Memorial Hospital in Dallas.",
+      "type": "locatedAt",
+      "arguments": [
+        {
+          "entities": [
+            {
+              "text": "Tray",
+              "type": "Person"
+            }
+          ],
+          "location": [
+            2268,
+            2272
+          ],
+          "text": "Tray"
+        },
+        {
+          "entities": [
+            {
+              "text": "ambulance",
+              "type": "Vehicle"
+            }
+          ],
+          "location": [
+            2287,
+            2296
+          ],
+          "text": "ambulance"
+        }
+      ]
+    },
+    {
+      "score": 0.543205,
+      "sentence": "Tray was rushed by ambulance to Parkland Memorial Hospital in Dallas.",
+      "type": "locatedAt",
+      "arguments": [
+        {
+          "entities": [
+            {
+              "text": "Parkland Memorial Hospital",
+              "type": "Organization"
+            }
+          ],
+          "location": [
+            2300,
+            2326
+          ],
+          "text": "Parkland Memorial Hospital"
+        },
+        {
+          "entities": [
+            {
+              "text": "Dallas",
+              "type": "GeopoliticalEntity"
+            }
+          ],
+          "location": [
+            2330,
+            2336
+          ],
+          "text": "Dallas"
+        }
+      ]
+    },
+    {
+      "score": 0.378024,
+      "sentence": "He was just lying there, he was breathing, the machine was breathing for him.",
+      "type": "residesIn",
+      "arguments": [
+        {
+          "entities": [
+            {
+              "text": "Trey Cooley",
+              "type": "Person"
+            }
+          ],
+          "location": [
+            2338,
+            2340
+          ],
+          "text": "He"
+        },
+        {
+          "entities": [
+            {
+              "text": "Dallas",
+              "type": "GeopoliticalEntity"
+            }
+          ],
+          "location": [
+            2356,
+            2361
+          ],
+          "text": "there"
+        }
+      ]
+    },
+    {
+      "score": 0.929576,
+      "sentence": "I just wanted to tell him that I was very very proud of him.",
+      "type": "agentOf",
+      "arguments": [
+        {
+          "entities": [
+            {
+              "text": "Trey Cooley",
+              "type": "Person"
+            }
+          ],
+          "location": [
+            2510,
+            2511
+          ],
+          "text": "I"
+        },
+        {
+          "entities": [
+            {
+              "text": "tell",
+              "type": "EventCommunication"
+            }
+          ],
+          "location": [
+            2527,
+            2531
+          ],
+          "text": "tell"
+        }
+      ]
+    },
+    {
+      "score": 0.874297,
+      "sentence": "I just wanted to tell him that I was very very proud of him.",
+      "type": "affectedBy",
+      "arguments": [
+        {
+          "entities": [
+            {
+              "text": "Trey Cooley",
+              "type": "Person"
+            }
+          ],
+          "location": [
+            2532,
+            2535
+          ],
+          "text": "him"
+        },
+        {
+          "entities": [
+            {
+              "text": "tell",
+              "type": "EventCommunication"
+            }
+          ],
+          "location": [
+            2527,
+            2531
+          ],
+          "text": "tell"
+        }
+      ]
+    },
+    {
+      "score": 0.989271,
+      "sentence": "Butch Cooley spent two decades as a state trooper, was it possible the shooting had something to do with an enemy he possibly made during his tenure?",
+      "type": "agentOf",
+      "arguments": [
+        {
+          "entities": [
+            {
+              "text": "Butch Cooley",
+              "type": "Person"
+            }
+          ],
+          "location": [
+            3084,
+            3086
+          ],
+          "text": "he"
+        },
+        {
+          "entities": [
+            {
+              "text": "made",
+              "type": "EventCommunication"
+            }
+          ],
+          "location": [
+            3096,
+            3100
+          ],
+          "text": "made"
+        }
+      ]
+    },
+    {
+      "score": 0.538412,
+      "sentence": "It wasn't contained inside a house or inside an apartment.",
+      "type": "near",
+      "arguments": [
+        {
+          "entities": [
+            {
+              "text": "house",
+              "type": "Facility"
+            }
+          ],
+          "location": [
+            3387,
+            3392
+          ],
+          "text": "house"
+        },
+        {
+          "entities": [
+            {
+              "text": "apartment",
+              "type": "Facility"
+            }
+          ],
+          "location": [
+            3406,
+            3415
+          ],
+          "text": "apartment"
+        }
+      ]
+    },
+    {
+      "score": 0.842977,
+      "sentence": "Trey attended Bulls Junior High School in Arlington, Texas near Dallas.",
+      "type": "agentOf",
+      "arguments": [
+        {
+          "entities": [
+            {
+              "text": "Trey Cooley",
+              "type": "Person"
+            }
+          ],
+          "location": [
+            362,
+            366
+          ],
+          "text": "Trey"
+        },
+        {
+          "entities": [
+            {
+              "text": "attended",
+              "type": "EventEducation"
+            }
+          ],
+          "location": [
+            367,
+            375
+          ],
+          "text": "attended"
+        }
+      ]
+    },
+    {
+      "score": 0.789398,
+      "sentence": "Most of the competitive shooters on the outside ranges that day were using hand made bullets so there was little doubt that the bullet came from somewhere here rather than from kids on the railroad tracks.",
+      "type": "partOfMany",
+      "arguments": [
+        {
+          "entities": [
+            {
+              "text": "Most",
+              "type": "Cardinal"
+            }
+          ],
+          "location": [
+            4395,
+            4399
+          ],
+          "text": "Most"
+        },
+        {
+          "entities": [
+            {
+              "text": "shooters",
+              "type": "Person"
+            }
+          ],
+          "location": [
+            4419,
+            4427
+          ],
+          "text": "shooters"
+        }
+      ]
+    },
+    {
+      "score": 0.741319,
+      "sentence": "Most of the competitive shooters on the outside ranges that day were using hand made bullets so there was little doubt that the bullet came from somewhere here rather than from kids on the railroad tracks.",
+      "type": "locatedAt",
+      "arguments": [
+        {
+          "entities": [
+            {
+              "text": "kids",
+              "type": "Person"
+            }
+          ],
+          "location": [
+            4572,
+            4576
+          ],
+          "text": "kids"
+        },
+        {
+          "entities": [
+            {
+              "text": "railroad tracks",
+              "type": "Facility"
+            }
+          ],
+          "location": [
+            4584,
+            4599
+          ],
+          "text": "railroad tracks"
+        }
+      ]
+    },
+    {
+      "score": 0.675259,
+      "sentence": "Larry Fletcher found the gun that fired the fatal shot.",
+      "type": "ownerOf",
+      "arguments": [
+        {
+          "entities": [
+            {
+              "text": "Larry Fletcher",
+              "type": "Person"
+            }
+          ],
+          "location": [
+            5574,
+            5588
+          ],
+          "text": "Larry Fletcher"
+        },
+        {
+          "entities": [
+            {
+              "text": "guns",
+              "type": "Weapon"
+            }
+          ],
+          "location": [
+            5599,
+            5602
+          ],
+          "text": "gun"
+        }
+      ]
+    },
+    {
+      "score": 0.888104,
+      "sentence": "Larry Fletcher found the gun that fired the fatal shot.",
+      "type": "agentOf",
+      "arguments": [
+        {
+          "entities": [
+            {
+              "text": "Larry Fletcher",
+              "type": "Person"
+            }
+          ],
+          "location": [
+            5574,
+            5588
+          ],
+          "text": "Larry Fletcher"
+        },
+        {
+          "entities": [
+            {
+              "text": "shooting",
+              "type": "Crime"
+            }
+          ],
+          "location": [
+            5624,
+            5628
+          ],
+          "text": "shot"
+        }
+      ]
+    },
+    {
+      "score": 0.281422,
+      "sentence": "Larry Fletcher found the gun that fired the fatal shot.",
+      "type": "instrumentOf",
+      "arguments": [
+        {
+          "entities": [
+            {
+              "text": "guns",
+              "type": "Weapon"
+            }
+          ],
+          "location": [
+            5599,
+            5602
+          ],
+          "text": "gun"
+        },
+        {
+          "entities": [
+            {
+              "text": "shooting",
+              "type": "Crime"
+            }
+          ],
+          "location": [
+            5624,
+            5628
+          ],
+          "text": "shot"
+        }
+      ]
+    },
+    {
+      "score": 0.945644,
+      "sentence": "A pistol competitor named Dan Smith was using that gun on the day of the competition And he was firing on this outdoor range just behind the air gun building.",
+      "type": "agentOf",
+      "arguments": [
+        {
+          "entities": [
+            {
+              "text": "competitor",
+              "type": "Organization"
+            }
+          ],
+          "location": [
+            5683,
+            5693
+          ],
+          "text": "competitor"
+        },
+        {
+          "entities": [
+            {
+              "text": "named",
+              "type": "EventPersonnel"
+            }
+          ],
+          "location": [
+            5694,
+            5699
+          ],
+          "text": "named"
+        }
+      ]
+    },
+    {
+      "score": 0.861493,
+      "sentence": "A pistol competitor named Dan Smith was using that gun on the day of the competition And he was firing on this outdoor range just behind the air gun building.",
+      "type": "affectedBy",
+      "arguments": [
+        {
+          "entities": [
+            {
+              "text": "Dan Smith",
+              "type": "Person"
+            }
+          ],
+          "location": [
+            5700,
+            5709
+          ],
+          "text": "Dan Smith"
+        },
+        {
+          "entities": [
+            {
+              "text": "named",
+              "type": "EventPersonnel"
+            }
+          ],
+          "location": [
+            5694,
+            5699
+          ],
+          "text": "named"
+        }
+      ]
+    },
+    {
+      "score": 0.334334,
+      "sentence": "A pistol competitor named Dan Smith was using that gun on the day of the competition And he was firing on this outdoor range just behind the air gun building.",
+      "type": "ownerOf",
+      "arguments": [
+        {
+          "entities": [
+            {
+              "text": "Dan Smith",
+              "type": "Person"
+            }
+          ],
+          "location": [
+            5700,
+            5709
+          ],
+          "text": "Dan Smith"
+        },
+        {
+          "entities": [
+            {
+              "text": "guns",
+              "type": "Weapon"
+            }
+          ],
+          "location": [
+            5725,
+            5728
+          ],
+          "text": "gun"
+        }
+      ]
+    },
+    {
+      "score": 0.744534,
+      "sentence": "A pistol competitor named Dan Smith was using that gun on the day of the competition And he was firing on this outdoor range just behind the air gun building.",
+      "type": "agentOf",
+      "arguments": [
+        {
+          "entities": [
+            {
+              "text": "Trey Cooley",
+              "type": "Person"
+            }
+          ],
+          "location": [
+            5763,
+            5765
+          ],
+          "text": "he"
+        },
+        {
+          "entities": [
+            {
+              "text": "firing",
+              "type": "EventViolence"
+            }
+          ],
+          "location": [
+            5770,
+            5776
+          ],
+          "text": "firing"
+        }
+      ]
+    },
+    {
+      "score": 0.996981,
+      "sentence": "But Smith told police he couldn't have fired the fatal shot.",
+      "type": "agentOf",
+      "arguments": [
+        {
+          "entities": [
+            {
+              "text": "Dan Smith",
+              "type": "Person"
+            }
+          ],
+          "location": [
+            5837,
+            5842
+          ],
+          "text": "Smith"
+        },
+        {
+          "entities": [
+            {
+              "text": "told",
+              "type": "EventCommunication"
+            }
+          ],
+          "location": [
+            5843,
+            5847
+          ],
+          "text": "told"
+        }
+      ]
+    },
+    {
+      "score": 0.390877,
+      "sentence": "Trey attended Bulls Junior High School in Arlington, Texas near Dallas.",
+      "type": "employedBy",
+      "arguments": [
+        {
+          "entities": [
+            {
+              "text": "Trey Cooley",
+              "type": "Person"
+            }
+          ],
+          "location": [
+            362,
+            366
+          ],
+          "text": "Trey"
+        },
+        {
+          "entities": [
+            {
+              "text": "Bulls Junior High School",
+              "type": "Organization"
+            }
+          ],
+          "location": [
+            376,
+            400
+          ],
+          "text": "Bulls Junior High School"
+        }
+      ]
+    },
+    {
+      "score": 0.960078,
+      "sentence": "But Smith told police he couldn't have fired the fatal shot.",
+      "type": "affectedBy",
+      "arguments": [
+        {
+          "entities": [
+            {
+              "text": "Police",
+              "type": "Organization"
+            }
+          ],
+          "location": [
+            5848,
+            5854
+          ],
+          "text": "police"
+        },
+        {
+          "entities": [
+            {
+              "text": "told",
+              "type": "EventCommunication"
+            }
+          ],
+          "location": [
+            5843,
+            5847
+          ],
+          "text": "told"
+        }
+      ]
+    },
+    {
+      "score": 0.736361,
+      "sentence": "But Smith told police he couldn't have fired the fatal shot.",
+      "type": "agentOf",
+      "arguments": [
+        {
+          "entities": [
+            {
+              "text": "Dan Smith",
+              "type": "Person"
+            }
+          ],
+          "location": [
+            5855,
+            5857
+          ],
+          "text": "he"
+        },
+        {
+          "entities": [
+            {
+              "text": "shooting",
+              "type": "Crime"
+            }
+          ],
+          "location": [
+            5888,
+            5892
+          ],
+          "text": "shot"
+        }
+      ]
+    },
+    {
+      "score": 0.96025,
+      "sentence": "It led to the range where Dan Smith was shooting, but oddly enough, not to the firing line.",
+      "type": "agentOf",
+      "arguments": [
+        {
+          "entities": [
+            {
+              "text": "Dan Smith",
+              "type": "Person"
+            }
+          ],
+          "location": [
+            9286,
+            9295
+          ],
+          "text": "Dan Smith"
+        },
+        {
+          "entities": [
+            {
+              "text": "shooting",
+              "type": "Crime"
+            }
+          ],
+          "location": [
+            9300,
+            9308
+          ],
+          "text": "shooting"
+        }
+      ]
+    },
+    {
+      "score": 0.694142,
+      "sentence": "He spent his entire life around guns and won awards for marksmanship and gun safety.",
+      "type": "locatedAt",
+      "arguments": [
+        {
+          "entities": [
+            {
+              "text": "Butch Cooley",
+              "type": "Person"
+            }
+          ],
+          "location": [
+            6029,
+            6032
+          ],
+          "text": "his"
+        },
+        {
+          "entities": [
+            {
+              "text": "guns",
+              "type": "Facility"
+            }
+          ],
+          "location": [
+            6052,
+            6056
+          ],
+          "text": "guns"
+        }
+      ]
+    },
+    {
+      "score": 0.404932,
+      "sentence": "Police were satisfied the Trey Cooley's death was an accident The ballistics report said the fatal bullet came from a gun fired from an outdoor range during the competition.",
+      "type": "agentOf",
+      "arguments": [
+        {
+          "entities": [
+            {
+              "text": "Trey Cooley",
+              "type": "Person"
+            }
+          ],
+          "location": [
+            6244,
+            6255
+          ],
+          "text": "Trey Cooley"
+        },
+        {
+          "entities": [
+            {
+              "text": "firing",
+              "type": "EventPersonnel"
+            }
+          ],
+          "location": [
+            6340,
+            6345
+          ],
+          "text": "fired"
+        }
+      ]
+    },
+    {
+      "score": 0.638466,
+      "sentence": "The owner of the gun said he didn't miss a shot, and the range was designed to contain any errant bullet.",
+      "type": "agentOf",
+      "arguments": [
+        {
+          "entities": [
+            {
+              "text": "Trey Cooley",
+              "type": "Person"
+            }
+          ],
+          "location": [
+            6405,
+            6410
+          ],
+          "text": "owner"
+        },
+        {
+          "entities": [
+            {
+              "text": "said",
+              "type": "EventCommunication"
+            }
+          ],
+          "location": [
+            6422,
+            6426
+          ],
+          "text": "said"
+        }
+      ]
+    },
+    {
+      "score": 0.952263,
+      "sentence": "Butch hired attorney Mike Schmidt to find out where or if the safety system had failed.",
+      "type": "agentOf",
+      "arguments": [
+        {
+          "entities": [
+            {
+              "text": "Butch Cooley",
+              "type": "Person"
+            }
+          ],
+          "location": [
+            7667,
+            7672
+          ],
+          "text": "Butch"
+        },
+        {
+          "entities": [
+            {
+              "text": "hired",
+              "type": "EventPersonnel"
+            }
+          ],
+          "location": [
+            7673,
+            7678
+          ],
+          "text": "hired"
+        }
+      ]
+    },
+    {
+      "score": 0.692966,
+      "sentence": "Butch hired attorney Mike Schmidt to find out where or if the safety system had failed.",
+      "type": "affectedBy",
+      "arguments": [
+        {
+          "entities": [
+            {
+              "text": "Mike Schmidt",
+              "type": "Person"
+            }
+          ],
+          "location": [
+            7679,
+            7687
+          ],
+          "text": "attorney"
+        },
+        {
+          "entities": [
+            {
+              "text": "hired",
+              "type": "EventPersonnel"
+            }
+          ],
+          "location": [
+            7673,
+            7678
+          ],
+          "text": "hired"
+        }
+      ]
+    },
+    {
+      "score": 0.524654,
+      "sentence": "Schmidt put together an investigative team.",
+      "type": "employedBy",
+      "arguments": [
+        {
+          "entities": [
+            {
+              "text": "Mike Schmidt",
+              "type": "Person"
+            }
+          ],
+          "location": [
+            7755,
+            7762
+          ],
+          "text": "Schmidt"
+        },
+        {
+          "entities": [
+            {
+              "text": "team",
+              "type": "Organization"
+            }
+          ],
+          "location": [
+            7793,
+            7797
+          ],
+          "text": "team"
+        }
+      ]
+    },
+    {
+      "score": 0.521189,
+      "sentence": "You wind up starting at unfortunately the the young boy get shot and then working your way backwards.",
+      "type": "agentOf",
+      "arguments": [
+        {
+          "entities": [
+            {
+              "text": "your",
+              "type": "Person"
+            }
+          ],
+          "location": [
+            8127,
+            8130
+          ],
+          "text": "You"
+        },
+        {
+          "entities": [
+            {
+              "text": "shooting",
+              "type": "Crime"
+            }
+          ],
+          "location": [
+            8187,
+            8191
+          ],
+          "text": "shot"
+        }
+      ]
+    },
+    {
+      "score": 0.63521,
+      "sentence": "It was roughly a straight line, but I couldn't see from the interior wall to the exterior wall, and it wasn't until we got it back to the office and got it mapped to that it formed this remarkably straight line.",
+      "type": "locatedAt",
+      "arguments": [
+        {
+          "entities": [
+            {
+              "text": "we",
+              "type": "Person"
+            }
+          ],
+          "location": [
+            9018,
+            9020
+          ],
+          "text": "we"
+        },
+        {
+          "entities": [
+            {
+              "text": "office",
+              "type": "Facility"
+            }
+          ],
+          "location": [
+            9040,
+            9046
+          ],
+          "text": "office"
+        }
+      ]
+    },
+    {
+      "score": 0.874714,
+      "sentence": "Trey attended Bulls Junior High School in Arlington, Texas near Dallas.",
+      "type": "basedIn",
+      "arguments": [
+        {
+          "entities": [
+            {
+              "text": "Bulls Junior High School",
+              "type": "Organization"
+            }
+          ],
+          "location": [
+            376,
+            400
+          ],
+          "text": "Bulls Junior High School"
+        },
+        {
+          "entities": [
+            {
+              "text": "Arlington",
+              "type": "GeopoliticalEntity"
+            }
+          ],
+          "location": [
+            404,
+            413
+          ],
+          "text": "Arlington"
+        }
+      ]
+    },
+    {
+      "score": 0.647543,
+      "sentence": "When Ken Buster was brought into the investigation, he immediately inspected the firing range to see if there was any way a bullet could get past all of the range's safety features.",
+      "type": "affectedBy",
+      "arguments": [
+        {
+          "entities": [
+            {
+              "text": "Ken Buster",
+              "type": "Person"
+            }
+          ],
+          "location": [
+            9438,
+            9448
+          ],
+          "text": "Ken Buster"
+        },
+        {
+          "entities": [
+            {
+              "text": "investigation",
+              "type": "EventLegal"
+            }
+          ],
+          "location": [
+            9470,
+            9483
+          ],
+          "text": "investigation"
+        }
+      ]
+    },
+    {
+      "score": 0.681241,
+      "sentence": "Several of these holes had been plugged, that means to me as a safety person, as a range person, as a long time shooter that they knew that bullets were getting out of that range and they accepted that fact and continue to shoot.",
+      "type": "partOfMany",
+      "arguments": [
+        {
+          "entities": [
+            {
+              "text": "Ken Buster",
+              "type": "Person"
+            }
+          ],
+          "location": [
+            10445,
+            10452
+          ],
+          "text": "shooter"
+        },
+        {
+          "entities": [
+            {
+              "text": "themselves",
+              "type": "Person"
+            }
+          ],
+          "location": [
+            10458,
+            10462
+          ],
+          "text": "they"
+        }
+      ]
+    },
+    {
+      "score": 0.73521,
+      "sentence": "First, from the firing line at twenty five yards, then they moved forward to twenty yards, and finally to fifteen yards.",
+      "type": "locatedAt",
+      "arguments": [
+        {
+          "entities": [
+            {
+              "text": "shooters",
+              "type": "Person"
+            }
+          ],
+          "location": [
+            10867,
+            10871
+          ],
+          "text": "they"
+        },
+        {
+          "entities": [
+            {
+              "text": "twenty yards",
+              "type": "Vehicle"
+            }
+          ],
+          "location": [
+            10889,
+            10901
+          ],
+          "text": "twenty yards"
+        }
+      ]
+    },
+    {
+      "score": 0.682004,
+      "sentence": "The laser study showed that the fatal bullet was fired from the fifteen yard line.",
+      "type": "affectedBy",
+      "arguments": [
+        {
+          "entities": [
+            {
+              "text": "fifteen",
+              "type": "Person"
+            }
+          ],
+          "location": [
+            10997,
+            11004
+          ],
+          "text": "fifteen"
+        },
+        {
+          "entities": [
+            {
+              "text": "firing",
+              "type": "EventPersonnel"
+            }
+          ],
+          "location": [
+            10982,
+            10987
+          ],
+          "text": "fired"
+        }
+      ]
+    },
+    {
+      "score": 0.414075,
+      "sentence": "The laser study showed that the fatal bullet was fired from the fifteen yard line.",
+      "type": "locatedAt",
+      "arguments": [
+        {
+          "entities": [
+            {
+              "text": "fifteen",
+              "type": "Person"
+            }
+          ],
+          "location": [
+            10997,
+            11004
+          ],
+          "text": "fifteen"
+        },
+        {
+          "entities": [
+            {
+              "text": "yard",
+              "type": "Facility"
+            }
+          ],
+          "location": [
+            11005,
+            11009
+          ],
+          "text": "yard"
+        }
+      ]
+    },
+    {
+      "score": 0.464276,
+      "sentence": "By firing from the fifteen yard line, shooters had to move in front of the eyebrow, and the first set of protective baffles.",
+      "type": "locatedAt",
+      "arguments": [
+        {
+          "entities": [
+            {
+              "text": "fifteen",
+              "type": "Person"
+            }
+          ],
+          "location": [
+            11086,
+            11093
+          ],
+          "text": "fifteen"
+        },
+        {
+          "entities": [
+            {
+              "text": "yard",
+              "type": "Facility"
+            }
+          ],
+          "location": [
+            11094,
+            11098
+          ],
+          "text": "yard"
+        }
+      ]
+    },
+    {
+      "score": 0.616021,
+      "sentence": "From the fifteen yard line, you could see the back of the air gun building.",
+      "type": "locatedAt",
+      "arguments": [
+        {
+          "entities": [
+            {
+              "text": "fifteen",
+              "type": "Person"
+            }
+          ],
+          "location": [
+            11259,
+            11266
+          ],
+          "text": "fifteen"
+        },
+        {
+          "entities": [
+            {
+              "text": "yard",
+              "type": "Facility"
+            }
+          ],
+          "location": [
+            11267,
+            11271
+          ],
+          "text": "yard"
+        }
+      ]
+    },
+    {
+      "score": 0.427603,
+      "sentence": "Outside on the firing range, behind the air gun building, Dan Smith one of the last competitors of the day steps up to the fifteen yard line.",
+      "type": "locatedAt",
+      "arguments": [
+        {
+          "entities": [
+            {
+              "text": "fifteen",
+              "type": "Person"
+            }
+          ],
+          "location": [
+            13704,
+            13711
+          ],
+          "text": "fifteen"
+        },
+        {
+          "entities": [
+            {
+              "text": "yard",
+              "type": "Facility"
+            }
+          ],
+          "location": [
+            13712,
+            13716
+          ],
+          "text": "yard"
+        }
+      ]
+    },
+    {
+      "score": 0.362959,
+      "sentence": "By firing from the fifteen yard line, shooters had to move in front of the eyebrow, and the first set of protective baffles.",
+      "type": "agentOf",
+      "arguments": [
+        {
+          "entities": [
+            {
+              "text": "fifteen",
+              "type": "Person"
+            }
+          ],
+          "location": [
+            11086,
+            11093
+          ],
+          "text": "fifteen"
+        },
+        {
+          "entities": [
+            {
+              "text": "firing",
+              "type": "EventViolence"
+            }
+          ],
+          "location": [
+            11070,
+            11076
+          ],
+          "text": "firing"
+        }
+      ]
+    },
+    {
+      "score": 0.428313,
+      "sentence": "By firing from the fifteen yard line, shooters had to move in front of the eyebrow, and the first set of protective baffles.",
+      "type": "locatedAt",
+      "arguments": [
+        {
+          "entities": [
+            {
+              "text": "firing",
+              "type": "EventViolence"
+            }
+          ],
+          "location": [
+            11070,
+            11076
+          ],
+          "text": "firing"
+        },
+        {
+          "entities": [
+            {
+              "text": "yard",
+              "type": "Facility"
+            }
+          ],
+          "location": [
+            11094,
+            11098
+          ],
+          "text": "yard"
+        }
+      ]
+    },
+    {
+      "score": 0.851658,
+      "sentence": "If you can see it you can shoot, and any projectile that might leave the range in that area was going to hit that building.",
+      "type": "locatedAt",
+      "arguments": [
+        {
+          "entities": [
+            {
+              "text": "building",
+              "type": "Facility"
+            }
+          ],
+          "location": [
+            11440,
+            11448
+          ],
+          "text": "building"
+        },
+        {
+          "entities": [
+            {
+              "text": "area",
+              "type": "GeopoliticalEntity"
+            }
+          ],
+          "location": [
+            11413,
+            11417
+          ],
+          "text": "area"
+        }
+      ]
+    },
+    {
+      "score": 0.515349,
+      "sentence": "His firm specializes in forensic animation.",
+      "type": "managerOf",
+      "arguments": [
+        {
+          "entities": [
+            {
+              "text": "Kirk Parks",
+              "type": "Person"
+            }
+          ],
+          "location": [
+            12466,
+            12469
+          ],
+          "text": "His"
+        },
+        {
+          "entities": [
+            {
+              "text": "firm",
+              "type": "Organization"
+            }
+          ],
+          "location": [
+            12470,
+            12474
+          ],
+          "text": "firm"
+        }
+      ]
+    },
+    {
+      "score": 0.579162,
+      "sentence": "When Trey Cooley entered the Dallas Pistol and Revolver Club on September 29th, 1991, the range was a tragedy just waiting to strike.",
+      "type": "timeOf",
+      "arguments": [
+        {
+          "entities": [
+            {
+              "text": "September 29th, 1991",
+              "type": "Date"
+            }
+          ],
+          "location": [
+            13511,
+            13531
+          ],
+          "text": "September 29th, 1991"
+        },
+        {
+          "entities": [
+            {
+              "text": "strike",
+              "type": "EventViolence"
+            }
+          ],
+          "location": [
+            13573,
+            13579
+          ],
+          "text": "strike"
+        }
+      ]
+    },
+    {
+      "score": 0.937374,
+      "sentence": "Trey attended Bulls Junior High School in Arlington, Texas near Dallas.",
+      "type": "locatedAt",
+      "arguments": [
+        {
+          "entities": [
+            {
+              "text": "Arlington",
+              "type": "GeopoliticalEntity"
+            }
+          ],
+          "location": [
+            404,
+            413
+          ],
+          "text": "Arlington"
+        },
+        {
+          "entities": [
+            {
+              "text": "Texas",
+              "type": "GeopoliticalEntity"
+            }
+          ],
+          "location": [
+            415,
+            420
+          ],
+          "text": "Texas"
+        }
+      ]
+    },
+    {
+      "score": 0.942831,
+      "sentence": "The Cooley family filed a negligence suit against the gun club and individuals involved with the competition.",
+      "type": "agentOf",
+      "arguments": [
+        {
+          "entities": [
+            {
+              "text": "Cooley family",
+              "type": "Person"
+            }
+          ],
+          "location": [
+            14820,
+            14833
+          ],
+          "text": "Cooley family"
+        },
+        {
+          "entities": [
+            {
+              "text": "filed",
+              "type": "EventLegal"
+            }
+          ],
+          "location": [
+            14834,
+            14839
+          ],
+          "text": "filed"
+        }
+      ]
+    },
+    {
+      "score": 0.859841,
+      "sentence": "I've been on the bench six and a half years and I would say that's in the top 2 or 3 or 4 in terms of just the the professionalism and the effectiveness of the demonstrative evidence brought into court.",
+      "type": "agentOf",
+      "arguments": [
+        {
+          "entities": [
+            {
+              "text": "Trey Cooley",
+              "type": "Person"
+            }
+          ],
+          "location": [
+            15074,
+            15075
+          ],
+          "text": "I"
+        },
+        {
+          "entities": [
+            {
+              "text": "explained",
+              "type": "EventCommunication"
+            }
+          ],
+          "location": [
+            15082,
+            15085
+          ],
+          "text": "say"
+        }
+      ]
+    },
+    {
+      "score": 0.735095,
+      "sentence": "The Cooley's attorney says the forensic animation and model explained this tragedy in a way nothing else could.",
+      "type": "clientOf",
+      "arguments": [
+        {
+          "entities": [
+            {
+              "text": "Trey Cooley",
+              "type": "Person"
+            }
+          ],
+          "location": [
+            15233,
+            15239
+          ],
+          "text": "Cooley"
+        },
+        {
+          "entities": [
+            {
+              "text": "Mike Schmidt",
+              "type": "Person"
+            }
+          ],
+          "location": [
+            15242,
+            15250
+          ],
+          "text": "attorney"
+        }
+      ]
+    },
+    {
+      "score": 0.992926,
+      "sentence": "The Cooley's attorney says the forensic animation and model explained this tragedy in a way nothing else could.",
+      "type": "agentOf",
+      "arguments": [
+        {
+          "entities": [
+            {
+              "text": "Mike Schmidt",
+              "type": "Person"
+            }
+          ],
+          "location": [
+            15242,
+            15250
+          ],
+          "text": "attorney"
+        },
+        {
+          "entities": [
+            {
+              "text": "says",
+              "type": "EventCommunication"
+            }
+          ],
+          "location": [
+            15251,
+            15255
+          ],
+          "text": "says"
+        }
+      ]
+    },
+    {
+      "score": 0.619853,
+      "sentence": "Ir if the shooter had been standing at the proper firing line, the shot would have hit the baffle or flown over the building.",
+      "type": "agentOf",
+      "arguments": [
+        {
+          "entities": [
+            {
+              "text": "Kirk Parks",
+              "type": "Person"
+            }
+          ],
+          "location": [
+            16046,
+            16053
+          ],
+          "text": "shooter"
+        },
+        {
+          "entities": [
+            {
+              "text": "shooting",
+              "type": "Crime"
+            }
+          ],
+          "location": [
+            16103,
+            16107
+          ],
+          "text": "shot"
+        }
+      ]
+    },
+    {
+      "score": 0.65337,
+      "sentence": "No explanation can ease the pain felt by a father who woke his son early one September morning.",
+      "type": "parentOf",
+      "arguments": [
+        {
+          "entities": [
+            {
+              "text": "Kirk Parks",
+              "type": "Person"
+            }
+          ],
+          "location": [
+            16469,
+            16472
+          ],
+          "text": "his"
+        },
+        {
+          "entities": [
+            {
+              "text": "Butch Cooley",
+              "type": "Person"
+            }
+          ],
+          "location": [
+            16473,
+            16476
+          ],
+          "text": "son"
+        }
+      ]
+    },
+    {
+      "score": 0.475781,
+      "sentence": "Trey attended Bulls Junior High School in Arlington, Texas near Dallas.",
+      "type": "locatedAt",
+      "arguments": [
+        {
+          "entities": [
+            {
+              "text": "Texas",
+              "type": "GeopoliticalEntity"
+            }
+          ],
+          "location": [
+            415,
+            420
+          ],
+          "text": "Texas"
+        },
+        {
+          "entities": [
+            {
+              "text": "Dallas",
+              "type": "GeopoliticalEntity"
+            }
+          ],
+          "location": [
+            426,
+            432
+          ],
+          "text": "Dallas"
+        }
+      ]
+    },
+    {
+      "score": 0.316596,
+      "sentence": "Most of all he enjoyed spending time with his family.",
+      "type": "partOfMany",
+      "arguments": [
+        {
+          "entities": [
+            {
+              "text": "Trey Cooley",
+              "type": "Person"
+            }
+          ],
+          "location": [
+            650,
+            653
+          ],
+          "text": "his"
+        },
+        {
+          "entities": [
+            {
+              "text": "Cooley family",
+              "type": "Person"
+            }
+          ],
+          "location": [
+            654,
+            660
+          ],
+          "text": "family"
+        }
+      ]
+    },
+    {
+      "score": 0.683638,
+      "sentence": "Trey and his father, Butch, were best friends.",
+      "type": "parentOf",
+      "arguments": [
+        {
+          "entities": [
+            {
+              "text": "Butch Cooley",
+              "type": "Person"
+            }
+          ],
+          "location": [
+            675,
+            681
+          ],
+          "text": "father"
+        },
+        {
+          "entities": [
+            {
+              "text": "Trey Cooley",
+              "type": "Person"
+            }
+          ],
+          "location": [
+            671,
+            674
+          ],
+          "text": "his"
+        }
+      ]
+    },
+    {
+      "score": 0.791034,
+      "sentence": "Trey chose to go with his father.",
+      "type": "parentOf",
+      "arguments": [
+        {
+          "entities": [
+            {
+              "text": "Butch Cooley",
+              "type": "Person"
+            }
+          ],
+          "location": [
+            976,
+            982
+          ],
+          "text": "father"
+        },
+        {
+          "entities": [
+            {
+              "text": "Trey Cooley",
+              "type": "Person"
+            }
+          ],
+          "location": [
+            972,
+            975
+          ],
+          "text": "his"
+        }
+      ]
+    }
+  ]
+}
