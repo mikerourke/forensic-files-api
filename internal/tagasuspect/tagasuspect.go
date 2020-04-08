@@ -55,10 +55,10 @@ func (d *Detective) OpenCase() {
 
 // Analyze submits a request to analyze the entities in a transcript associated
 // with an episode.
-func (d *Detective) Analyze(seasonNumber int, episodeNumber int) {
+func (d *Detective) Analyze(seasonNumber int, episodeNumber int, overwrite bool) {
 	onEpisode := func(ep *whodunit.Episode) {
 		a := NewAnalysis(ep)
-		a.Create(d.service)
+		a.Create(d.service, overwrite)
 	}
 
 	if err := whodunit.Solve(seasonNumber, episodeNumber, onEpisode); err != nil {

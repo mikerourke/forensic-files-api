@@ -17,6 +17,10 @@ func main() {
 	app := kingpin.New(filepath.Base(os.Args[0]), "Internal tools for the Forensic Files API.")
 	app.HelpFlag.Short('h')
 
+	overwriteFlag := app.Flag(
+		"overwrite",
+		"Overwrite existing file").Short('x').Bool()
+
 	registerCommand := app.Command(
 		"registercb",
 		"Register a callback URL.").Alias("rcb")
@@ -109,7 +113,7 @@ func main() {
 
 	case analyzeCommand.FullCommand():
 		d.OpenCase()
-		d.Analyze(*analyzeSeason, *analyzeEpisode)
+		d.Analyze(*analyzeSeason, *analyzeEpisode, *overwriteFlag)
 	}
 }
 

@@ -22,7 +22,7 @@ func NewAnalysis(ep *whodunit.Episode) *Analysis {
 
 // Create creates a new analysis file by sending the transcript to the NLP
 // service and writing the results to the `/assets` directory.
-func (a *Analysis) Create(svc *nluv1.NaturalLanguageUnderstandingV1) {
+func (a *Analysis) Create(svc *nluv1.NaturalLanguageUnderstandingV1, overwrite bool) {
 	t := killigraphy.NewTranscript(a.Episode)
 	if !t.Exists() {
 		log.WithField("file", t.FileName()).Warnln(
@@ -30,7 +30,7 @@ func (a *Analysis) Create(svc *nluv1.NaturalLanguageUnderstandingV1) {
 		return
 	}
 
-	if a.Exists() {
+	if a.Exists() && !overwrite {
 		log.WithField("file", a.FileName()).Warnln(
 			"Analysis already exists, skipping")
 		return
@@ -43,12 +43,12 @@ func (a *Analysis) Create(svc *nluv1.NaturalLanguageUnderstandingV1) {
 		&nluv1.AnalyzeOptions{
 			Text: &contents,
 			Features: &nluv1.Features{
-				Relations: &nluv1.RelationsOptions{},
+				Categories: &nluv1.CategoriesOptions{},
 				Entities: &nluv1.EntitiesOptions{
 					Limit: core.Int64Ptr(10000),
 				},
-				Categories: &nluv1.CategoriesOptions{
-					Limit: core.Int64Ptr(100),
+				Keywords: &nluv1.KeywordsOptions{
+					Limit: core.Int64Ptr(10000),
 				},
 			},
 		},
