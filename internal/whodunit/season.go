@@ -15,7 +15,7 @@ import (
 // associated episodes.
 type Season struct {
 	SeasonNumber int
-	EpisodeMap   map[int]*Episode
+	episodeMap   map[int]*Episode
 }
 
 // SeasonCount is the count of seasons in Forensic Files.
@@ -25,7 +25,7 @@ const SeasonCount = 14
 func NewSeason(seasonNumber int) *Season {
 	return &Season{
 		SeasonNumber: seasonNumber,
-		EpisodeMap:   make(map[int]*Episode, 0),
+		episodeMap:   make(map[int]*Episode, 0),
 	}
 }
 
@@ -50,7 +50,7 @@ func (s *Season) PopulateEpisodes() error {
 
 	seasonName := crimeseen.PaddedNumberString(s.SeasonNumber)
 	for _, ep := range result[seasonName] {
-		s.EpisodeMap[ep.EpisodeNumber] = newEpisode(s,
+		s.episodeMap[ep.EpisodeNumber] = newEpisode(s,
 			ep.EpisodeNumber, ep.Title, ep.URL)
 	}
 
@@ -59,13 +59,13 @@ func (s *Season) PopulateEpisodes() error {
 
 // EpisodeCount returns the count of episodes in the season.
 func (s *Season) EpisodeCount() int {
-	return len(s.EpisodeMap)
+	return len(s.episodeMap)
 }
 
 // AllEpisodes returns a slice of Episode instances in the season.
 func (s *Season) AllEpisodes() []*Episode {
 	episodes := make([]*Episode, 0)
-	for _, ep := range s.EpisodeMap {
+	for _, ep := range s.episodeMap {
 		episodes = append(episodes, ep)
 	}
 
@@ -80,7 +80,7 @@ func (s *Season) AllEpisodes() []*Episode {
 // Episode returns an Episode instance associated with the specified episode
 // number.
 func (s *Season) Episode(episodeNumber int) *Episode {
-	return s.EpisodeMap[episodeNumber]
+	return s.episodeMap[episodeNumber]
 }
 
 // EnsureDir ensures that the season directory exists in the assets sub-directory
