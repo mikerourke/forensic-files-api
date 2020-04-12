@@ -15,35 +15,35 @@ import (
 	stv1 "github.com/watson-developer-cloud/go-sdk/speechtotextv1"
 )
 
-// Perpetrator contains properties and methods used to start recognition
+// Eyewitness contains properties and methods used to start recognition
 // jobs.
-type Perpetrator struct {
+type Eyewitness struct {
 	s2t         *s2tInstance
 	callbackURL string
 }
 
 var log = waterlogged.New("hearnoevil")
 
-// NewPerpetrator returns a new instance of Perpetrator.
-func NewPerpetrator(callbackURL string) *Perpetrator {
+// NewEyewitness returns a new instance of Eyewitness.
+func NewEyewitness(callbackURL string) *Eyewitness {
 	env := crimeseen.NewEnv()
 	sts := newS2TInstance(env)
-	p := &Perpetrator{s2t: sts}
+	ew := &Eyewitness{s2t: sts}
 
 	if callbackURL != "" {
-		p.RegisterCallbackURL(callbackURL)
+		ew.RegisterCallbackURL(callbackURL)
 	} else {
 		callbackURL = env.CallbackURL()
 	}
-	p.callbackURL = callbackURL
+	ew.callbackURL = callbackURL
 
-	return p
+	return ew
 }
 
 // RegisterCallbackURL registers a callback URL with the speech to text service
 // that will receive recognition job responses.
-func (p *Perpetrator) RegisterCallbackURL(callbackURL string) {
-	result, _, err := p.s2t.RegisterCallback(
+func (ew *Eyewitness) RegisterCallbackURL(callbackURL string) {
+	result, _, err := ew.s2t.RegisterCallback(
 		&stv1.RegisterCallbackOptions{
 			CallbackURL: core.StringPtr(callbackURL),
 		},
@@ -66,12 +66,12 @@ func (p *Perpetrator) RegisterCallbackURL(callbackURL string) {
 // Recognize makes a call to the speech-to-text service to create a recognition
 // job for a single episode in the specified season or all episodes if the season
 // was not specified.
-func (p *Perpetrator) Recognize(seasonNumber int, episodeNumber int) {
-	p.interrogate()
+func (ew *Eyewitness) Recognize(seasonNumber int, episodeNumber int) {
+	ew.interrogate()
 
 	onEpisode := func(ep *whodunit.Episode) {
 		r := NewRecognition(ep)
-		r.StartJob(p.s2t, p.callbackURL)
+		r.StartJob(ew.s2t, ew.callbackURL)
 	}
 
 	if err := whodunit.Solve(seasonNumber, episodeNumber, onEpisode); err != nil {
@@ -80,10 +80,10 @@ func (p *Perpetrator) Recognize(seasonNumber int, episodeNumber int) {
 }
 
 // Investigate logs the episode statuses.
-func (p *Perpetrator) Investigate(status whodunit.AssetStatus) {
+func (ew *Eyewitness) Investigate(status whodunit.AssetStatus) {
 	totalCount := 0
 	table := whodunit.NewStatusTable(whodunit.AssetTypeRecognition, status)
-	jep := p.jobEpisodeMap()
+	jep := ew.jobEpisodeMap()
 	for season := 1; season <= whodunit.SeasonCount; season++ {
 		s := whodunit.NewSeason(season)
 		if err := s.PopulateEpisodes(); err != nil {
@@ -107,13 +107,13 @@ func (p *Perpetrator) Investigate(status whodunit.AssetStatus) {
 
 // StartCallbackServer starts the callback server to receive responses from the
 // speech-to-text service.
-func (p *Perpetrator) StartCallbackServer() {
+func (ew *Eyewitness) StartCallbackServer() {
 	cs := newCallbackServer()
 	cs.Start()
 }
 
-func (p *Perpetrator) jobEpisodeMap() map[string]*whodunit.Episode {
-	result, _, err := p.s2t.CheckJobs(&stv1.CheckJobsOptions{})
+func (ew *Eyewitness) jobEpisodeMap() map[string]*whodunit.Episode {
+	result, _, err := ew.s2t.CheckJobs(&stv1.CheckJobsOptions{})
 	if err != nil {
 		log.WithError(err).Fatalln("Error getting recognition jobs")
 	}
@@ -138,7 +138,7 @@ func (p *Perpetrator) jobEpisodeMap() map[string]*whodunit.Episode {
 	return epMap
 }
 
-func (p *Perpetrator) interrogate() {
+func (ew *Eyewitness) interrogate() {
 	const ErrorMessage = "ngrok is not running, run `ngrok http 9000`"
 
 	cmd := exec.Command("ps", "aux")

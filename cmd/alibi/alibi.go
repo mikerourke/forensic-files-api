@@ -75,17 +75,17 @@ func main() {
 
 	parsedCmd := kingpin.MustParse(app.Parse(os.Args[1:]))
 
-	p := hearnoevil.NewPerpetrator("")
+	ew := hearnoevil.NewEyewitness("")
 	d := tagasuspect.NewDetective()
 	switch parsedCmd {
 	case registerCommand.FullCommand():
-		p.RegisterCallbackURL(*registerCommandURLFlag)
+		ew.RegisterCallbackURL(*registerCommandURLFlag)
 
 	case serverCommand.FullCommand():
-		p.StartCallbackServer()
+		ew.StartCallbackServer()
 
 	case recognizeCommand.FullCommand():
-		p.Recognize(*recogSeason, *recogEpisode)
+		ew.Recognize(*recogSeason, *recogEpisode)
 
 	case investigateCommand.FullCommand():
 		status := flagToAssetStatus(*investigateCommandFilterFlag)
@@ -95,7 +95,7 @@ func main() {
 		case "audio":
 			visibilityzero.Investigate(status)
 		case "recog":
-			p.Investigate(status)
+			ew.Investigate(status)
 		case "trans":
 			killigraphy.Investigate(status)
 		case "video":
