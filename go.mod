@@ -1,6 +1,6 @@
 module github.com/mikerourke/forensic-files-api
 
-go 1.13
+go 1.14
 
 require (
 	cloud.google.com/go v0.56.0
