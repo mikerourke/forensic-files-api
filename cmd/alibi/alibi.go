@@ -73,6 +73,10 @@ func main() {
 		"Create a new entity analysis.").Alias("an")
 	analyzeSeason, analyzeEpisode := addSeasonEpisodeFlags(analyzeCommand)
 
+	analyzeCSVFlag := analyzeCommand.Flag(
+		"csv",
+		"Output a CSV file to the specified directory.").Short('c').ExistingDir()
+
 	parsedCmd := kingpin.MustParse(app.Parse(os.Args[1:]))
 
 	ew := hearnoevil.NewEyewitness("")
@@ -112,9 +116,15 @@ func main() {
 		killigraphy.Transcribe(*transSeason, *transEpisode)
 
 	case analyzeCommand.FullCommand():
-		d.OpenCase()
-		defer d.CloseCase()
-		d.Analyze(*analyzeSeason, *analyzeEpisode, *overwriteFlag)
+		season := *analyzeSeason
+		episode := *analyzeEpisode
+		if *analyzeCSVFlag != "" {
+			d.FileReport(season, episode, *analyzeCSVFlag)
+		} else {
+			d.OpenCase()
+			defer d.CloseCase()
+			d.Analyze(season, episode, *overwriteFlag)
+		}
 	}
 }
 

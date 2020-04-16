@@ -61,6 +61,17 @@ func (d *Detective) Analyze(seasonNumber int, episodeNumber int, overwrite bool)
 	}
 }
 
+func (d *Detective) FileReport(seasonNumber int, episodeNumber int, outputDir string) {
+	onEpisode := func(ep *whodunit.Episode) {
+		a := newAnalysis(ep, d)
+		a.WriteCSV(outputDir)
+	}
+
+	if err := whodunit.Solve(seasonNumber, episodeNumber, onEpisode); err != nil {
+		log.WithError(err).Errorln("Error analyzing episode(s)")
+	}
+}
+
 // CloseCase closes the GCP NLP client.
 func (d *Detective) CloseCase() {
 	if err := d.client.Close(); err != nil {
