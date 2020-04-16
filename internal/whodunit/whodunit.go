@@ -9,6 +9,8 @@ import (
 	"log"
 	"os"
 	"path/filepath"
+
+	"github.com/mikerourke/forensic-files-api/internal/crimeseen"
 )
 
 // AssetStatus is an enum that represents the status of the asset.
@@ -57,18 +59,20 @@ const (
 // AssetsDirPath is the absolute path to the `/assets` directory.
 var AssetsDirPath = assetsDirPath()
 
+var env = crimeseen.NewEnv()
+
 // DirPath returns the absolute path to the directory associated with the
 // asset type.
 func (at AssetType) DirPath() string {
 	switch at {
 	case AssetTypeAnalysis:
-		return filepath.Join(AssetsDirPath, "analyses")
+		return filepath.Join(env.InvestigationsPath(), "gcp-analyses")
 	case AssetTypeAudio:
 		return filepath.Join(AssetsDirPath, "audio")
 	case AssetTypeRecognition:
-		return filepath.Join(AssetsDirPath, "recognitions")
+		return filepath.Join(env.InvestigationsPath(), "recognitions")
 	case AssetTypeTranscript:
-		return filepath.Join(AssetsDirPath, "transcripts")
+		return filepath.Join(env.InvestigationsPath(), "transcripts")
 	case AssetTypeVideo:
 		return filepath.Join(AssetsDirPath, "videos")
 	default:

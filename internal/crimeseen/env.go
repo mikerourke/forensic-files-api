@@ -51,3 +51,8 @@ func (e *Env) IBMLangAPIUrl() string {
 func (e *Env) GCPCredsPath() string {
 	return os.Getenv("GOOGLE_APPLICATION_CREDENTIALS")
 }
+
+// InvestigationsPath returns the path to the forensic-files-investigations repo.
+func (e *Env) InvestigationsPath() string {
+	return os.Getenv("INVESTIGATIONS_PATH")
+}
