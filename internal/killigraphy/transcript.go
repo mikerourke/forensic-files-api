@@ -62,7 +62,7 @@ func (t *Transcript) Create() {
 		log.WithError(err).Errorln("Error syncing transcript file")
 	}
 
-	log.Infoln("Transcript successfully written")
+	log.WithField("file", t.FileName()).Infoln("Transcript successfully written")
 }
 
 func (t *Transcript) recognitionContents() string {
@@ -86,10 +86,31 @@ func (t *Transcript) recognitionContents() string {
 	lines := make([]string, 0)
 	for _, result := range results {
 		for _, alt := range result.Alternatives {
-			validLine := *alt.Transcript + "."
-			validLine = strings.ReplaceAll(validLine, " %HESITATION", "")
-			validLine = strings.ReplaceAll(validLine, " .", ".")
-			lines = append(lines, validLine)
+			content := *alt.Transcript
+			words := strings.Fields(content)
+			var confidence float32
+			if alt.Confidence != nil {
+				confidence = float32(*alt.Confidence)
+			}
+
+			if confidence >= 0.7 && len(words) > 2 {
+				validWords := make([]string, 0)
+				for i, word := range words {
+					if !strings.Contains(word, "%HESITATION") {
+						if i == 0 {
+							validWords = append(validWords, strings.Title(word))
+						} else {
+							validWords = append(validWords, word)
+						}
+					}
+				}
+
+				validWords = append(validWords, ".")
+				validLine := strings.Join(validWords, " ")
+				validLine = strings.ReplaceAll(validLine, " .", ".")
+				validLine = strings.ReplaceAll(validLine, " ,", ",")
+				lines = append(lines, validLine)
+			}
 		}
 	}
 

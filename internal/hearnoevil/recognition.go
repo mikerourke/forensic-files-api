@@ -106,12 +106,12 @@ func (r *Recognition) ReadResults() (
 	return contents[0].Results, nil
 }
 
-// Exists return true if the audio file exists in the `/assets` directory.
+// Exists return true if the recognition file exists in the `/assets` directory.
 func (r *Recognition) Exists() bool {
 	return r.AssetExists(whodunit.AssetTypeRecognition)
 }
 
-// FilePath returns the path to the audio file in the `/assets` directory.
+// FilePath returns the path to the recognition file in the `/assets` directory.
 func (r *Recognition) FilePath() string {
 	return r.AssetFilePath(whodunit.AssetTypeRecognition)
 }
