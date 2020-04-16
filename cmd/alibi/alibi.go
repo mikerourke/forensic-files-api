@@ -91,7 +91,7 @@ func main() {
 		status := flagToAssetStatus(*investigateCommandFilterFlag)
 		switch *investigateCommandAssetFlag {
 		case "analysis":
-			visibilityzero.Investigate(status)
+			tagasuspect.Investigate(status)
 		case "audio":
 			visibilityzero.Investigate(status)
 		case "recog":
@@ -113,6 +113,7 @@ func main() {
 
 	case analyzeCommand.FullCommand():
 		d.OpenCase()
+		defer d.CloseCase()
 		d.Analyze(*analyzeSeason, *analyzeEpisode, *overwriteFlag)
 	}
 }

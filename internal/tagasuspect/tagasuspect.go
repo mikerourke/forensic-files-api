@@ -1,19 +1,22 @@
 package tagasuspect
 
 import (
-	"github.com/IBM/go-sdk-core/core"
+	"context"
+
+	language "cloud.google.com/go/language/apiv1"
 	"github.com/mikerourke/forensic-files-api/internal/crimeseen"
 	"github.com/mikerourke/forensic-files-api/internal/waterlogged"
 	"github.com/mikerourke/forensic-files-api/internal/whodunit"
 	"github.com/sirupsen/logrus"
-	nluv1 "github.com/watson-developer-cloud/go-sdk/naturallanguageunderstandingv1"
+	"google.golang.org/api/option"
 )
 
 // Detective contains properties and methods used to start entity analysis
 // jobs.
 type Detective struct {
-	options *nluv1.NaturalLanguageUnderstandingV1Options
-	service *nluv1.NaturalLanguageUnderstandingV1
+	client   *language.Client
+	ctx      context.Context
+	withFile option.ClientOption
 }
 
 var (
@@ -23,42 +26,34 @@ var (
 
 // NewDetective returns a new instance of a detective.
 func NewDetective() *Detective {
-	authenticator := &core.IamAuthenticator{
-		ApiKey: env.IBMLangAPIKey(),
-	}
-	options := &nluv1.NaturalLanguageUnderstandingV1Options{
-		Version:       "2019-07-12",
-		Authenticator: authenticator,
+	if env.GCPCredsPath() == "" {
+		log.Fatalln("GCP credentials file not specified in .env file")
 	}
 
+	ctx := context.Background()
 	return &Detective{
-		options: options,
+		ctx:      ctx,
+		withFile: option.WithCredentialsFile(env.GCPCredsPath()),
 	}
 }
 
-// OpenCase creates a new instance of an NLU service. We're doing this here
-// instead of each analysis call so we can persist the service for batch jobs.
+// OpenCase creates a new instance of an NLP client. We're doing this here
+// instead of each analysis call so we can persist the client for batch jobs.
+// See https://cloud.google.com/natural-language/docs/reference/rest
 func (d *Detective) OpenCase() {
-	d.interrogate()
-
-	svc, err := nluv1.NewNaturalLanguageUnderstandingV1(d.options)
+	client, err := language.NewClient(d.ctx, d.withFile)
 	if err != nil {
-		logrus.WithError(err).Fatalln("Could not create new IBM service")
+		logrus.WithError(err).Fatalln("Could not create new GCP client")
 	}
-
-	if err := svc.SetServiceURL(env.IBMLangAPIUrl()); err != nil {
-		logrus.WithError(err).Fatalln("Could not set IBM service URL")
-	}
-
-	d.service = svc
+	d.client = client
 }
 
 // Analyze submits a request to analyze the entities in a transcript associated
 // with an episode.
 func (d *Detective) Analyze(seasonNumber int, episodeNumber int, overwrite bool) {
 	onEpisode := func(ep *whodunit.Episode) {
-		a := NewAnalysis(ep)
-		a.Create(d.service, overwrite)
+		a := newAnalysis(ep, d)
+		a.Create(overwrite)
 	}
 
 	if err := whodunit.Solve(seasonNumber, episodeNumber, onEpisode); err != nil {
@@ -66,14 +61,16 @@ func (d *Detective) Analyze(seasonNumber int, episodeNumber int, overwrite bool)
 	}
 }
 
+// CloseCase closes the GCP NLP client.
+func (d *Detective) CloseCase() {
+	if err := d.client.Close(); err != nil {
+		log.WithError(err).Errorln("Error closing case")
+	}
+	log.Println("Case closed")
+}
+
 // Investigate logs the episode statuses.
 func Investigate(status whodunit.AssetStatus) {
 	table := whodunit.NewStatusTable(whodunit.AssetTypeAnalysis, status)
 	table.Log()
-}
-
-func (d *Detective) interrogate() {
-	if env.IBMLangAPIKey() == "" || env.IBMLangAPIUrl() == "" {
-		log.Fatalln("IBM credentials file not specified in .env file")
-	}
 }
