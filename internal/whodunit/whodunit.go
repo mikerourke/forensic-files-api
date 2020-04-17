@@ -39,8 +39,11 @@ const (
 type AssetType int
 
 const (
-	// AssetTypeAnalysis represents the entity analysis associated with the episode.
-	AssetTypeAnalysis AssetType = iota
+	// AssetTypeGCPAnalysis represents the GCP entity analysis associated with the episode.
+	AssetTypeGCPAnalysis AssetType = iota
+
+	// AssetTypeIBMAnalysis represents the IBM entity analysis associated with the episode.
+	AssetTypeIBMAnalysis
 
 	// AssetTypeAudio represents the audio file associated with the episode.
 	AssetTypeAudio
@@ -65,8 +68,10 @@ var env = crimeseen.NewEnv()
 // asset type.
 func (at AssetType) DirPath() string {
 	switch at {
-	case AssetTypeAnalysis:
+	case AssetTypeGCPAnalysis:
 		return filepath.Join(env.InvestigationsPath(), "gcp-analyses")
+	case AssetTypeIBMAnalysis:
+		return filepath.Join(env.InvestigationsPath(), "ibm-analyses")
 	case AssetTypeAudio:
 		return filepath.Join(AssetsDirPath, "audio")
 	case AssetTypeRecognition:
@@ -83,18 +88,14 @@ func (at AssetType) DirPath() string {
 // FileExt returns the file extension associated with the asset type.
 func (at AssetType) FileExt() string {
 	switch at {
-	case AssetTypeAnalysis:
-		return ".json"
 	case AssetTypeAudio:
 		return ".mp3"
-	case AssetTypeRecognition:
-		return ".json"
 	case AssetTypeTranscript:
 		return ".txt"
 	case AssetTypeVideo:
 		return ".mp4"
 	default:
-		return ""
+		return ".json"
 	}
 }
 

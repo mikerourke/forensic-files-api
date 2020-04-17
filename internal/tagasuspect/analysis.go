@@ -9,17 +9,19 @@ import (
 	"strconv"
 	"strings"
 
+	"github.com/IBM/go-sdk-core/core"
 	"github.com/mikerourke/forensic-files-api/internal/crimeseen"
 	"github.com/mikerourke/forensic-files-api/internal/killigraphy"
 	"github.com/mikerourke/forensic-files-api/internal/whodunit"
 	"github.com/sirupsen/logrus"
+	nluv1 "github.com/watson-developer-cloud/go-sdk/naturallanguageunderstandingv1"
 	languagepb "google.golang.org/genproto/googleapis/cloud/language/v1"
 )
 
-// Analysis represents the entity analysis from the NLP service.
 type Analysis struct {
 	*whodunit.Episode
 	detective *Detective
+	assetType whodunit.AssetType
 }
 
 type AnalysisEntity struct {
@@ -33,6 +35,7 @@ func newAnalysis(ep *whodunit.Episode, d *Detective) *Analysis {
 	return &Analysis{
 		Episode:   ep,
 		detective: d,
+		assetType: assetTypeForCloudService(d.cloudService),
 	}
 }
 
@@ -100,7 +103,13 @@ func (a *Analysis) Create(overwrite bool) {
 
 	log.WithField("file", a.FileName()).Infoln("Starting analysis")
 
-	result, err := a.apiResult(t.Read())
+	var result interface{}
+	var err error
+	if a.detective.cloudService == CloudServiceGCP {
+		result, err = a.gcpAPIResult(t.Read())
+	} else {
+		result, err = a.ibmAPIResult(t.Read())
+	}
 	if err != nil {
 		log.WithError(err).Errorln("Error submitting analysis request")
 	}
@@ -113,7 +122,7 @@ func (a *Analysis) Create(overwrite bool) {
 	log.Infoln("Analysis successfully written")
 }
 
-func (a *Analysis) apiResult(contents string) (interface{}, error) {
+func (a *Analysis) gcpAPIResult(contents string) (interface{}, error) {
 	doc := &languagepb.Document{
 		Type: languagepb.Document_PLAIN_TEXT,
 		Source: &languagepb.Document_Content{
@@ -142,6 +151,28 @@ func (a *Analysis) apiResult(contents string) (interface{}, error) {
 	}
 
 	return analysisEntities, nil
+}
+
+func (a *Analysis) ibmAPIResult(contents string) (interface{}, error) {
+	result, _, err := a.detective.service.Analyze(
+		&nluv1.AnalyzeOptions{
+			Text: &contents,
+			Features: &nluv1.Features{
+				Relations: &nluv1.RelationsOptions{},
+				Entities: &nluv1.EntitiesOptions{
+					Limit: core.Int64Ptr(10000),
+				},
+				Categories: &nluv1.CategoriesOptions{
+					Limit: core.Int64Ptr(100),
+				},
+			},
+		},
+	)
+	if err != nil {
+		return nil, err
+	}
+
+	return result, nil
 }
 
 // ReadResults returns the results of the analysis as an array of entity
@@ -175,15 +206,15 @@ func (a *Analysis) csvFilePath(outputDir string) string {
 
 // Exists return true if the analysis file exists in the `/assets` directory.
 func (a *Analysis) Exists() bool {
-	return a.AssetExists(whodunit.AssetTypeAnalysis)
+	return a.AssetExists(a.assetType)
 }
 
 // FilePath returns the path to the analysis file in the `/assets` directory.
 func (a *Analysis) FilePath() string {
-	return a.AssetFilePath(whodunit.AssetTypeAnalysis)
+	return a.AssetFilePath(a.assetType)
 }
 
 // FileName returns the name of the analysis file in the `/assets` directory.
 func (a *Analysis) FileName() string {
-	return a.AssetFileName(whodunit.AssetTypeAnalysis)
+	return a.AssetFileName(a.assetType)
 }

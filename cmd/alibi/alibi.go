@@ -44,12 +44,17 @@ func main() {
 		"investigate",
 		"Log status of asset.").Alias("log")
 
-	investigateCommandAssetFlag := investigateCommand.Flag(
+	investigateAssetFlag := investigateCommand.Flag(
 		"asset",
 		"Asset to log.",
 	).Short('a').Required().Enum("analysis", "audio", "video", "recog", "trans")
 
-	investigateCommandFilterFlag := investigateCommand.Flag(
+	investigateServiceFlag := investigateCommand.Flag(
+		"service",
+		"Service to use for the analysis.",
+	).Default("gcp").Short('u').Enum("gcp", "ibm")
+
+	investigateFilterFlag := investigateCommand.Flag(
 		"filter",
 		"Type to filter by.",
 	).Short('f').Enum("pending", "complete", "in-process", "missing")
@@ -73,6 +78,11 @@ func main() {
 		"Create a new entity analysis.").Alias("an")
 	analyzeSeason, analyzeEpisode := addSeasonEpisodeFlags(analyzeCommand)
 
+	analyzeServiceFlag := analyzeCommand.Flag(
+		"service",
+		"Service to use for the analysis.",
+	).Short('u').Required().Enum("gcp", "ibm")
+
 	analyzeCSVFlag := analyzeCommand.Flag(
 		"csv",
 		"Output a CSV file to the specified directory.").Short('c').ExistingDir()
@@ -92,10 +102,14 @@ func main() {
 		ew.Recognize(*recogSeason, *recogEpisode)
 
 	case investigateCommand.FullCommand():
-		status := flagToAssetStatus(*investigateCommandFilterFlag)
-		switch *investigateCommandAssetFlag {
+		status := whodunit.AssetStatusAny
+		if investigateFilterFlag != nil {
+			status = flagToAssetStatus(*investigateFilterFlag)
+		}
+		switch *investigateAssetFlag {
 		case "analysis":
-			tagasuspect.Investigate(status)
+			cloudService := flagToCloudService(*investigateServiceFlag)
+			tagasuspect.Investigate(cloudService, status)
 		case "audio":
 			visibilityzero.Investigate(status)
 		case "recog":
@@ -121,7 +135,8 @@ func main() {
 		if *analyzeCSVFlag != "" {
 			d.FileReport(season, episode, *analyzeCSVFlag)
 		} else {
-			d.OpenCase()
+			cloudService := flagToCloudService(*analyzeServiceFlag)
+			d.OpenCase(cloudService)
 			defer d.CloseCase()
 			d.Analyze(season, episode, *overwriteFlag)
 		}
@@ -152,4 +167,11 @@ func flagToAssetStatus(value string) whodunit.AssetStatus {
 		return whodunit.AssetStatusMissing
 	}
 	return whodunit.AssetStatusAny
+}
+
+func flagToCloudService(value string) tagasuspect.CloudService {
+	if value == "gcp" {
+		return tagasuspect.CloudServiceGCP
+	}
+	return tagasuspect.CloudServiceIBM
 }
