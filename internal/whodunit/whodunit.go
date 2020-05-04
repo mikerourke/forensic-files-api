@@ -67,19 +67,20 @@ var env = crimeseen.NewEnv()
 // DirPath returns the absolute path to the directory associated with the
 // asset type.
 func (at AssetType) DirPath() string {
+	invPath := env.InvestigationsPath()
 	switch at {
 	case AssetTypeGCPAnalysis:
-		return filepath.Join(env.InvestigationsPath(), "gcp-analyses")
+		return filepath.Join(invPath, "gcp-analyses")
 	case AssetTypeIBMAnalysis:
-		return filepath.Join(env.InvestigationsPath(), "ibm-analyses")
+		return filepath.Join(invPath, "ibm-analyses")
 	case AssetTypeAudio:
-		return filepath.Join(AssetsDirPath, "audio")
+		return filepath.Join(invPath, "audio")
 	case AssetTypeRecognition:
-		return filepath.Join(env.InvestigationsPath(), "recognitions")
+		return filepath.Join(invPath, "recognitions")
 	case AssetTypeTranscript:
-		return filepath.Join(env.InvestigationsPath(), "transcripts")
+		return filepath.Join(invPath, "transcripts")
 	case AssetTypeVideo:
-		return filepath.Join(AssetsDirPath, "videos")
+		return filepath.Join(invPath, "videos")
 	default:
 		return ""
 	}
